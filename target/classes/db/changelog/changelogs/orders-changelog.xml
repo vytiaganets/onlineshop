@@ -1,0 +1,53 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <changeSet id="1" author="Andrii">
+        <comment>create table orders</comment>
+        <createTable tableName="orders">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="order_pkey"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" referencedTableName="Users" referencedColumnNames="id" foreignKeyName="fk_orders_Users"/>
+            </column>
+            <column name="delivery_address" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="delivery_method" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contact_phone" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="ENUM('CREATED', 'AWAITING_PAYMENT', 'PAID', 'ON_THE_WAY', 'DELIVERED','CANCELED')">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="Andrii">
+        <comment>add test data to orders</comment>
+        <insert tableName="orders">
+            <column name="user_id" value="1"/>
+            <column name="delivery_address" value="Kiev, Ukraine"/>
+            <column name="delivery_method" value="by post"/>
+            <column name="contact_phone" value="+1 234 567 890"/>
+            <column name="status" value="CREATED"/>
+            <column name="created_at" value="2024-06-24 18:21:03.123000"/>
+            <column name="updated_at" value="2024-06-24 18:21:03.123000"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

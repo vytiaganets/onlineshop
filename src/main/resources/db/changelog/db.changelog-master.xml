@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <include file="db/changelog/changelogs/users-changelog.xml"/>
+    <include file="db/changelog/changelogs/category-changelog.xml"/>
+    <include file="db/changelog/changelogs/product-changelog.xml"/>
+<!--    <include file="db/changelog/changelogs/favorities-changelog.xml"/>-->
+<!--    <include file="db/changelog/changelogs/cart-changelog.xml"/>-->
+<!--    <include file="db/changelog/changelogs/cartItems-changelog.xml"/>-->
+<!--    <include file="db/changelog/changelogs/orders-changelog.xml"/>-->
+<!--    <include file="db/changelog/changelogs/orderItems-changelog.xml"/>-->
+<!--    <include file="db/changelog/changelogs/history-changelog.xml"/>-->
+
+</databaseChangeLog>

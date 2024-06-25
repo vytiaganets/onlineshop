@@ -1,0 +1,46 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <changeSet id="1" author="Andrii">
+        <comment>create table users</comment>
+        <createTable tableName="users">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="user_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_hash" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="ENUM('USER', 'ADMIN')">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="Andrii">
+        <comment>add test data to users</comment>
+        <insert tableName="users">
+            <column name="name" value="Andrii Kpi"/>
+            <column name="email" value="andrii@ukr.net"/>
+            <column name="phone_number" value="+1 234 567 890"/>
+            <!--            2345-->
+            <column name="password_hash" value="$3a$46$Z.IGSrxjpcn6E7lF0A1xAuzm43kgRsvQ3co8ZwlJufm32dU9ymVi"/>
+            <column name="role" value="ADMIN"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
