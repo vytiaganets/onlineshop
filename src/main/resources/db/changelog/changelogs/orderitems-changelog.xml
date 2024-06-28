@@ -8,20 +8,20 @@
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <changeSet id="1" author="Andrii">
-        <createTable tableName="orderitems">
-            <column name="id" type="BIGINT" autoIncrement="true">
+        <createTable tableName="OrderItems">
+            <column name="OrderItemID" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="order_id" type="BIGINT">
-                <constraints nullable="false" foreignKeyName="fk_orderItems_order" references="orders(id)"/>
+            <column name="OrderID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_orderItems_order" references="Orders(OrderID)"/>
             </column>
-            <column name="product_id" type="BIGINT">
-                <constraints nullable="false" foreignKeyName="fk_orderItems_product" references="product(id)"/>
+            <column name="ProductID" type="BIGINT">
+                <constraints nullable="false" foreignKeyName="fk_orderItems_product" references="Products(ProductID)"/>
             </column>
-            <column name="quantity" type="INTEGER">
+            <column name="Quantity" type="INTEGER">
                 <constraints nullable="false"/>
             </column>
-            <column name="price_at_purchase" type="DECIMAL">
+            <column name="PriceAtPurchase" type="DECIMAL">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -29,29 +29,29 @@
 
     <changeSet id="2" author="Andrii">
         <comment>I</comment>
-        <insert tableName="orderitems">
-            <column name="order_id" value="1"/>
-            <column name="product_id" value="2"/>
-            <column name="quantity" value="2"/>
-            <column name="price_at_purchase" value="11"/>
+        <insert tableName="OrderItems">
+            <column name="OrderID" value="1"/>
+            <column name="ProductID" value="1"/>
+            <column name="Quantity" value="2"/>
+            <column name="PriceAtPurchase" value="11"/>
         </insert>
-        <insert tableName="orderitems">
-            <column name="order_id" value="1"/>
-            <column name="product_id" value="1"/>
-            <column name="quantity" value="4"/>
-            <column name="price_at_purchase" value="3.44"/>
+        <insert tableName="OrderItems">
+            <column name="OrderID" value="1"/>
+            <column name="ProductID" value="1"/>
+            <column name="Quantity" value="4"/>
+            <column name="PriceAtPurchase" value="3.44"/>
         </insert>
-        <insert tableName="orderitems">
-            <column name="order_id" value="1"/>
-            <column name="product_id" value="3"/>
-            <column name="quantity" value="100"/>
-            <column name="price_at_purchase" value="342.32"/>
+        <insert tableName="OrderItems">
+            <column name="OrderID" value="1"/>
+            <column name="ProductID" value="1"/>
+            <column name="Quantity" value="100"/>
+            <column name="PriceAtPurchase" value="342.32"/>
         </insert>
-        <insert tableName="orderitems">
-            <column name="order_id" value="1"/>
-            <column name="product_id" value="2"/>
-            <column name="quantity" value="23"/>
-            <column name="price_at_purchase" value="983.21"/>
+        <insert tableName="OrderItems">
+            <column name="OrderID" value="1"/>
+            <column name="ProductID" value="1"/>
+            <column name="Quantity" value="23"/>
+            <column name="PriceAtPurchase" value="983.21"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
