@@ -9,27 +9,27 @@
 
     <changeSet id="1" author="Andrii">
         <comment>create table categories</comment>
-        <createTable tableName="category">
-            <column name="id" autoIncrement="true" type="BIGINT">
+        <createTable tableName="Categories">
+            <column name="CategoryID" autoIncrement="true" type="BIGINT">
                 <constraints primaryKey="true" nullable="false" primaryKeyName="category_pkey"/>
             </column>
-            <column name="name" type="VARCHAR(255)"/>
+            <column name="Name" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
 
     <changeSet id="2" author="Andrii">
         <comment>Insert data into categories</comment>
-        <insert tableName="category">
-            <column name="name" value="Lopata"/>
+        <insert tableName="Categories">
+            <column name="Name" value="Protective products and septic tanks"/>
         </insert>
-        <insert tableName="category">
-            <column name="name" value="Sapa"/>
+        <insert tableName="Categories">
+            <column name="Name" value="Planting material"/>
         </insert>
-        <insert tableName="category">
-            <column name="name" value="Vila"/>
+        <insert tableName="Categories">
+            <column name="Name" value="Tools and equipment"/>
         </insert>
-        <insert tableName="category">
-            <column name="name" value="Kosa"/>
+        <insert tableName="Categories">
+            <column name="Name" value="Pots and planters"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

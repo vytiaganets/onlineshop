@@ -9,46 +9,47 @@
 
     <changeSet id="1" author="Andrii">
         <comment>Create table product</comment>
-        <createTable tableName="product">
-            <column name="id" type="BIGINT" autoIncrement="true">
+        <createTable tableName="Products">
+            <column name="ProductID" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="VARCHAR(255)">
+            <column name="Name" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="description" type="VARCHAR(255)">
+            <column name="Description" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="price" type="DECIMAL(10,2)">
+            <column name="Price" type="DECIMAL(10,2)">
                 <constraints nullable="false"/>
             </column>
-            <column name="image" type="VARCHAR(255)">
+            <column name="ImageURL" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="created_at" type="TIMESTAMP">
+            <column name="CreatedAt" type="TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
-            <column name="updated_at" type="TIMESTAMP">
+            <column name="UpdatedAt" type="TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
-            <column name="discount_price" type="DECIMAL"/>
-            <column name="category_id" type="BIGINT">
-                <constraints nullable="false" referencedTableName="category" referencedColumnNames="id" foreignKeyName="fk_product_category"/>
+            <column name="DiscountPrice" type="DECIMAL"/>
+            <column name="CategoryID" type="BIGINT">
+                <constraints nullable="false" referencedTableName="Categories" referencedColumnNames="CategoryID"
+                             foreignKeyName="fk_product_category"/>
             </column>
         </createTable>
     </changeSet>
 
     <changeSet id="2" author="Andrii">
         <comment>Insert sample products for each category</comment>
-        <insert tableName="product">
-            <column name="name" value="Lopata 1"/>
-            <column name="description" value="Lopata for garden."/>
-            <column name="price" value="2.43"/>
-            <column name="image" value="lopata.jpg"/>
-            <column name="created_at" value="2024-06-24 18:34:12"/>
-            <column name="updated_at" value="2024-06-24 18:34:12"/>
-            <column name="discount_price" value="3.44"/>
-            <column name="category_id" value="2"/>
+        <insert tableName="Products">
+            <column name="Name" value="Lopata 1"/>
+            <column name="Description" value="Lopata for garden."/>
+            <column name="Price" value="2.43"/>
+            <column name="ImageURL" value="lopata.jpg"/>
+            <column name="CreatedAt" value="2024-06-24 18:34:12"/>
+            <column name="UpdatedAt" value="2024-06-24 18:34:12"/>
+            <column name="DiscountPrice" value="3.44"/>
+            <column name="CategoryID" value="1"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

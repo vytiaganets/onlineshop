@@ -10,23 +10,23 @@
 
     <changeSet id="1" author="Andrii">
         <comment>create table users</comment>
-        <createTable tableName="users">
-            <column name="id" autoIncrement="true" type="BIGINT">
+        <createTable tableName="Users">
+            <column name="UserID" autoIncrement="true" type="BIGINT">
                 <constraints primaryKey="true" nullable="false" primaryKeyName="user_pkey"/>
             </column>
-            <column name="name" type="VARCHAR(255)">
+            <column name="Name" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="email" type="VARCHAR(255)">
+            <column name="Email" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="phone_number" type="VARCHAR(255)">
+            <column name="PhoneNumber" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="password_hash" type="VARCHAR(255)">
+            <column name="PasswordHash" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="role" type="ENUM('USER', 'ADMIN')">
+            <column name="Role" type="ENUM('USER', 'ADMIN')">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -34,13 +34,12 @@
 
     <changeSet id="2" author="Andrii">
         <comment>add test data to users</comment>
-        <insert tableName="users">
-            <column name="name" value="Andrii Kpi"/>
-            <column name="email" value="andrii@ukr.net"/>
-            <column name="phone_number" value="+1 234 567 890"/>
-            <!--            2345-->
-            <column name="password_hash" value="$3a$46$Z.IGSrxjpcn6E7lF0A1xAuzm43kgRsvQ3co8ZwlJufm32dU9ymVi"/>
-            <column name="role" value="ADMIN"/>
+        <insert tableName="Users">
+            <column name="Name" value="Andrii Kpi"/>
+            <column name="Email" value="andrii@ukr.net"/>
+            <column name="PhoneNumber" value="+1 234 567 890"/>
+            <column name="PasswordHash" value="$3a$46$Z.IGSrxjpcn6E7lF0A1xAuzm43kgRsvQ3co8ZwlJufm32dU9ymVi"/>
+            <column name="Role" value="ADMIN"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
