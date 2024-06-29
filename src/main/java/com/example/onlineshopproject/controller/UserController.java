@@ -1,75 +1,47 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.exceptions.UserInvalidArgumentException;
-import com.example.onlineshopproject.exceptions.UserNotFoundException;
 import com.example.onlineshopproject.dto.UserDto;
-import com.example.onlineshopproject.entity.UserEntity;
-import com.example.onlineshopproject.security.AuthService;
-import com.example.onlineshopproject.security.model.JwtAuthResponce;
-import com.example.onlineshopproject.security.model.SignInRequest;
+import com.example.onlineshopproject.exceptions.ErrorParamException;
+import com.example.onlineshopproject.exceptions.NotFoundInDbException;
 import com.example.onlineshopproject.service.UserService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.springdoc.api.ErrorMessage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.io.FileNotFoundException;
 
 @RestController
 @RequestMapping("/v1/users")
-@Slf4j
-@RequiredArgsConstructor
-public class UserController {
-    private final UserService userService;
+public class UserController implements UserControllerInterface {
+    @Autowired
+    UserService userService;
 
-    private final AuthService authService;
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<UserDto> getUserById(@PathVariable Long id) {
+        UserDto userDto = userService.getUserById(id);
+        return new ResponseEntity<>(userDto, HttpStatus.OK);
+    }
 
-//    @GetMapping
-//    public ResponseEntity<List<UserDto>> listAll() {
-//        log.debug("Получение всех пользователей.");
-//        List<UserDto> userDto = userService.getAll()
-//                .stream()
-//                .map(userMapper::toDto)
-//                .collect(Collectors.toList());
-//        return ResponseEntity.ok(userDto);
-//    }
-//
-//    @PostMapping("/register")
-//    public ResponseEntity<UserDto> register(@Valid @RequestBody UserCreateDto userCreateDto){
-//        UserEntity userEntity = userMapper.userCreateDtoToEntity(userCreateDto);
-//        UserEntity createdUserEntity = userService.create(userEntity);
-//        UserDto createdUserDto = userMapper.toDto(createdUserEntity);
-//        log.debug("Пользователь, зарегистрированный с помощью Id: {}", createdUserDto.getId());
-//        return new ResponseEntity<>(createdUserDto, HttpStatus.CREATED);
-//    }
-//    @PutMapping("/{id}")
-//    public ResponseEntity<UserDto> edit(@PathVariable Long id, @Valid @RequestBody UserCreateDto userCreateDto){
-//        log.debug("Попытка отредактировать пользователя с идентификатором: {}", id);
-//        UserEntity updatedUser = userService.edit(id, userCreateDto);
-//        return ResponseEntity.ok(userMapper.toDto(updatedUser));
-//    }
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity delete(@PathVariable Long id){
-//        log.debug("Попытка удалить пользователя с идентификатором: {}", id);
-//        userService.delete(id);
-//        return ResponseEntity.noContent().build();
-//    }
-    @PostMapping("/login")
-    public JwtAuthResponce login(@RequestBody SignInRequest request){
-        return authService.authenticate(request);
+    @PutMapping
+    public ResponseEntity<UserDto> updateClient(@RequestBody @Valid UserDto userDto) throws FileNotFoundException {
+        UserDto client = userService.updateUser(userDto);
+        return new ResponseEntity<>(client, HttpStatus.OK);
     }
-    @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<String> handleUserNotExceeption(UserNotFoundException ex){
-        log.error("Пользователь не найден: {}", ex.getMessage());
-        return ResponseEntity.notFound().build();
+
+    @ExceptionHandler(ErrorParamException.class)
+    public ResponseEntity<ErrorMessage> handleException(ErrorParamException errorParamException) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorMessage(errorParamException.getMessage() + "!"));
     }
-    @ExceptionHandler(UserInvalidArgumentException.class)
-    public ResponseEntity<String> handleUserInvalidArgumentException(UserInvalidArgumentException ex){
-        log.error("Недопустимый аргумент пользователя: {}", ex.getMessage());
-        return ResponseEntity.badRequest().body(ex.getMessage());
+
+    @ExceptionHandler(NotFoundInDbException.class)
+    public ResponseEntity<ErrorMessage> handleException(NotFoundInDbException notFoundInDbException) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorMessage(notFoundInDbException.getMessage() + "!"));
     }
 }

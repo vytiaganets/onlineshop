@@ -19,8 +19,9 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
     private final Mappers mappers;
-    public OrderDto insertOrder(OrderDto orderDto){
-        if(orderDto.getItems().isEmpty()){
+
+    public OrderDto insertOrder(OrderDto orderDto) {
+        if (orderDto.getItems().isEmpty()) {
             //...
         }
         OrderEntity orderEntity = mappers.convertToOrderEntity(orderDto);
@@ -30,9 +31,10 @@ public class OrderService {
         orderEntity.getItems().stream().forEach(e -> orderItemRepository.save(e));
         return mappers.convertToOrderDto(orderRepository.save(orderEntity));
     }
-    public Status getOrderStatusById(long id){
+
+    public Status getOrderStatusById(long id) {
         Optional<OrderEntity> orderEntityOptional = orderRepository.findById(id);
-        if(orderEntityOptional.isPresent()){
+        if (orderEntityOptional.isPresent()) {
             return orderEntityOptional.get().getStatus();
         } else {
             return null;

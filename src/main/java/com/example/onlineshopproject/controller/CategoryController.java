@@ -4,7 +4,6 @@ import com.example.onlineshopproject.dto.CategoryDto;
 import com.example.onlineshopproject.exceptions.CategoryWrongValueException;
 import com.example.onlineshopproject.exceptions.CategoryNotFoundException;
 import com.example.onlineshopproject.service.CategoryService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.spi.ErrorMessage;
 import org.springframework.http.HttpStatus;

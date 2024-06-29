@@ -1,10 +1,7 @@
 package com.example.onlineshopproject.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "Favorities")
@@ -13,7 +10,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class FavoriteEntity {
-    @Id@Column(name = "FavoritiesID")
+    @Id
+    @Column(name = "FavoritiesID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long favoriteId;
 

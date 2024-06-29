@@ -11,7 +11,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItemEntity {
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "OrderItemID")
     private Long orderItemId;
 
