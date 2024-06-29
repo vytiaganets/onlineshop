@@ -13,15 +13,14 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Users")
-@Getter
-@Setter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userID")
+    @Column(name = "UserID")
     private Long userId;
     @NotNull
     @Size(min = 2, max = 50)
@@ -30,7 +29,7 @@ public class UserEntity {
 
     @NotNull
     @Email
-    @Column(name = "Email", unique = true,nullable = false)
+    @Column(name = "Email", unique = true, nullable = false)
     private String email;
 
     @Pattern(regexp = "^\\+?[0-9. ()-]{7,25}$", message = "Номер телефона недействителен.")
@@ -56,9 +55,7 @@ public class UserEntity {
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
     private Set<OrderEntity> orderEntitySet = new HashSet<>();
 
-    public String getPassword() {
-        return null;
-    }
+
 }
 
 

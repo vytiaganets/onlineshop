@@ -1,28 +1,38 @@
 package com.example.onlineshopproject.dto;
 
 import com.example.onlineshopproject.enums.UserRole;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.*;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class UserDto {
-    @JsonProperty("id")
-    private Long id;
-    @JsonProperty("name")
+
+    private Long userId;
+
+    @NotBlank(message = "Неверное имя: пустое имя")
+    @Size(min = 2, max = 30, message = "Неверное имя: должно состоять из 2 - 30 символов")
     private String name;
-    @JsonProperty("email")
+
+    @Email(message = "Неверный адрес электронной почты")
     private String email;
-    @JsonProperty("phone")
+
+    @NotBlank(message = "Неверный номер телефона:   пустой номер")
+    @Pattern(regexp = "^\\d{12}", message = "Неверный номер телефона")
     private String phoneNumber;
-    @JsonIgnore
+
     private String passwordHash;
-    @JsonProperty("role")
+
     private UserRole role;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty("Cart")
+    @JsonProperty("cart")
     private CartDto cartDto;
 }

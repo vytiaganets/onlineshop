@@ -15,30 +15,29 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import java.util.zip.DataFormatException;
-
 @Service
 @RequiredArgsConstructor
 public class CartService {
     private final CartRepository cartRepository;
     private final UserRepository userRepository;
     private final Mappers mappers;
+
     @ResponseStatus(HttpStatus.CREATED)
-    public CartDto insertCart(@Valid @RequestBody CartDto cartDto){
-        if(cartDto.getUserDto() == null || cartDto.getUserDto().getId() == null){
+    public CartDto insertCart(@Valid @RequestBody CartDto cartDto) {
+        if (cartDto.getUserDto() == null || cartDto.getUserDto().getUserId() == null) {
             throw new IllegalArgumentException("Идентификатор пользователя должен быть указан в CartDto");
         }
-        Long userId = cartDto.getUserDto().getId();
+        Long userId = cartDto.getUserDto().getUserId();
         UserEntity userEntity = userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException(
                 "Пользователь не " +
-                "найден с идентификатором: " + userId));
+                        "найден с идентификатором: " + userId));
 
         CartEntity cartEntity = mappers.convertToCartEntity(cartDto);
         cartEntity.setUserEntity(userEntity);
-        try{
+        try {
             CartEntity savedCart = cartRepository.save(cartEntity);
             return mappers.convertToCartDto(savedCart);
-        } catch (DataAccessException dataAccessException){
+        } catch (DataAccessException dataAccessException) {
             throw new RuntimeException("Не удалось сохранить корзину: " + dataAccessException.getMessage(),
                     dataAccessException);
         }

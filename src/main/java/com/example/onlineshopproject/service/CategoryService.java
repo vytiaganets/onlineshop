@@ -40,18 +40,19 @@ public class CategoryService {
         return mappers.convertToCategoryDto(savedCategory);
     }
 
-    public void deleteCategoryById(Long id){
+    public void deleteCategoryById(Long id) {
         Optional<CategoryEntity> categoryEntity = categoryRepository.findById(id);
-        if(categoryEntity.isPresent()){
+        if (categoryEntity.isPresent()) {
             categoryRepository.deleteById(id);
         }
     }
-    public CategoryDto updateCategory(CategoryDto categoryDto){
-        if(categoryDto.getCategoryId() <= 0){
+
+    public CategoryDto updateCategory(CategoryDto categoryDto) {
+        if (categoryDto.getCategoryId() <= 0) {
             return null;
         }
         Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(categoryDto.getCategoryId());
-        if(!categoryEntityOptional.isPresent()){
+        if (!categoryEntityOptional.isPresent()) {
             return null;
             //...
         }

@@ -1,10 +1,11 @@
 package com.example.onlineshopproject.enums;
 
 public enum UserRole {
-    ADMIN("ROLE_ADMIN"),
-    USER("ROLE_USER");
+    ADMIN("Роль администратора"),
+    USER("Роль пользователя");
     private final String roleName;
-    UserRole(String roleName){
+
+    UserRole(String roleName) {
         this.roleName = roleName;
     }
 

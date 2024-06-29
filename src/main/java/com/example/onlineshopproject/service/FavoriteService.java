@@ -16,7 +16,8 @@ public class FavoriteService {
     private final FavoriteRepository favoriteRepository;
     private final UserRepository userRepository;
     private final Mappers mappers;
-    public List<FavoriteDto> getFavorite(){
+
+    public List<FavoriteDto> getFavorite() {
         return MapperConfiguration.convertList(favoriteRepository.findAll(), mappers::convertToFavoriteDto);
     }
 }

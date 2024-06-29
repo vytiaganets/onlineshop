@@ -14,29 +14,34 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
     private final ProductService productService;
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<ProductResponceDto> getProduct(){
+    public List<ProductResponceDto> getProduct() {
         return productService.getProduct();
     }
+
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ProductResponceDto getProductById(@PathVariable Long id){
+    public ProductResponceDto getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
     }
+
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteProductById(@PathVariable Long id){
+    public void deleteProductById(@PathVariable Long id) {
         productService.deleteProductById(id);
     }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void insertProducct(@RequestBody ProductRequestDto productRequestDto){
+    public void insertProducct(@RequestBody ProductRequestDto productRequestDto) {
         productService.insertProduct(productRequestDto);
     }
+
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void updatePrroduct(@RequestBody ProductRequestDto productRequestDto, @PathVariable Long id){
+    public void updatePrroduct(@RequestBody ProductRequestDto productRequestDto, @PathVariable Long id) {
         productService.updateProduct(productRequestDto, id);
     }
 }

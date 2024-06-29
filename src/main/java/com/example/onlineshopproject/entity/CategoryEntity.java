@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
+
 @Entity
 @Table(name = "Categories")
 @Setter
@@ -21,6 +22,6 @@ public class CategoryEntity {
     @Column(name = "Name")
     private String name;
 
-    @OneToMany(mappedBy = "categoryEntity",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categoryEntity", cascade = CascadeType.ALL)
     private Set<ProductEntity> products = new HashSet<>();
 }

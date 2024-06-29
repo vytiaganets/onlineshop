@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
+
     @PostMapping
-    public ResponseEntity<OrderDto> insertOrder(@RequestBody @Valid OrderDto orderDto){
+    public ResponseEntity<OrderDto> insertOrder(@RequestBody @Valid OrderDto orderDto) {
         OrderDto orderDtoResponce = orderService.insertOrder(orderDto);
         return new ResponseEntity<>(orderDtoResponce, HttpStatus.OK);
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<Status> getOrderStatusById(@PathVariable long id) {
         Status orderStatusById = orderService.getOrderStatusById(id);
