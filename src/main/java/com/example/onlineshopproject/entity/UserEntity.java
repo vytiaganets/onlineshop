@@ -21,18 +21,18 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "UserID")
-    private Long userId;
+    private long userId;
     @NotNull
     @Size(min = 2, max = 50)
     @Column(name = "Name", nullable = false)
     private String name;
 
     @NotNull
-    @Email
+    //@Email
     @Column(name = "Email", unique = true, nullable = false)
     private String email;
 
-    @Pattern(regexp = "^\\+?[0-9. ()-]{7,25}$", message = "Номер телефона недействителен.")
+    //@Pattern(regexp = "^\\+?[0-9. ()-]{7,25}$", message = "Номер телефона недействителен.")
     @Column(name = "PhoneNumber")
     private String phoneNumber;
 
@@ -54,34 +54,4 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
     private Set<OrderEntity> orderEntitySet = new HashSet<>();
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
