@@ -78,15 +78,15 @@ public class UserService {
     }
 
     public UserDto getByEmail(String email) {
-//        List<UserEntity> userEntityList = userRepository.getByEmail(email);
-//        UserDto userDto = null;
+        List<UserEntity> userEntityList = userRepository.getByEmail(email);
+        UserDto userDto = null;
 //        if (userEntityList != null && !userEntityList.isEmpty()) {
 //            userDto = mappers.convertToUserDto(userEntityList.getFirst());
 //        } else {
 //            new NotFoundInDbException("Не найден в БД пользователь с e-mail: " + email);
 //        }
-//        return userDto;
-        return null;
+        return userDto;
+
     }
 
     public UserDto createUser(UserDto userCredentialsDto) {
