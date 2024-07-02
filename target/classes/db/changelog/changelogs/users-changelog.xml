@@ -38,7 +38,7 @@
             <column name="Name" value="Andrii Kpi"/>
             <column name="Email" value="andrii@ukr.net"/>
             <column name="PhoneNumber" value="+1 234 567 890"/>
-            <column name="PasswordHash" value="$2a$10$I7r0aNpBBMMOi5IYDr//l.4I37aLoXWNaf7oGXH0SbvCA5NkaaiwK"/>
+            <column name="PasswordHash" value="$2a$10$917c2G9DXbVUXtBw2TMaZ.6eZAsS5LD2v9WSObUQdqYrRo9SzSvHO"/>
             <column name="Role" value="ADMIN"/>
         </insert>
     </changeSet>
