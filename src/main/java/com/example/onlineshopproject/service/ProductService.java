@@ -1,14 +1,18 @@
 package com.example.onlineshopproject.service;
 
 import com.example.onlineshopproject.configuration.MapperConfiguration;
+import com.example.onlineshopproject.dto.ProductDto;
 import com.example.onlineshopproject.dto.ProductRequestDto;
 import com.example.onlineshopproject.dto.ProductResponceDto;
 import com.example.onlineshopproject.entity.CategoryEntity;
 import com.example.onlineshopproject.entity.ProductEntity;
 import com.example.onlineshopproject.mapper.Mappers;
+import com.example.onlineshopproject.query.ProductCount;
 import com.example.onlineshopproject.repository.CategoryRepository;
 import com.example.onlineshopproject.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -18,14 +22,32 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class ProductService {
+    private static final Logger log = LoggerFactory.getLogger(ProductService.class);
     private final ProductRepository productRepository;
     private final Mappers mappers;
     private final CategoryRepository categoryRepository;
-
+    public List<ProductDto> getProducts(Long categoryId, Double minPrice, Double maxPrice, Boolean isDiscount,
+                                        String sort){
+        log.info("categoryId = " + categoryId);
+        log.info("minPrice = " + minPrice);
+        log.info("maxPrice = " + maxPrice);
+        log.info("isDiscount = " + isDiscount);
+        log.info("sort = " + sort);//name(asc|desc); price(asc|desc)
+        CategoryEntity categoryEntity = categoryRepository.findById(categoryId).orElse(null);
+        List<ProductEntity> productEntityList = productRepository.findProductByFilter(categoryEntity, minPrice,
+                maxPrice, isDiscount, sort);
+        List<ProductDto> productDtoList = MapperConfiguration.convertList(productEntityList,
+                mappers::convertToProductDto);
+        return productDtoList;
+    }
+    public List<ProductCount> getTop10Products(String status){
+        List<ProductCount> productCountList = (List<ProductCount>)(List<?>)productRepository.findTop10Products(status);
+        return productCountList;
+    }
     public List<ProductResponceDto> getProduct() {
         List<ProductEntity> productEntityList = productRepository.findAll();
         List<ProductResponceDto> productResponceDtoList = MapperConfiguration.convertList(productEntityList,
-                mappers::convertToProductDto);
+                mappers::convertToProductResponceDto);
         return productResponceDtoList;
     }
 
@@ -33,7 +55,7 @@ public class ProductService {
         Optional<ProductEntity> productOptional = productRepository.findById(id);
         ProductResponceDto productResponceDto = null;
         if (productOptional.isPresent()) {
-            productResponceDto = productOptional.map(mappers::convertToProductDto).orElse(null);
+            productResponceDto = productOptional.map(mappers::convertToProductResponceDto).orElse(null);
         }
         return productResponceDto;
     }

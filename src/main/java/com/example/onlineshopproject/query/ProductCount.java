@@ -1,22 +1,22 @@
 package com.example.onlineshopproject.query;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "ProductCount")
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductCount {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ProductID")
-    private long productId;
+    private Long productId;
     @Column(name = "Name")
     private String name;
-    //@Column("Count")
+    @Column(name = "Count")
     private Long count;
-    //@Column(name = "Sum")
+    @Column(name = "Sum")
     private Double sum;
 }

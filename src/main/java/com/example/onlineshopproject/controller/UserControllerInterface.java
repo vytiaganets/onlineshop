@@ -6,11 +6,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@Tag(name = "Контроллер пользователей", description = "Контроллер для работы с пользователями")
+@Tag(name = "User Controller", description = "Controller for working with users")
 public interface UserControllerInterface {
     @Operation(
-            summary = "Получить игформацию о клиенте",
-            description = "Позволяет получить информациюо клиенте по его Id"
+            summary = "Get customer information",
+            description = "Allows you to obtain information about the client by Id"
     )
     public ResponseEntity<UserDto> getUserById(@PathVariable Long id);
 }

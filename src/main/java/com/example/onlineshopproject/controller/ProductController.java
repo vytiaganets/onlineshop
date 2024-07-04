@@ -15,6 +15,7 @@ import java.util.List;
 public class ProductController {
     private final ProductService productService;
 
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<ProductResponceDto> getProduct() {
@@ -35,42 +36,13 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void insertProducct(@RequestBody ProductRequestDto productRequestDto) {
+    public void insertProduct(@RequestBody ProductRequestDto productRequestDto) {
         productService.insertProduct(productRequestDto);
     }
 
     @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void updatePrroduct(@RequestBody ProductRequestDto productRequestDto, @PathVariable Long id) {
+    public void updateProduct(@RequestBody ProductRequestDto productRequestDto, @PathVariable Long id) {
         productService.updateProduct(productRequestDto, id);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

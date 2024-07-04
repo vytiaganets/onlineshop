@@ -100,6 +100,15 @@ public class AdviceController {
                 .body(new ErrorMessage("Избранное не найдено."));
     }
 
+    //AV Обработка недопустимого исключения использования API доступа к данным
+
+    @ExceptionHandler(InvalidDataAccessApiUsageException.class)
+    public final ResponseEntity<ErrorMessage> handleException(InvalidDataAccessApiUsageException invalidDataAccessApiUsageException) {
+        log.error("Недопустимого исключения использования API доступа к данным: {}",invalidDataAccessApiUsageException.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ErrorMessage("Недопустимое исключение использования API доступа к данным."));
+    }
     //AV Обработка ошибок базы данных 404
     @ExceptionHandler(NotFoundInDbException.class)
     public final ResponseEntity<ErrorMessage> handleException(NotFoundInDbException notFoundInDbException) {
