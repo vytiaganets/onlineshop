@@ -6,8 +6,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @Configuration
-@EnableScheduling
+@EnableScheduling//AV Включение планирования
 @EnableAsync
-@ConditionalOnProperty(name = "scheduler.enabled", matchIfMissing = true)
+@ConditionalOnProperty(name = "scheduler.enabled", matchIfMissing = true)//AV Включение планирования с помощью свойства
 public class ScheduledConfiguration {
 }

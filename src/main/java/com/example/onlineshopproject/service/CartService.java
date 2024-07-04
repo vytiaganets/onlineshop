@@ -29,8 +29,7 @@ public class CartService {
         }
         Long userId = cartDto.getUserDto().getUserId();
         UserEntity userEntity = userRepository.findById(userId).orElseThrow(() -> new EntityNotFoundException(
-                "Пользователь не " +
-                        "найден с идентификатором: " + userId));
+                "Пользователь не найден с идентификатором: " + userId));
 
         CartEntity cartEntity = mappers.convertToCartEntity(cartDto);
         cartEntity.setUserEntity(userEntity);
