@@ -21,7 +21,6 @@ import org.springframework.context.annotation.Primary;
                 )
         )
 )
-//http://localhost:8080/swagger-ui/
 public class SwaggerConfiguration {
     @Bean
     @Primary
@@ -29,7 +28,7 @@ public class SwaggerConfiguration {
         return GroupedOpenApi
                 .builder()
                 .group("public")
-                .packagesToScan("com.example.onlineshopproject")
+                .packagesToScan("com.example.onlineshopproject.controller")
                 .build();
     }
 
@@ -58,7 +57,7 @@ public class SwaggerConfiguration {
 
     @Bean
     public GroupedOpenApi ordersApi() {
-        return groupedOpenApi("orders", "/v1/orderss/**");
+        return groupedOpenApi("orders", "/v1/orders/**");
     }
 
     @Bean

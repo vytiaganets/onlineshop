@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.security.service;
 
-import com.example.onlineshopproject.dto.UserDto;
+import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.exceptions.ResponseException;
 import com.example.onlineshopproject.security.jwt.*;
 import com.example.onlineshopproject.service.UserService;
@@ -27,13 +27,13 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
 
     public JwtResponce login(JwtRequest authRequest) throws AuthException {
-        final UserDto userDto = userService.getByEmail(authRequest.getLogin());
-        if (userDto == null) new AuthException("Пользователь не найден");
+        final UserRequestDto userRequestDto = userService.getByEmail(authRequest.getLogin());
+        if (userRequestDto == null) new AuthException("Пользователь не найден");
 
-        if (passwordEncoder.matches(authRequest.getPassword(), userDto.getPasswordHash())) {
-            final String accessToken = jwtProvider.generateAccessToken(userDto);
-            final String refreshToken = jwtProvider.generateRefreshToken(userDto);
-            refreshStorage.put(userDto.getEmail(), refreshToken);
+        if (passwordEncoder.matches(authRequest.getPassword(), userRequestDto.getPasswordHash())) {
+            final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
+            final String refreshToken = jwtProvider.generateRefreshToken(userRequestDto);
+            refreshStorage.put(userRequestDto.getEmail(), refreshToken);
             return new JwtResponce(accessToken, refreshToken);
         } else {
             throw new AuthException("Неправильный пароль.");
@@ -46,9 +46,9 @@ public class AuthService {
             final String login = claims.getSubject();
             final String savedRefreshToken = refreshStorage.get(login);
             if (savedRefreshToken != null && savedRefreshToken.equals(refreshToken)) {
-                final UserDto userDto = userService.getByEmail(login);
-                if (userDto == null) new AuthException("Пользователь не найден.");
-                final String accessToken = jwtProvider.generateAccessToken(userDto);
+                final UserRequestDto userRequestDto = userService.getByEmail(login);
+                if (userRequestDto == null) new AuthException("Пользователь не найден.");
+                final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
                 return new JwtResponce(accessToken, null);
             }
         }
@@ -61,11 +61,11 @@ public class AuthService {
             final String login = claims.getSubject();
             final String savedRefreshToken = refreshStorage.get(login);
             if (savedRefreshToken != null && savedRefreshToken.equals(refreshToken)) {
-                final UserDto userDto = userService.getByEmail(login);
-                if (userDto == null) new AuthException("Пользователь не найден.");
-                final String accessToken = jwtProvider.generateAccessToken(userDto);
-                final String newRefreshToken = jwtProvider.generateRefreshToken(userDto);
-                refreshStorage.put(userDto.getEmail(), newRefreshToken);
+                final UserRequestDto userRequestDto = userService.getByEmail(login);
+                if (userRequestDto == null) new AuthException("Пользователь не найден.");
+                final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
+                final String newRefreshToken = jwtProvider.generateRefreshToken(userRequestDto);
+                refreshStorage.put(userRequestDto.getEmail(), newRefreshToken);
                 return new JwtResponce(accessToken, newRefreshToken);
             }
         }
@@ -76,7 +76,7 @@ public class AuthService {
         return (JwtAuth) SecurityContextHolder.getContext().getAuthentication();
     }
 
-    public UserDto createUser(UserDto userCredentialDto) throws ResponseException {
+    public UserRequestDto createUser(UserRequestDto userCredentialDto) throws ResponseException {
         return userService.createUser(userCredentialDto);
     }
 }

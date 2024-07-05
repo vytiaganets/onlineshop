@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.FavoriteDto;
+import com.example.onlineshopproject.dto.FavoriteResponseDto;
 import com.example.onlineshopproject.service.FavoriteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,7 +19,7 @@ public class FavoriteController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<FavoriteDto> getFavorities() {
+    public List<FavoriteResponseDto> getFavorities() {
         return favoriteService.getFavorite();
     }
 }

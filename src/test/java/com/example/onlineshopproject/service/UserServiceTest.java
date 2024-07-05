@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.service;
 
-import com.example.onlineshopproject.dto.UserDto;
+import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.entity.UserEntity;
 import com.example.onlineshopproject.enums.UserRole;
 import com.example.onlineshopproject.mapper.Mappers;
@@ -32,11 +32,11 @@ public class UserServiceTest {
     private ModelMapper modelMapperMock;
     @InjectMocks
     private UserService userServiceTest;
-    private UserDto expectedUserDto;
+    private UserRequestDto expectedUserRequestDto;
     private UserEntity expectedUser;
     @BeforeEach
     void setUp(){
-        expectedUserDto = UserDto.builder()
+        expectedUserRequestDto = UserRequestDto.builder()
                 .userId(1L)
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)
@@ -56,16 +56,16 @@ public class UserServiceTest {
     @Test
     void getUserTest(){
         when(userRepositoryMock.findAll()).thenReturn(Arrays.asList(expectedUser));
-        when(mappersMock.convertToUserDto(any(UserEntity.class))).thenReturn(expectedUserDto);
-        List<UserDto> actualUserDtoList = userServiceTest.getUser();
-        assertEquals(Arrays.asList(expectedUserDto), actualUserDtoList);
+        when(mappersMock.convertToUserDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
+        List<UserRequestDto> actualUserRequestDtoList = userServiceTest.getUser();
+        assertEquals(Arrays.asList(expectedUserRequestDto), actualUserRequestDtoList);
     }
     @Test
     void getUserByIdTest(){
         when(userRepositoryMock.findById(anyLong())).thenReturn(Optional.of(expectedUser));
-        when(mappersMock.convertToUserDto(any(UserEntity.class))).thenReturn(expectedUserDto);
-        UserDto actualUserDto = userServiceTest.getUserById(1L);
-        assertEquals(expectedUserDto, actualUserDto);
+        when(mappersMock.convertToUserDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
+        UserRequestDto actualUserRequestDto = userServiceTest.getUserById(1L);
+        assertEquals(expectedUserRequestDto, actualUserRequestDto);
     }
     @Test
     void updateUserTest() {

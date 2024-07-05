@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.UserDto;
+import com.example.onlineshopproject.dto.UserRequestDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
@@ -12,5 +12,5 @@ public interface UserControllerInterface {
             summary = "Get customer information",
             description = "Allows you to obtain information about the client by Id"
     )
-    public ResponseEntity<UserDto> getUserById(@PathVariable Long id);
+    public ResponseEntity<UserRequestDto> getUserById(@PathVariable Long id);
 }

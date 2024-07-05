@@ -1,7 +1,7 @@
 package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.ProductRequestDto;
-import com.example.onlineshopproject.dto.ProductResponceDto;
+import com.example.onlineshopproject.dto.ProductResponseDto;
 import com.example.onlineshopproject.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,13 +18,13 @@ public class ProductController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<ProductResponceDto> getProduct() {
+    public List<ProductResponseDto> getProduct() {
         return productService.getProduct();
     }
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ProductResponceDto getProductById(@PathVariable Long id) {
+    public ProductResponseDto getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
     }
 

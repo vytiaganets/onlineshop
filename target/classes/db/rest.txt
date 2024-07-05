@@ -1,0 +1,138 @@
+API REST документация для онлайн-магазина товаров для дома и сада
+ Общие Сведения
+- Базовый URL: `https://api.example.com/v1`
+- Формат данных: JSON
+- Аутентификация: JWT токен в заголовке запроса `Authorization: Bearer <token>`
+Эндпоинты
+Управление учетными записями пользователей
+- Регистрация пользователя
+    - URL: `/users/register`
+    - Метод: `POST`
+    - Тело запроса:
+        {
+          "name": "string",
+          "email": "string",
+          "phone": "string",
+          "password": "string"
+}
+- Ожидаемые HTTP статусы: 201 Created, 400 Bad Request - Аутентификация пользователя
+    - URL: `/users/login`
+    - Метод: `POST`
+    - Тело запроса:
+        {
+          "email": "string",
+          "password": "string"
+}
+- Ожидаемые HTTP статусы: 200 OK, 401 Unauthorized - Редактирование профиля пользователя
+    - URL: `/users/{userId}`
+    - Метод: `PUT`
+    - Тело запроса:
+        {
+          "name": "string",
+          "phone": "string"
+}
+- Ожидаемые HTTP статусы: 200 OK, 400 Bad Request, 404 Not Found
+
+- Удаление учетной записи
+- URL: `/users/{userId}`
+- Метод: `DELETE`
+- Ожидаемые HTTP статусы: 200 OK, 404 Not Found
+Управление каталогом товаров (для администраторов)
+- Добавление нового товара
+    - URL: `/products`
+    - Метод: `POST`
+    - Тело запроса:
+        {
+          "name": "string",
+          "description": "string",
+          "price": "number",
+          "category": "string",
+          "image": "string"
+}
+- Ожидаемые HTTP статусы: 201 Created, 400 Bad Request - Редактирование товара
+- URL: `/products/{productId}` - Метод: `PUT`
+- Тело запроса:
+        {
+          "name": "string",
+          "description": "string",
+          "price": "number",
+          "category": "string",
+          "image": "string"
+}
+- Ожидаемые HTTP статусы: 200 OK, 400 Bad Request, 404 Not Found - Удаление товара
+- URL: `/products/{productId}`
+- Метод: `DELETE`
+- Ожидаемые HTTP статусы: 200 OK, 404 Not Found
+Управление категориями товаров (для администраторов)
+- Добавление новой категории товаров - URL: `/categories`
+- Метод: `POST`
+- Тело запроса:
+        {
+          "categoryId": "string",
+
+          "category": "string"
+        }
+- Ожидаемые HTTP статусы: 201 Created, 400 Bad Request - Редактирование категории товаров
+- URL: `/categories/{categoryId}` - Метод: `PUT`
+- Тело запроса:
+        {
+          "categoryId": "string",
+          "category": "string"
+}
+- Ожидаемые HTTP статусы: 200 OK, 400 Bad Request, 404 Not Found - Удаление категории товаров
+- URL: `/categories/{categoryId}`
+- Метод: `DELETE`
+- Ожидаемые HTTP статусы: 200 OK, 404 Not Found
+ Получение и Фильтрация Данных
+- Получение списка товаров
+- URL: `/products`
+- Метод: `GET`
+- Параметры запроса: `category`, `minPrice`, `maxPrice`, `discount`,
+`sort`
+- Ожидаемые HTTP статусы: 200 OK
+- Получение детальной информации о товаре
+- URL: `/products/{productId}`
+- Метод: `GET`
+- Ожидаемые HTTP статусы: 200 OK, 404 Not Found
+- Получение списка категорий товаров - URL: `/categories`
+- Метод: `GET`
+- Ожидаемые HTTP статусы: 200 OK
+ Система Заказов
+- Добавление товара в корзину
+    - URL: `/cart`
+    - Метод: `POST`
+    - Тело запроса:
+        {
+          "productId": "string",
+          "quantity": "number"
+}
+
+- Ожидаемые HTTP статусы: 200 OK, 400 Bad Request - Оформление заказа
+    - URL: `/orders`
+    - Метод: `POST`
+    - Тело запроса:
+{
+"items": [
+            {
+              "productId": "string",
+              "quantity": "number"
+} ],
+"deliveryAddress": "string",
+"deliveryMethod": "string" }
+- Ожидаемые HTTP статусы: 201 Created, 400 Bad Request - Просмотр статуса заказа
+- URL: `/orders/{orderId}`
+- Метод: `GET`
+- Ожидаемые HTTP статусы: 200 OK, 404 Not Found
+ История и Избранное
+- История покупок пользователя
+- URL: `/orders/history`
+- Метод: `GET`
+- Аутентификация: Требуется JWT токен
+- Ожидаемые HTTP статусы: 200 OK, 401 Unauthorized
+- Получение списка избранных товаров пользователя - URL: `/favorites`
+- Метод: `GET`
+- Аутентификация: Требуется JWT токен
+- Ожидаемые HTTP статусы: 200 OK, 401 Unauthorized Примечания
+- Все эндпоинты, требующие аутентификации, должны проверять наличие и действительность JWT токена.
+- Для каждого эндпоинта должна быть предусмотрена обработка ошибок с соответствующими HTTP статусами и сообщениями об ошибках.
+- Информация о всех реализованных эндпоинтах должна быть отображена в Swagger.

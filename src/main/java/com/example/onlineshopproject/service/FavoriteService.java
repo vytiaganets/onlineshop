@@ -1,7 +1,7 @@
 package com.example.onlineshopproject.service;
 
 import com.example.onlineshopproject.configuration.MapperConfiguration;
-import com.example.onlineshopproject.dto.FavoriteDto;
+import com.example.onlineshopproject.dto.FavoriteResponseDto;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.FavoriteRepository;
 import com.example.onlineshopproject.repository.UserRepository;
@@ -17,7 +17,7 @@ public class FavoriteService {
     private final UserRepository userRepository;
     private final Mappers mappers;
 
-    public List<FavoriteDto> getFavorite() {
-        return MapperConfiguration.convertList(favoriteRepository.findAll(), mappers::convertToFavoriteDto);
+    public List<FavoriteResponseDto> getFavorite() {
+        return MapperConfiguration.convertList(favoriteRepository.findAll(), mappers::convertToFavoriteResponseDto);
     }
 }

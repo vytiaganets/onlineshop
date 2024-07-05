@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.security.controller;
 
-import com.example.onlineshopproject.dto.UserDto;
+import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.exceptions.ResponseException;
 import com.example.onlineshopproject.security.jwt.JwtRequest;
 import com.example.onlineshopproject.security.jwt.JwtRequestRefresh;
@@ -38,8 +38,8 @@ public class AuthController {
 
     @PostMapping("/registration")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public ResponseEntity<UserDto> register(@RequestBody UserDto userCredentialsDto) throws ResponseException {
-        UserDto userDto = authService.createUser(userCredentialsDto);
-        return ResponseEntity.ofNullable(userDto);
+    public ResponseEntity<UserRequestDto> register(@RequestBody UserRequestDto userCredentialsDto) throws ResponseException {
+        UserRequestDto userRequestDto = authService.createUser(userCredentialsDto);
+        return ResponseEntity.ofNullable(userRequestDto);
     }
 }

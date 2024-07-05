@@ -21,10 +21,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@RequiredArgsConstructor
 public class SecurityConfiguration {
     //AV Endpoint set
     private static final String[] SWAGGER = {
+            "v2/api-docs",
+            "v3/api-docs",
             "/swagger-resources/**",
             "/swagger-resources",
             "swagger-ui/",
@@ -32,7 +33,8 @@ public class SecurityConfiguration {
             "swagger-ui/**",
             "/swagger-resources/configuration/ui",
             "/swagger-resources/configuration/security",
-            "/auth/registration"
+            "/auth/registration",
+            "/"
     };
     //AV Authorization check filter by token
     @Autowired
@@ -44,16 +46,22 @@ public class SecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests
                         (request -> request
+                                //AB is allowed for the swagger
                                 .requestMatchers(SWAGGER)
                                 .permitAll()
+                                //AB allow the user to log in to receive a token
                                 .requestMatchers("/auth/login")
                                 .permitAll()
+                                //AB allows registering a new user without a token and passwords
                                 .requestMatchers("/auth/registration")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated())
+                //AB basic authentication
                 .httpBasic(Customizer.withDefaults())
+                //AB disable state storage between requests
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                //AB work with token
                 .addFilterBefore(jwtFilter,
                         UsernamePasswordAuthenticationFilter.class)
                 .build();

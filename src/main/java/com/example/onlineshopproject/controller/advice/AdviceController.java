@@ -19,181 +19,181 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class AdviceController {
 
-    //AV Обработка недопустимого аргумента корзины
+    //AV Handling an invalid cart argument
     @ExceptionHandler(CartInvalidArgumentException.class)
     public final ResponseEntity<ErrorMessage> handleException(CartInvalidArgumentException cartInvalidArgumentException) {
-        log.error("Недопустимый аргумент корзины: {}", cartInvalidArgumentException.getMessage());
+        log.error("Invalid cart argument: {}", cartInvalidArgumentException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorMessage("Недопустимый аргумент корзины."));
+                .body(new ErrorMessage("Invalid cart argument."));
     }
 
-    //AV Обработка недопустимый аргумент товара корзины
+    //AV Handling invalid cart item argument
     @ExceptionHandler(CartItemInvalidArgumentException.class)
     public final ResponseEntity<ErrorMessage> handleException(CartItemInvalidArgumentException cartItemInvalidArgumentException) {
-        log.error("Недопустимый аргумент товара корзины: {}", cartItemInvalidArgumentException.getMessage());
+        log.error("Invalid cart item argument: {}", cartItemInvalidArgumentException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorMessage("Недопустимый аргумент товара корзины."));
+                .body(new ErrorMessage("Invalid cart item argument."));
     }
 
-    //AV Обработка ошибки ненайденого товара в корзине
+    //AV Handling the error of an item not found in the cart
     @ExceptionHandler(CartItemNotFoundException.class)
     public final ResponseEntity<ErrorMessage> handleException(CartItemNotFoundException cartItemNotFoundException) {
-        log.error("Ненайден товар в корзине: {}", cartItemNotFoundException.getMessage());
+        log.error("Product not found in cart: {}", cartItemNotFoundException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorMessage("Ненайден товар в корзине."));
+                .body(new ErrorMessage("Product not found in cart."));
     }
 
-    //AV Обработка ошибки не найдена корзина
+    //AV Error handling cart not found
     @ExceptionHandler(CartNotFoundException.class)
     public final ResponseEntity<ErrorMessage> handleException(CartNotFoundException cartNotFoundException) {
-        log.error("Корзина не найдена: {}", cartNotFoundException.getMessage());
+        log.error("Cart not found: {}", cartNotFoundException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorMessage("Корзина не найдена."));
+                .body(new ErrorMessage("Cart not found."));
     }
 
-    //AV Обработка ошибки недопустимого аргумента категории
+    //AV Handling an invalid category argument error
     @ExceptionHandler(CategoryInvalidArgumentException.class)
     public final ResponseEntity<ErrorMessage> handleException(CategoryInvalidArgumentException categoryInvalidArgumentException) {
-        log.error("Недопустимый аргумент категории: {}", categoryInvalidArgumentException.getMessage());
+        log.error("Invalid category argument: {}", categoryInvalidArgumentException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorMessage("Недопустимый аргумент категории."));
+                .body(new ErrorMessage("Invalid category argument."));
     }
 
-    //AV Обработка ошибки не найдена категории
+    //AV Error handling category not found
     @ExceptionHandler(CategoryNotFoundException.class)
     public final ResponseEntity<ErrorMessage> handleException(CategoryNotFoundException categoryNotFoundException) {
-        log.error("Категория не найдена: {}", categoryNotFoundException.getMessage());
+        log.error("Category not found: {}", categoryNotFoundException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorMessage("Категория не найдена."));
+                .body(new ErrorMessage("Category not found."));
     }
 
-    //AV Обработка ошибки неправильное значение категории
+    //AV Error handling incorrect category value
     @ExceptionHandler(CategoryWrongValueException.class)
     public ResponseEntity<ErrorMessage> handleException(CategoryWrongValueException categoryWrongValueException) {
-        log.error("Неправильное значение категории: {}", categoryWrongValueException.getMessage());
+        log.error("Invalid category value: {}", categoryWrongValueException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorMessage("Неправильное значение категории."));
+                .body(new ErrorMessage("Invalid category value."));
     }
 
-    //AV Обработка ошибки неправильное значение параметра
+    //AV Error handling: incorrect parameter value
     @ExceptionHandler(ErrorParamException.class)
     public final ResponseEntity<ErrorMessage> handleException(ErrorParamException errorParamException) {
-        log.error("Неправильное значение параметра: {}", errorParamException.getMessage());
+        log.error("Invalid parameter value: {}", errorParamException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorMessage("Неправильное значение параметра."));
+                .body(new ErrorMessage("Invalid parameter value."));
     }
 
-    //AV Обработка ошибки не найдена избранное
+    //AV Error handling not found favorites
     @ExceptionHandler(FavoriteNotFoundException.class)
     public final ResponseEntity<ErrorMessage> handleException(FavoriteNotFoundException favoriteNotFoundException) {
-        log.error("Избранное не найдено: {}", favoriteNotFoundException.getMessage());
+        log.error("Favorites not found: {}", favoriteNotFoundException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorMessage("Избранное не найдено."));
+                .body(new ErrorMessage("Favorites not found."));
     }
 
-    //AV Обработка недопустимого исключения использования API доступа к данным
+    //AV Handling Invalid Data Access API Usage Exception
 
     @ExceptionHandler(InvalidDataAccessApiUsageException.class)
     public final ResponseEntity<ErrorMessage> handleException(InvalidDataAccessApiUsageException invalidDataAccessApiUsageException) {
-        log.error("Недопустимого исключения использования API доступа к данным: {}",invalidDataAccessApiUsageException.getMessage());
+        log.error("Invalid Data Access API usage exception: {}",invalidDataAccessApiUsageException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorMessage("Недопустимое исключение использования API доступа к данным."));
+                .body(new ErrorMessage("Invalid Data Access API Usage Exception."));
     }
-    //AV Обработка ошибок базы данных 404
+    //AV Handling 404 database errors
     @ExceptionHandler(NotFoundInDbException.class)
     public final ResponseEntity<ErrorMessage> handleException(NotFoundInDbException notFoundInDbException) {
-        log.error("Не найдено в базе данных: {}", notFoundInDbException.getMessage());
+        log.error("Not found in database: {}", notFoundInDbException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
                 .body(new ErrorMessage(notFoundInDbException.getMessage()));
     }
 
-    //AV Обработка ошибки не найден заказ
+    //AV Error handling order not found
     @ExceptionHandler(OrderNotFoundException.class)
     public final ResponseEntity<ErrorMessage> handleException(OrderNotFoundException orderNotFoundException) {
-        log.error("Заказ не найден: {}", orderNotFoundException.getMessage());
+        log.error("Order not found: {}", orderNotFoundException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorMessage("Заказ не найден."));
+                .body(new ErrorMessage("Order not found."));
     }
 
-    //AV Обработка ошибки неправильное значение продукта
+    //AV Error handling incorrect product value
     @ExceptionHandler(ProductIllegalArgumentException.class)
     public final ResponseEntity<ErrorMessage> handleException(ProductIllegalArgumentException productIllegalArgumentException) {
-        log.error("Неправильное значение продукта: {}", productIllegalArgumentException.getMessage());
+        log.error("Incorrect product value: {}", productIllegalArgumentException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorMessage("Неправильное значение продукта."));
+                .body(new ErrorMessage("Incorrect product value."));
     }
 
-    //AV Обработка ошибки не найден продукт
+    //AV Error handling product not found
     @ExceptionHandler(ProductNotFoundException.class)
     public final ResponseEntity<ErrorMessage> handleException(ProductNotFoundException productNotFoundException) {
-        log.error("Продукт не найден: {}", productNotFoundException.getMessage());
+        log.error("Product not found: {}", productNotFoundException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorMessage("Продукт не найден."));
+                .body(new ErrorMessage("Product not found."));
     }
 
-    //AV Обработка ошибок 400
+    //AV Handling 400 errors
     @ExceptionHandler(ResponseException.class)
     public final ResponseEntity<ErrorMessage> handleException(ResponseException responseException) {
-        log.error("Исключение: {}", responseException.getMessage());
+        log.error("Exception: {}", responseException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.I_AM_A_TEAPOT)
-                .body(new ErrorMessage("Извините, что-то пошло не так. Повторите попытку позже"));
+                .body(new ErrorMessage("Sorry, something went wrong. Please try again later"));
     }
 
-    //AV Обработка ошибки неправильное значение пользователя
+    //AV Error handling invalid user value
     @ExceptionHandler(UserInvalidArgumentException.class)
     public final ResponseEntity<ErrorMessage> handleException(UserInvalidArgumentException userInvalidArgumentException) {
-        log.error("Неправильное значение пользователя: {}", userInvalidArgumentException.getMessage());
+        log.error("Invalid user value: {}", userInvalidArgumentException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
-                .body(new ErrorMessage("Неправильное значение пользователя."));
+                .body(new ErrorMessage("Invalid user value."));
     }
 
-    //AV Обработка ошибки не найден пользователь
+    //AV Error handling user not found
     @ExceptionHandler(UserNotFoundException.class)
     public final ResponseEntity<ErrorMessage> handleException(UserNotFoundException userInvalidArgumentException) {
-        log.error("Пользователь не найден: {}", userInvalidArgumentException.getMessage());
+        log.error("User is not found: {}", userInvalidArgumentException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ErrorMessage("Пользователь не найден."));
+                .body(new ErrorMessage("User is not found."));
     }
 
-    //AV Обработка ошибок validation
+    //AV Handling validation errors
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public final ResponseEntity<Map<String, List<String>>> handleValidationErrors(MethodArgumentNotValidException methodArgumentNotValidException) {
         List<String> errors = methodArgumentNotValidException.getBindingResult().getFieldErrors()
                 .stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.toList());
-        log.error("Аргумент недействительный: {}", methodArgumentNotValidException.getMessage());
+        log.error("The argument is invalid: {}", methodArgumentNotValidException.getMessage());
         return new ResponseEntity<>(getErrorMap(errors), new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
-    //AV getErrorMap метод
+    //AV getErrorMap method
     private Map<String, List<String>> getErrorMap(List<String> errors) {
         Map<String, List<String>> errorResponse = new HashMap<>();
         errorResponse.put("errors", errors);
         return errorResponse;
     }
 
-    //AV Обработка остальных исключений
+    //AV Handling other exceptions
     @ExceptionHandler(Exception.class)
     public final ResponseEntity<ErrorMessage> handleException(Exception exception) {
-        log.error("Исключение: {}", exception.getMessage());
+        log.error("Exception: {}", exception.getMessage());
         return ResponseEntity
                 .status(HttpStatus.I_AM_A_TEAPOT)
-                .body(new ErrorMessage("Извините, что-то пошло не так. Повторите попытку позже"));
+                .body(new ErrorMessage("Sorry, something went wrong. Please try again later"));
     }
 }

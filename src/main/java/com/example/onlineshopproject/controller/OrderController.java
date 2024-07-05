@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.OrderDto;
+import com.example.onlineshopproject.dto.OrderResponseDto;
 import com.example.onlineshopproject.service.OrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -16,9 +16,9 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping
-    public ResponseEntity<OrderDto> insertOrder(@RequestBody @Valid OrderDto orderDto) {
-        OrderDto orderDtoResponce = orderService.insertOrder(orderDto);
-        return new ResponseEntity<>(orderDtoResponce, HttpStatus.OK);
+    public ResponseEntity<OrderResponseDto> insertOrder(@RequestBody @Valid OrderResponseDto orderResponseDto) {
+        OrderResponseDto orderResponseDtoResponce = orderService.insertOrder(orderResponseDto);
+        return new ResponseEntity<>(orderResponseDtoResponce, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
