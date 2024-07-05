@@ -1,8 +1,8 @@
 package com.example.onlineshopproject.service;
 
 import com.example.onlineshopproject.configuration.MapperConfiguration;
-import com.example.onlineshopproject.dto.CartDto;
-import com.example.onlineshopproject.dto.UserDto;
+import com.example.onlineshopproject.dto.CartResponseDto;
+import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.entity.CartEntity;
 import com.example.onlineshopproject.entity.UserEntity;
 import com.example.onlineshopproject.exceptions.NotFoundInDbException;
@@ -31,7 +31,7 @@ public class UserService {
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
 
-    public UserDto registerUser(UserDto userDto) {
+    public UserRequestDto registerUser(UserRequestDto userRequestDto) {
         return null;
     }
 
@@ -39,69 +39,70 @@ public class UserService {
         return null;
     }
 
-    public List<UserDto> getUser() {
+    public List<UserRequestDto> getUser() {
         List<UserEntity> userEntityList = new ArrayList<>();
         userRepository.findAll().forEach(userEntityList::add);
-        List<UserDto> userDtoList = MapperConfiguration.convertList(userEntityList, mappers::convertToUserDto);
-        return userDtoList;
+        List<UserRequestDto> userRequestDtoList = MapperConfiguration.convertList(userEntityList,
+                mappers::convertToUserResponseDto);
+        return userRequestDtoList;
     }
 
-    public UserDto getUserById(Long id) {
+    public UserRequestDto getUserById(Long id) {
         UserEntity userEntity = userRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Не найден пользователь с таким Id"));
-        UserDto userDto = mappers.convertToUserDto(userEntity);
-        return userDto;
+        UserRequestDto userRequestDto = mappers.convertToUserResponseDto(userEntity);
+        return userRequestDto;
     }
 
-    public UserDto updateUser(UserDto userDto) throws FileNotFoundException {
-        if (userDto.getUserId() != null) {
-            Optional<UserEntity> userEntityOptional = userRepository.findById(userDto.getUserId());
+    public UserRequestDto updateUser(UserRequestDto userRequestDto) throws FileNotFoundException {
+        if (userRequestDto.getUserId() != null) {
+            Optional<UserEntity> userEntityOptional = userRepository.findById(userRequestDto.getUserId());
             if (userEntityOptional.isPresent()) {
                 UserEntity userEntity = userEntityOptional.get();
-                userEntity.setUserId((userDto.getUserId() != null) ? userDto.getUserId() : userEntity.getUserId());
-                userEntity.setName((userDto.getName() != null) ? userDto.getName() : userEntity.getName());
-                userEntity.setEmail((userDto.getEmail() != null) ? userDto.getEmail() : userEntity.getEmail());
-                userEntity.setPhoneNumber((userDto.getPhoneNumber() != null) ? userDto.getPhoneNumber() :
+                userEntity.setUserId((userRequestDto.getUserId() != null) ? userRequestDto.getUserId() : userEntity.getUserId());
+                userEntity.setName((userRequestDto.getName() != null) ? userRequestDto.getName() : userEntity.getName());
+                userEntity.setEmail((userRequestDto.getEmail() != null) ? userRequestDto.getEmail() : userEntity.getEmail());
+                userEntity.setPhoneNumber((userRequestDto.getPhoneNumber() != null) ? userRequestDto.getPhoneNumber() :
                         userEntity.getPhoneNumber());
-                userEntity.setRole((userDto.getRole() != null) ? userDto.getRole() :
+                userEntity.setRole((userRequestDto.getRole() != null) ? userRequestDto.getRole() :
                         userEntity.getRole());
                 UserEntity userUpdate = userRepository.save(userEntity);
-                return mappers.convertToUserDto(userUpdate);
+                return mappers.convertToUserResponseDto(userUpdate);
             } else {
 
-                log.error("Не найден пользователь с Id " + userDto.getUserId());
-                throw new NotFoundInDbException("Не найден пользователь с Id " + userDto.getUserId());
+                log.error("Не найден пользователь с Id " + userRequestDto.getUserId());
+                throw new NotFoundInDbException("Не найден пользователь с Id " + userRequestDto.getUserId());
             }
         } else {
             throw new FileNotFoundException("Не корректный параметр userDto");
         }
     }
 
-    public UserDto getByEmail(String email) {
+    public UserRequestDto getByEmail(String email) {
         List<UserEntity> userEntityList = userRepository.getByEmail(email);
-        UserDto userDto = null;
+        UserRequestDto userRequestDto = null;
         if (userEntityList != null && !userEntityList.isEmpty()) {
             //userDto = mappers.convertToUserDto(userEntityList.getFirst());
-            userDto = mappers.convertToUserDto(userEntityList.get(0));
+            userRequestDto = mappers.convertToUserResponseDto(userEntityList.get(0));
         } else {
             new NotFoundInDbException("Не найден в БД пользователь с e-mail: " + email);
         }
-        return userDto;
+        return userRequestDto;
 
     }
 
-    public UserDto createUser(UserDto userCredentialsDto) {
+    public UserRequestDto createUser(UserRequestDto userCredentialsDto) {
         userCredentialsDto.setUserId(null);
         UserEntity userEntity = mappers.convertToUserEntity(userCredentialsDto);
         userEntity.setPasswordHash(passwordEncoder.encode(userCredentialsDto.getPasswordHash()));
-        CartDto cartDto = userCredentialsDto.getCartDto();
+        CartResponseDto cartResponseDto = userCredentialsDto.getCartResponseDto();
         CartEntity cartEntity = null;
-        if (cartDto != null) {
-            cartEntity = cartRepository.findById(cartDto.getCartId())
-                    .orElseThrow(() -> new NotFoundInDbException("Не найдена в БД корзина с id " + cartDto.getCartId()));
+        if (cartResponseDto != null) {
+            cartEntity = cartRepository.findById(cartResponseDto.getCartId())
+                    .orElseThrow(() -> new NotFoundInDbException("Не найдена в БД корзина с id " + cartResponseDto.getCartId()));
         }
         UserEntity userEntityResponce = userRepository.save(userEntity);
 
-        return mappers.convertToUserDto(userEntityResponce);
+        return mappers.convertToUserResponseDto(userEntityResponce);
     }
 }

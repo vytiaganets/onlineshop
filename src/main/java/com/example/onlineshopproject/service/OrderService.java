@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.service;
 
-import com.example.onlineshopproject.dto.OrderDto;
+import com.example.onlineshopproject.dto.OrderResponseDto;
 import com.example.onlineshopproject.entity.OrderEntity;
 import com.example.onlineshopproject.enums.Status;
 import com.example.onlineshopproject.mapper.Mappers;
@@ -20,16 +20,16 @@ public class OrderService {
     private final OrderItemRepository orderItemRepository;
     private final Mappers mappers;
 
-    public OrderDto insertOrder(OrderDto orderDto) {
-        if (orderDto.getItems().isEmpty()) {
+    public OrderResponseDto insertOrder(OrderResponseDto orderResponseDto) {
+        if (orderResponseDto.getItems().isEmpty()) {
             //...
         }
-        OrderEntity orderEntity = mappers.convertToOrderEntity(orderDto);
+        OrderEntity orderEntity = mappers.convertToOrderEntity(orderResponseDto);
         orderEntity.setStatus(Status.ORDERED);
         orderEntity.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
         orderEntity.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
         orderEntity.getItems().stream().forEach(e -> orderItemRepository.save(e));
-        return mappers.convertToOrderDto(orderRepository.save(orderEntity));
+        return mappers.convertToOrderResponseDto(orderRepository.save(orderEntity));
     }
 
     public Status getOrderStatusById(long id) {

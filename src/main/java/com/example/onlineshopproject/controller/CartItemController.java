@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.CartItemDto;
+import com.example.onlineshopproject.dto.CartItemResponseDto;
 import com.example.onlineshopproject.service.CartItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,25 +16,25 @@ public class CartItemController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<CartItemDto> getCartItem() {
+    public List<CartItemResponseDto> getCartItem() {
         return categoryService.getCartItem();
     }
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CartItemDto getCartItemById(@PathVariable Long id) {
+    public CartItemResponseDto getCartItemById(@PathVariable Long id) {
         return categoryService.getCartItemById(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CartItemDto createCartItem(@RequestBody CartItemDto categoryDto) {
+    public CartItemResponseDto createCartItem(@RequestBody CartItemResponseDto categoryDto) {
         return categoryService.createCartItem(categoryDto);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public CartItemDto updateCartItem(@RequestBody CartItemDto categoryDto) {
+    public CartItemResponseDto updateCartItem(@RequestBody CartItemResponseDto categoryDto) {
         return categoryService.updateCartItem(categoryDto);
     }
 

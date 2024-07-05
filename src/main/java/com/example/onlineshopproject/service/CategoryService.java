@@ -1,7 +1,8 @@
 package com.example.onlineshopproject.service;
 
 import com.example.onlineshopproject.configuration.MapperConfiguration;
-import com.example.onlineshopproject.dto.CategoryDto;
+import com.example.onlineshopproject.dto.CategoryRequestDto;
+import com.example.onlineshopproject.dto.CategoryResponseDto;
 import com.example.onlineshopproject.entity.CategoryEntity;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.CategoryRepository;
@@ -18,26 +19,27 @@ public class CategoryService {
 
     private final Mappers mappers;
 
-    public List<CategoryDto> getCategory() {
+    public List<CategoryResponseDto> getCategory() {
         List<CategoryEntity> categoryEntityList = categoryRepository.findAll();
-        List<CategoryDto> categoryDtoList = MapperConfiguration.convertList(categoryEntityList, mappers::convertToCategoryDto);
-        return categoryDtoList;
+        List<CategoryResponseDto> categoryResponseDtoList = MapperConfiguration.convertList(categoryEntityList,
+                mappers::convertToCategoryResponseDto);
+        return categoryResponseDtoList;
     }
 
-    public CategoryDto getCategoryById(Long id) {
+    public CategoryResponseDto getCategoryById(Long id) {
         Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(id);
-        CategoryDto categoryDto = null;
+        CategoryResponseDto categoryResponseDto = null;
         if (!categoryEntityOptional.isPresent()) {
-            categoryDto = categoryEntityOptional.map(mappers::convertToCategoryDto).orElse(null);
+            categoryResponseDto = categoryEntityOptional.map(mappers::convertToCategoryResponseDto).orElse(null);
         }
-        return categoryDto;
+        return categoryResponseDto;
     }
 
-    public CategoryDto createCategory(CategoryDto categoryDto) {
-        CategoryEntity categoryEntity = mappers.convertToCategoryEntity(categoryDto);
+    public CategoryResponseDto createCategory(CategoryRequestDto categoryRequestDto) {
+        CategoryEntity categoryEntity = mappers.convertToCategoryEntity(categoryRequestDto);
         categoryEntity.setCategoryId(0L);
         CategoryEntity savedCategory = categoryRepository.save(categoryEntity);
-        return mappers.convertToCategoryDto(savedCategory);
+        return mappers.convertToCategoryResponseDto(savedCategory);
     }
 
     public void deleteCategoryById(Long id) {
@@ -47,18 +49,18 @@ public class CategoryService {
         }
     }
 
-    public CategoryDto updateCategory(CategoryDto categoryDto) {
-        if (categoryDto.getCategoryId() <= 0) {
+    public CategoryResponseDto updateCategory(CategoryResponseDto categoryResponseDto) {
+        if (categoryResponseDto.getCategoryId() <= 0) {
             return null;
         }
-        Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(categoryDto.getCategoryId());
+        Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(categoryResponseDto.getCategoryId());
         if (!categoryEntityOptional.isPresent()) {
             return null;
             //...
         }
         CategoryEntity categoryEntity = categoryEntityOptional.get();
-        categoryEntity.setName(categoryDto.getName());
+        categoryEntity.setName(categoryResponseDto.getName());
         CategoryEntity savedCategory = categoryRepository.save(categoryEntity);
-        return mappers.convertToCategoryDto(savedCategory);
+        return mappers.convertToCategoryResponseDto(savedCategory);
     }
 }

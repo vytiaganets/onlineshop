@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.ProductDto;
+import com.example.onlineshopproject.dto.ProductResponseDto;
 import com.example.onlineshopproject.query.ProductCount;
 import com.example.onlineshopproject.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -18,14 +18,14 @@ public class ProductCountController {
     private final ProductService productService;
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
-    public List<ProductDto> getProducts(
+    public List<ProductResponseDto> getProducts(
             @RequestParam(value = "category", required = false) Long categoryId,
             @RequestParam(value = "min_price", required = false) Double minPrice,
             @RequestParam(value = "max_price", required = false) Double maxPrice,
             @RequestParam(value = "is_discount", required = false, defaultValue = "false") Boolean isDiscount,
             @RequestParam(value = "sort", required = false) String sort
     ){
-        List<ProductDto> productDtoList = productService.getProducts(
+        List<ProductResponseDto> productDtoList = productService.getProducts(
                 categoryId,
                 minPrice,
                 maxPrice,

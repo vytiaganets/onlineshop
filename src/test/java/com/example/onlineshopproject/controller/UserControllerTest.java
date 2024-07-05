@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.UserDto;
+import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.enums.UserRole;
 import com.example.onlineshopproject.service.UserService;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
@@ -31,7 +30,7 @@ public class UserControllerTest {
 
     @Test
     void getUserTest() throws Exception {
-        when(userServiceMock.getUser()).thenReturn(List.of(UserDto.builder().userId(1L).build()));
+        when(userServiceMock.getUser()).thenReturn(List.of(UserRequestDto.builder().userId(1L).build()));
         this.mockMvc.perform(get("/uses")).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$..userId").exists());
@@ -39,7 +38,7 @@ public class UserControllerTest {
 
     @Test
     void getUserByIdTest() throws Exception {
-        when(userServiceMock.getUserById(anyLong())).thenReturn(UserDto.builder().userId(1L).build());
+        when(userServiceMock.getUserById(anyLong())).thenReturn(UserRequestDto.builder().userId(1L).build());
         this.mockMvc.perform(get("/users/{id}", 1)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.userId").value(1));
@@ -47,7 +46,7 @@ public class UserControllerTest {
 
     @Test
     void updateClientTest() throws Exception {
-        UserDto expectedUser = UserDto.builder()
+        UserRequestDto expectedUser = UserRequestDto.builder()
                 .userId(1L)
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)
@@ -55,7 +54,7 @@ public class UserControllerTest {
                 .phoneNumber("0123456789")
                 .passwordHash("*****")
                 .build();
-        when(userServiceMock.updateUser(any(UserDto.class))).thenReturn(expectedUser);
+        when(userServiceMock.updateUser(any(UserRequestDto.class))).thenReturn(expectedUser);
         this.mockMvc.perform(put("/users")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""

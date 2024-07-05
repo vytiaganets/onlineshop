@@ -1,10 +1,9 @@
 package com.example.onlineshopproject.integration;
 
-import com.example.onlineshopproject.dto.UserDto;
+import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.enums.UserRole;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -41,7 +40,7 @@ public class UserIntegrationTest {
     }
     @Test
     void updateClientTests() throws Exception{
-        UserDto expectedUser = UserDto.builder()
+        UserRequestDto expectedUser = UserRequestDto.builder()
                 .userId(1L)
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)

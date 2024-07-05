@@ -1,6 +1,7 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.CategoryDto;
+import com.example.onlineshopproject.dto.CategoryRequestDto;
+import com.example.onlineshopproject.dto.CategoryResponseDto;
 import com.example.onlineshopproject.exceptions.CategoryWrongValueException;
 import com.example.onlineshopproject.exceptions.CategoryNotFoundException;
 import com.example.onlineshopproject.service.CategoryService;
@@ -20,26 +21,26 @@ public class CategoryController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<CategoryDto> getCategory() {
+    public List<CategoryResponseDto> getCategory() {
         return categoryService.getCategory();
     }
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CategoryDto getCategoryById(@PathVariable Long id) {
+    public CategoryResponseDto getCategoryById(@PathVariable Long id) {
         return categoryService.getCategoryById(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CategoryDto createCategory(@RequestBody CategoryDto categoryDto) {
-        return categoryService.createCategory(categoryDto);
+    public CategoryResponseDto createCategory(@RequestBody CategoryRequestDto categoryRequestDto) {
+        return categoryService.createCategory(categoryRequestDto);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public CategoryDto updateCategory(@RequestBody CategoryDto categoryDto) {
-        return categoryService.updateCategory(categoryDto);
+    public CategoryResponseDto updateCategory(@RequestBody CategoryResponseDto categoryResponseDto) {
+        return categoryService.updateCategory(categoryResponseDto);
     }
 
     @DeleteMapping(value = "/{id}")

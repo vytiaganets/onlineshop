@@ -12,140 +12,97 @@ import org.springframework.stereotype.Component;
 public class Mappers {
     private final ModelMapper modelMapper;
 
-    public CartItemEntity convertToCartItemEntity(CartItemDto cartItemDto) {
-        CartItemEntity cartItemEntity = modelMapper.map(cartItemDto, CartItemEntity.class);
+    public CartItemEntity convertToCartItemEntity(CartItemResponseDto cartItemResponseDto) {
+        CartItemEntity cartItemEntity = modelMapper.map(cartItemResponseDto, CartItemEntity.class);
         return cartItemEntity;
     }
 
-    public CartItemDto convertToCartItemDto(CartItemEntity cartItemEntity) {
-        CartItemDto cartItemDto = modelMapper.map(cartItemEntity, CartItemDto.class);
-        return cartItemDto;
+    public CartItemResponseDto convertToCartItemResponseDto(CartItemEntity cartItemEntity) {
+        CartItemResponseDto cartItemResponseDto = modelMapper.map(cartItemEntity, CartItemResponseDto.class);
+        return cartItemResponseDto;
     }
 
-    public OrderItemEntity convertToOrderItemEntity(OrderItemDto orderItemDto) {
-        OrderItemEntity orderItemEntity = modelMapper.map(orderItemDto, OrderItemEntity.class);
+    public OrderItemEntity convertToOrderItemEntity(OrderItemResponseDto orderItemResponseDto) {
+        OrderItemEntity orderItemEntity = modelMapper.map(orderItemResponseDto, OrderItemEntity.class);
         return orderItemEntity;
     }
 
-    public OrderItemDto convertToOrderItemDto(OrderItemEntity orderItemEntity) {
-        OrderItemDto orderItemDto = modelMapper.map(orderItemEntity, OrderItemDto.class);
-        return orderItemDto;
+    public OrderItemResponseDto convertToOrderItemResponseDto(OrderItemEntity orderItemEntity) {
+        OrderItemResponseDto orderItemResponseDto = modelMapper.map(orderItemEntity, OrderItemResponseDto.class);
+        return orderItemResponseDto;
     }
 
-    public OrderEntity convertToOrderEntity(OrderDto orderDto) {
+    public OrderEntity convertToOrderEntity(OrderResponseDto orderResponseDto) {
         return OrderEntity.builder()
-                .deliveryAddress(orderDto.getDeliveryAddress())
-                .deliveryMethod(orderDto.getDeliveryMethod())
-                .items(MapperConfiguration.convertList(orderDto.getItems(), this::convertToOrderItemEntity))
+                .deliveryAddress(orderResponseDto.getDeliveryAddress())
+                .deliveryMethod(orderResponseDto.getDeliveryMethod())
+                .items(MapperConfiguration.convertList(orderResponseDto.getItems(), this::convertToOrderItemEntity))
                 .build();
     }
 
-    public OrderDto convertToOrderDto(OrderEntity orderEntity) {
-        return OrderDto.builder()
+    public OrderResponseDto convertToOrderResponseDto(OrderEntity orderEntity) {
+        return OrderResponseDto.builder()
                 .orderId(orderEntity.getOrderId())
                 .deliveryAddress(orderEntity.getDeliveryAddress())
                 .deliveryMethod(orderEntity.getDeliveryMethod())
-                .items(MapperConfiguration.convertList(orderEntity.getItems(), this::convertToOrderItemDto))
+                .items(MapperConfiguration.convertList(orderEntity.getItems(), this::convertToOrderItemResponseDto))
                 .build();
     }
 
-    public UserDto convertToUserDto(UserEntity userEntity) {
+    public UserRequestDto convertToUserResponseDto(UserEntity userEntity) {
         if (userEntity == null) {
             return null;
         }
-        UserDto userDto = modelMapper.map(userEntity, UserDto.class);
-
+        UserRequestDto userRequestDto = modelMapper.map(userEntity, UserRequestDto.class);
         CartEntity cartEntity = userEntity.getCartEntity();
         if (cartEntity != null) {
             cartEntity.setUserEntity(null);
-            userDto.setCartDto(convertToCartDto(cartEntity));
+            userRequestDto.setCartResponseDto(convertToCartResponseDto(cartEntity));
         }
-        return userDto;
+        return userRequestDto;
+    }
+    public UserEntity convertToUserEntity(UserRequestDto userRequestDto) {
+        UserEntity userEntity = modelMapper.map(userRequestDto, UserEntity.class);
+        return userEntity;
+    }
+    public CategoryResponseDto convertToCategoryResponseDto(CategoryEntity categoryEntity) {
+        CategoryResponseDto categoryResponseDto = modelMapper.map(categoryEntity, CategoryResponseDto.class);
+        return categoryResponseDto;
     }
 
-    public CategoryDto convertToCategoryDto(CategoryEntity categoryEntity) {
-        CategoryDto categoryDto = modelMapper.map(categoryEntity, CategoryDto.class);
-        return categoryDto;
-    }
-
-    public CategoryEntity convertToCategoryEntity(CategoryDto categoryDto) {
-        CategoryEntity categoryEntity = modelMapper.map(categoryDto, CategoryEntity.class);
+    public CategoryEntity convertToCategoryEntity(CategoryRequestDto categoryRequestDto) {
+        CategoryEntity categoryEntity = modelMapper.map(categoryRequestDto, CategoryEntity.class);
         return categoryEntity;
     }
 
-//    public ProductResponceDto convertToProductDto(ProductEntity productEntity) {
-//        ProductResponceDto productResponceDto = modelMapper.map(productEntity, ProductResponceDto.class);
-//        return productResponceDto;
-//    }
-
-    public UserEntity convertToUserEntity(UserDto userDto) {
-        UserEntity userEntity = modelMapper.map(userDto, UserEntity.class);
-        return userEntity;
+    public CartResponseDto convertToCartResponseDto(CartEntity cartEntity) {
+        CartResponseDto cartResponseDto = modelMapper.map(cartEntity, CartResponseDto.class);
+        return cartResponseDto;
     }
-
-    public CartDto convertToCartDto(CartEntity cartEntity) {
-        CartDto cartDto = modelMapper.map(cartEntity, CartDto.class);
-        return cartDto;
-    }
-
-    public CartEntity convertToCartEntity(CartDto cartDto) {
-        CartEntity cartEntity = modelMapper.map(cartDto, CartEntity.class);
+    public CartEntity convertToCartEntity(CartRequestDto cartRequestDto) {
+        CartEntity cartEntity = modelMapper.map(cartRequestDto, CartEntity.class);
         return cartEntity;
     }
-
-    public ProductRequestDto convertToProductRequestDto(ProductEntity productEntity) {
-        ProductRequestDto productRequestDto = modelMapper.map(productEntity, ProductRequestDto.class);
-        return productRequestDto;
-    }
-    public ProductResponceDto convertToProductResponceDto(ProductEntity productEntity) {
-        ProductResponceDto productResponceDto = modelMapper.map(productEntity, ProductResponceDto.class);
-        return productResponceDto;
-    }
-    public ProductDto convertToProductDto(ProductEntity productEntity) {
-        ProductDto productDto = modelMapper.map(productEntity, ProductDto.class);
-        return productDto;
+    public ProductResponseDto convertToProductResponseDto(ProductEntity productEntity) {
+        ProductResponseDto productResponseDto = modelMapper.map(productEntity, ProductResponseDto.class);
+        return productResponseDto;
     }
     public ProductEntity convertToProductEntity(ProductRequestDto productRequestDto) {
         ProductEntity productEntity = modelMapper.map(productRequestDto, ProductEntity.class);
         return productEntity;
     }
 
-    public FavoriteDto convertToFavoriteDto(FavoriteEntity favoriteEntity) {
-        FavoriteDto favoriteDto = modelMapper.map(favoriteEntity, FavoriteDto.class);
-        return favoriteDto;
+    public FavoriteResponseDto convertToFavoriteResponseDto(FavoriteEntity favoriteEntity) {
+        FavoriteResponseDto favoriteResponseDto = modelMapper.map(favoriteEntity, FavoriteResponseDto.class);
+        modelMapper
+                .typeMap(FavoriteEntity.class, FavoriteResponseDto.class).addMappings(mapper -> mapper.skip(FavoriteResponseDto::setUserResponseDto));
+        favoriteResponseDto
+                .setProductResponseDto(convertToProductResponseDto(favoriteEntity.getProductEntity()));
+        return favoriteResponseDto;
     }
 
-    public FavoriteEntity convertToFavoriteEntity(FavoriteDto favoriteDto) {
-        FavoriteEntity favoriteEntity = modelMapper.map(favoriteDto, FavoriteEntity.class);
+    public FavoriteEntity convertToFavoriteEntity(FavoriteRequestDto favoriteRequestDto) {
+        FavoriteEntity favoriteEntity = modelMapper.map(favoriteRequestDto, FavoriteEntity.class);
         return favoriteEntity;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

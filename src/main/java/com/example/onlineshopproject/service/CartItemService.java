@@ -1,7 +1,7 @@
 package com.example.onlineshopproject.service;
 
 import com.example.onlineshopproject.configuration.MapperConfiguration;
-import com.example.onlineshopproject.dto.CartItemDto;
+import com.example.onlineshopproject.dto.CartItemResponseDto;
 import com.example.onlineshopproject.entity.CartItemEntity;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.CartItemRepository;
@@ -17,40 +17,40 @@ public class CartItemService {
     private final CartItemRepository cartItemRepository;
     private final Mappers mappers;
 
-    public List<CartItemDto> getCartItem() {
+    public List<CartItemResponseDto> getCartItem() {
         List<CartItemEntity> cartItemEntityList = cartItemRepository.findAll();
-        List<CartItemDto> cartItemDtoList = MapperConfiguration.convertList(cartItemEntityList,
-                mappers::convertToCartItemDto);
-        return cartItemDtoList;
+        List<CartItemResponseDto> cartItemResponseDtoList = MapperConfiguration.convertList(cartItemEntityList,
+                mappers::convertToCartItemResponseDto);
+        return cartItemResponseDtoList;
     }
 
-    public CartItemDto getCartItemById(Long id) {
+    public CartItemResponseDto getCartItemById(Long id) {
         Optional<CartItemEntity> cartItemEntity = cartItemRepository.findById(id);
-        CartItemDto cartItemDto = null;
+        CartItemResponseDto cartItemResponseDto = null;
         if (cartItemEntity.isPresent()) {
-            cartItemDto = mappers.convertToCartItemDto(cartItemEntity.get());
+            cartItemResponseDto = mappers.convertToCartItemResponseDto(cartItemEntity.get());
         }
-        return cartItemDto;
+        return cartItemResponseDto;
     }
 
-    public CartItemDto createCartItem(CartItemDto cartItemDto) {
-        CartItemEntity cartItemEntity = mappers.convertToCartItemEntity(cartItemDto);
+    public CartItemResponseDto createCartItem(CartItemResponseDto cartItemResponseDto) {
+        CartItemEntity cartItemEntity = mappers.convertToCartItemEntity(cartItemResponseDto);
         cartItemEntity.setCartItemId(null);
         CartItemEntity newCartItem = cartItemRepository.save(cartItemEntity);
-        return mappers.convertToCartItemDto(newCartItem);
+        return mappers.convertToCartItemResponseDto(newCartItem);
     }
 
-    public CartItemDto updateCartItem(CartItemDto cartItemDto) {
-        if (cartItemDto.getCartItemId() <= 0) {
+    public CartItemResponseDto updateCartItem(CartItemResponseDto cartItemResponseDto) {
+        if (cartItemResponseDto.getCartItemId() <= 0) {
             return null;
         }
-        Optional<CartItemEntity> cartItemEntityOptional = cartItemRepository.findById(cartItemDto.getCartItemId());
+        Optional<CartItemEntity> cartItemEntityOptional = cartItemRepository.findById(cartItemResponseDto.getCartItemId());
         if (cartItemEntityOptional.isEmpty()) {
             return null;
         }
-        CartItemEntity cartItemEntity = mappers.convertToCartItemEntity(cartItemDto);
+        CartItemEntity cartItemEntity = mappers.convertToCartItemEntity(cartItemResponseDto);
         CartItemEntity newCartItemEntity = cartItemRepository.save(cartItemEntity);
-        return mappers.convertToCartItemDto(newCartItemEntity);
+        return mappers.convertToCartItemResponseDto(newCartItemEntity);
     }
 
     public void deleteCartItemEntityById(Long id) {

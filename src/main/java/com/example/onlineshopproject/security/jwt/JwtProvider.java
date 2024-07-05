@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.security.jwt;
 
-import com.example.onlineshopproject.dto.UserDto;
+import com.example.onlineshopproject.dto.UserRequestDto;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -31,25 +31,25 @@ public class JwtProvider {
         this.jwtRefreshSecret = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtRefreshSecret));
     }
 
-    public String generateAccessToken(@NonNull UserDto userDto) {
+    public String generateAccessToken(@NonNull UserRequestDto userRequestDto) {
         final LocalDateTime now = LocalDateTime.now();
         final Instant accessExpirationInstant = now.plusMinutes(15).atZone(ZoneId.systemDefault()).toInstant();
         final Date accessExpiration = Date.from(accessExpirationInstant);
         return Jwts.builder()
-                .subject(userDto.getEmail())
+                .subject(userRequestDto.getEmail())
                 .expiration(accessExpiration)
                 .signWith(jwtAccessSecret)
-                .claim("roles", List.of(userDto.getRole()))
-                .claim("name", userDto.getName())
+                .claim("roles", List.of(userRequestDto.getRole()))
+                .claim("name", userRequestDto.getName())
                 .compact();
     }
 
-    public String generateRefreshToken(@NonNull UserDto userDto) {
+    public String generateRefreshToken(@NonNull UserRequestDto userRequestDto) {
         final LocalDateTime now = LocalDateTime.now();
         final Instant refreshExpirationInstant = now.plusDays(1).atZone(ZoneId.systemDefault()).toInstant();
         final Date refreshExpiration = Date.from(refreshExpirationInstant);
         return Jwts.builder()
-                .subject(userDto.getEmail())
+                .subject(userRequestDto.getEmail())
                 .expiration(refreshExpiration)
                 .signWith(jwtRefreshSecret)
                 .compact();

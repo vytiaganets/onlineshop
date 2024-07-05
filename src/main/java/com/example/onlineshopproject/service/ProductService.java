@@ -1,9 +1,8 @@
 package com.example.onlineshopproject.service;
 
 import com.example.onlineshopproject.configuration.MapperConfiguration;
-import com.example.onlineshopproject.dto.ProductDto;
+import com.example.onlineshopproject.dto.ProductResponseDto;
 import com.example.onlineshopproject.dto.ProductRequestDto;
-import com.example.onlineshopproject.dto.ProductResponceDto;
 import com.example.onlineshopproject.entity.CategoryEntity;
 import com.example.onlineshopproject.entity.ProductEntity;
 import com.example.onlineshopproject.mapper.Mappers;
@@ -26,7 +25,7 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final Mappers mappers;
     private final CategoryRepository categoryRepository;
-    public List<ProductDto> getProducts(Long categoryId, Double minPrice, Double maxPrice, Boolean isDiscount,
+    public List<ProductResponseDto> getProducts(Long categoryId, Double minPrice, Double maxPrice, Boolean isDiscount,
                                         String sort){
         log.info("categoryId = " + categoryId);
         log.info("minPrice = " + minPrice);
@@ -36,28 +35,28 @@ public class ProductService {
         CategoryEntity categoryEntity = categoryRepository.findById(categoryId).orElse(null);
         List<ProductEntity> productEntityList = productRepository.findProductByFilter(categoryEntity, minPrice,
                 maxPrice, isDiscount, sort);
-        List<ProductDto> productDtoList = MapperConfiguration.convertList(productEntityList,
-                mappers::convertToProductDto);
+        List<ProductResponseDto> productDtoList = MapperConfiguration.convertList(productEntityList,
+                mappers::convertToProductResponseDto);
         return productDtoList;
     }
     public List<ProductCount> getTop10Products(String status){
         List<ProductCount> productCountList = (List<ProductCount>)(List<?>)productRepository.findTop10Products(status);
         return productCountList;
     }
-    public List<ProductResponceDto> getProduct() {
+    public List<ProductResponseDto> getProduct() {
         List<ProductEntity> productEntityList = productRepository.findAll();
-        List<ProductResponceDto> productResponceDtoList = MapperConfiguration.convertList(productEntityList,
-                mappers::convertToProductResponceDto);
-        return productResponceDtoList;
+        List<ProductResponseDto> productResponseDtoList = MapperConfiguration.convertList(productEntityList,
+                mappers::convertToProductResponseDto);
+        return productResponseDtoList;
     }
 
-    public ProductResponceDto getProductById(Long id) {
+    public ProductResponseDto getProductById(Long id) {
         Optional<ProductEntity> productOptional = productRepository.findById(id);
-        ProductResponceDto productResponceDto = null;
+        ProductResponseDto productResponseDto = null;
         if (productOptional.isPresent()) {
-            productResponceDto = productOptional.map(mappers::convertToProductResponceDto).orElse(null);
+            productResponseDto = productOptional.map(mappers::convertToProductResponseDto).orElse(null);
         }
-        return productResponceDto;
+        return productResponseDto;
     }
 
     public void deleteProductById(Long id) {
