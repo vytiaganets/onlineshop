@@ -3,6 +3,7 @@ package com.example.onlineshopproject.mapper;
 import com.example.onlineshopproject.configuration.MapperConfiguration;
 import com.example.onlineshopproject.dto.*;
 import com.example.onlineshopproject.entity.*;
+import com.example.onlineshopproject.query.ProductCount;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -12,8 +13,8 @@ import org.springframework.stereotype.Component;
 public class Mappers {
     private final ModelMapper modelMapper;
 
-    public CartItemEntity convertToCartItemEntity(CartItemResponseDto cartItemResponseDto) {
-        CartItemEntity cartItemEntity = modelMapper.map(cartItemResponseDto, CartItemEntity.class);
+    public CartItemEntity convertToCartItemEntity(CartItemRequestDto cartItemRequestDto) {
+        CartItemEntity cartItemEntity = modelMapper.map(cartItemRequestDto, CartItemEntity.class);
         return cartItemEntity;
     }
 
@@ -22,8 +23,8 @@ public class Mappers {
         return cartItemResponseDto;
     }
 
-    public OrderItemEntity convertToOrderItemEntity(OrderItemResponseDto orderItemResponseDto) {
-        OrderItemEntity orderItemEntity = modelMapper.map(orderItemResponseDto, OrderItemEntity.class);
+    public OrderItemEntity convertToOrderItemEntity(OrderItemRequestDto orderItemRequestDto) {
+        OrderItemEntity orderItemEntity = modelMapper.map(orderItemRequestDto, OrderItemEntity.class);
         return orderItemEntity;
     }
 
@@ -32,21 +33,17 @@ public class Mappers {
         return orderItemResponseDto;
     }
 
-    public OrderEntity convertToOrderEntity(OrderResponseDto orderResponseDto) {
-        return OrderEntity.builder()
-                .deliveryAddress(orderResponseDto.getDeliveryAddress())
-                .deliveryMethod(orderResponseDto.getDeliveryMethod())
-                .items(MapperConfiguration.convertList(orderResponseDto.getItems(), this::convertToOrderItemEntity))
-                .build();
+    public OrderEntity convertToOrderEntity(OrderRequestDto orderRequestDto) {
+        OrderEntity orderEntity = modelMapper.map(orderRequestDto, OrderEntity.class);
+        return orderEntity;
     }
 
     public OrderResponseDto convertToOrderResponseDto(OrderEntity orderEntity) {
-        return OrderResponseDto.builder()
-                .orderId(orderEntity.getOrderId())
-                .deliveryAddress(orderEntity.getDeliveryAddress())
-                .deliveryMethod(orderEntity.getDeliveryMethod())
-                .items(MapperConfiguration.convertList(orderEntity.getItems(), this::convertToOrderItemResponseDto))
-                .build();
+modelMapper
+        .typeMap(OrderEntity.class, OrderResponseDto.class)
+        .addMappings(mapper -> mapper.skip(OrderResponseDto::setUserResponseDto));
+        OrderResponseDto orderResponseDto = modelMapper.map(orderEntity,OrderResponseDto.class);
+        return orderResponseDto;
     }
 
     public UserRequestDto convertToUserResponseDto(UserEntity userEntity) {
@@ -61,10 +58,12 @@ public class Mappers {
         }
         return userRequestDto;
     }
+
     public UserEntity convertToUserEntity(UserRequestDto userRequestDto) {
         UserEntity userEntity = modelMapper.map(userRequestDto, UserEntity.class);
         return userEntity;
     }
+
     public CategoryResponseDto convertToCategoryResponseDto(CategoryEntity categoryEntity) {
         CategoryResponseDto categoryResponseDto = modelMapper.map(categoryEntity, CategoryResponseDto.class);
         return categoryResponseDto;
@@ -79,17 +78,25 @@ public class Mappers {
         CartResponseDto cartResponseDto = modelMapper.map(cartEntity, CartResponseDto.class);
         return cartResponseDto;
     }
+
     public CartEntity convertToCartEntity(CartRequestDto cartRequestDto) {
         CartEntity cartEntity = modelMapper.map(cartRequestDto, CartEntity.class);
         return cartEntity;
     }
+
     public ProductResponseDto convertToProductResponseDto(ProductEntity productEntity) {
         ProductResponseDto productResponseDto = modelMapper.map(productEntity, ProductResponseDto.class);
         return productResponseDto;
     }
+
     public ProductEntity convertToProductEntity(ProductRequestDto productRequestDto) {
         ProductEntity productEntity = modelMapper.map(productRequestDto, ProductEntity.class);
         return productEntity;
+    }
+
+    public ProductCountDto convertToProductCountDto(ProductCount productCount) {
+        ProductCountDto productCountDto = modelMapper.map(productCount, ProductCountDto.class);
+        return productCountDto;
     }
 
     public FavoriteResponseDto convertToFavoriteResponseDto(FavoriteEntity favoriteEntity) {
@@ -105,4 +112,5 @@ public class Mappers {
         FavoriteEntity favoriteEntity = modelMapper.map(favoriteRequestDto, FavoriteEntity.class);
         return favoriteEntity;
     }
+
 }

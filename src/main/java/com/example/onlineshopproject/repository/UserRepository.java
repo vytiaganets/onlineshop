@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends CrudRepository<UserEntity, Long> {
+    boolean existsByEmail(String email);
     @Query("SELECT u FROM UserEntity u WHERE u.email=?1")
     List<UserEntity> getByEmail(String email);
 }

@@ -1,5 +1,6 @@
 package com.example.onlineshopproject.controller;
 
+import com.example.onlineshopproject.dto.ProductCountDto;
 import com.example.onlineshopproject.dto.ProductResponseDto;
 import com.example.onlineshopproject.query.ProductCount;
 import com.example.onlineshopproject.service.ProductService;
@@ -20,12 +21,12 @@ public class ProductCountController {
     @GetMapping
     public List<ProductResponseDto> getProducts(
             @RequestParam(value = "category", required = false) Long categoryId,
-            @RequestParam(value = "min_price", required = false) Double minPrice,
-            @RequestParam(value = "max_price", required = false) Double maxPrice,
-            @RequestParam(value = "is_discount", required = false, defaultValue = "false") Boolean isDiscount,
+            @RequestParam(value = "minPrice", required = false) Double minPrice,
+            @RequestParam(value = "maxPrice", required = false) Double maxPrice,
+            @RequestParam(value = "isDiscount", required = false, defaultValue = "false") Boolean isDiscount,
             @RequestParam(value = "sort", required = false) String sort
     ){
-        List<ProductResponseDto> productDtoList = productService.getProducts(
+        List<ProductResponseDto> productDtoList = productService.findProductByFilter(
                 categoryId,
                 minPrice,
                 maxPrice,
@@ -37,7 +38,7 @@ public class ProductCountController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/top10")
-    public List<ProductCount> getTop10Products(@RequestParam(value = "status", required = false) String status){
+    public List<ProductCountDto> getTop10Products(@RequestParam(value = "status", required = false) String status){
         return productService.getTop10Products(status);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.onlineshopproject.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -15,4 +16,6 @@ public class ProductRequestDto {
     private BigDecimal discountPrice;
     private String imageUrl;
     private Long categoryId;
+    @NotBlank(message = "Invalid category: empty category")
+    private String categoryEntity;
 }

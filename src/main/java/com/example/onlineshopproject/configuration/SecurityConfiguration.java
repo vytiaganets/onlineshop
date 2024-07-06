@@ -47,16 +47,13 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests
                         (request -> request
                                 //AB is allowed for the swagger
-                                .requestMatchers(SWAGGER)
-                                .permitAll()
+                                .requestMatchers(SWAGGER).permitAll()
                                 //AB allow the user to log in to receive a token
-                                .requestMatchers("/auth/login")
-                                .permitAll()
+                                .requestMatchers("/auth/login").permitAll()
                                 //AB allows registering a new user without a token and passwords
-                                .requestMatchers("/auth/registration")
-                                .permitAll()
-                                .anyRequest()
-                                .authenticated())
+                                .requestMatchers("/auth/registration").permitAll()
+                                .anyRequest().permitAll())
+                                //.authenticated())
                 //AB basic authentication
                 .httpBasic(Customizer.withDefaults())
                 //AB disable state storage between requests
