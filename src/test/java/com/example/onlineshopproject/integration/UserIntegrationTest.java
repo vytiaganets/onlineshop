@@ -2,7 +2,9 @@ package com.example.onlineshopproject.integration;
 
 import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.enums.UserRole;
+import com.example.onlineshopproject.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -26,15 +28,19 @@ public class UserIntegrationTest {
     private MockMvc mockMvc;
     @Autowired
     private ObjectMapper objectMapper;
+    @Autowired
+    private UserService userService;
     @Test
-    void getUsersTest() throws Exception{
-        this.mockMvc.perform(get("/users")).andDo(print())
+    void getAllUsersTest() throws Exception{
+        //Assertions.assertEquals(2,userService.getUser().size());//сервис репо
+        //RestAssure почитать
+        this.mockMvc.perform(get("/v1/users")).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$..userId").exists());
     }
     @Test
     void getUserByIdTest() throws Exception{
-        ResultActions resultActions = this.mockMvc.perform(get("/users/{id}", 1)).andDo(print())
+        ResultActions resultActions = this.mockMvc.perform(get("/v1/users/{id}", 1)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.userId").value(1));
     }
@@ -45,11 +51,11 @@ public class UserIntegrationTest {
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)
                 .name("Test")
-                .phoneNumber("0123456789")
-                .passwordHash("*****")
+                .phoneNumber("123456789012")
+                .passwordHash("1234")
                 .build();
         String requestBody = objectMapper.writeValueAsString(expectedUser);
-        this.mockMvc.perform(put("/users")
+        this.mockMvc.perform(put("/v1/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(requestBody))
                 .andDo(print())
