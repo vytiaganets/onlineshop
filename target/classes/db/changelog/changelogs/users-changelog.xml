@@ -37,7 +37,7 @@
         <insert tableName="Users">
             <column name="Name" value="Andrii Kpi"/>
             <column name="Email" value="andrii@ukr.net"/>
-            <column name="PhoneNumber" value="+1 234 567 890"/>
+            <column name="PhoneNumber" value="123456789012"/>
             <column name="PasswordHash" value="$2a$10$917c2G9DXbVUXtBw2TMaZ.6eZAsS5LD2v9WSObUQdqYrRo9SzSvHO"/>
             <column name="Role" value="ADMIN"/>
         </insert>

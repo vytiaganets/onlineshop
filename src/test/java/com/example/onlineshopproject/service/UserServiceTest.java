@@ -56,14 +56,14 @@ public class UserServiceTest {
     @Test
     void getUserTest(){
         when(userRepositoryMock.findAll()).thenReturn(Arrays.asList(expectedUser));
-        when(mappersMock.convertToUserDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
+        when(mappersMock.convertToUserResponseDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
         List<UserRequestDto> actualUserRequestDtoList = userServiceTest.getUser();
         assertEquals(Arrays.asList(expectedUserRequestDto), actualUserRequestDtoList);
     }
     @Test
     void getUserByIdTest(){
         when(userRepositoryMock.findById(anyLong())).thenReturn(Optional.of(expectedUser));
-        when(mappersMock.convertToUserDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
+        when(mappersMock.convertToUserResponseDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
         UserRequestDto actualUserRequestDto = userServiceTest.getUserById(1L);
         assertEquals(expectedUserRequestDto, actualUserRequestDto);
     }

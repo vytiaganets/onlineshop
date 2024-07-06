@@ -15,13 +15,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "Cart Controller",
-        description = "API for shopping carts")
+        description = "Controller for cart operations")
 @Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "/v1/cart")
 public class CartController {
     private final CartService cartService;
+
     @Operation(summary = "Create a cart")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
@@ -53,8 +54,8 @@ public class CartController {
                     description = "Internal server error")})
     @GetMapping(value = "/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<CartResponseDto> getByUserId(@PathVariable Long userId){
-        log.debug("Request to get cart for usser id: {}", userId);
+    public ResponseEntity<CartResponseDto> getByUserId(@PathVariable Long userId) {
+        log.debug("Request to get cart for user id: {}", userId);
         CartResponseDto cartResponseDto = cartService.getCartById(userId);
         return ResponseEntity.ok(cartResponseDto);
     }
