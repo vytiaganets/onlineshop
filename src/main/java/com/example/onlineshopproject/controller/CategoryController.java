@@ -5,6 +5,8 @@ import com.example.onlineshopproject.dto.CategoryResponseDto;
 import com.example.onlineshopproject.exceptions.CategoryWrongValueException;
 import com.example.onlineshopproject.exceptions.CategoryNotFoundException;
 import com.example.onlineshopproject.service.CategoryService;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.spi.ErrorMessage;
 import org.springframework.http.HttpStatus;
@@ -31,21 +33,27 @@ public class CategoryController {
         return categoryService.getCategoryById(id);
     }
 
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public CategoryResponseDto createCategory(@RequestBody CategoryRequestDto categoryRequestDto) {
+//        return categoryService.createCategory(categoryRequestDto);
+//    }
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CategoryResponseDto createCategory(@RequestBody CategoryRequestDto categoryRequestDto) {
-        return categoryService.createCategory(categoryRequestDto);
+    public void insertCategory(@RequestBody @Valid CategoryRequestDto categoryRequestDto) {
+        categoryService.createCategory(categoryRequestDto);
     }
-
-    @PutMapping
+    @PutMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public CategoryResponseDto updateCategory(@RequestBody CategoryResponseDto categoryResponseDto) {
-        return categoryService.updateCategory(categoryResponseDto);
+    public void updateCategory(@RequestBody @Valid CategoryRequestDto categoryRequestDto,
+                               @PathVariable
+                               @Positive(message = "Category id must be a positive number") Long id) {
+        categoryService.updateCategory(categoryRequestDto, id);
     }
 
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCategoryById(@PathVariable Long id) {
+    public void deleteCategoryById(@PathVariable @Positive(message = "Category id must be a positive number") Long id) {
         categoryService.deleteCategoryById(id);
     }
 

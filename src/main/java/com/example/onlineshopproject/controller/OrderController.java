@@ -1,30 +1,41 @@
 package com.example.onlineshopproject.controller;
 
+import com.example.onlineshopproject.dto.OrderRequestDto;
 import com.example.onlineshopproject.dto.OrderResponseDto;
 import com.example.onlineshopproject.service.OrderService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import com.example.onlineshopproject.enums.Status;
-import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Set;
 
 @RestController
 @RequestMapping("/v1/orders")
 @RequiredArgsConstructor
+@Validated
 public class OrderController {
     private final OrderService orderService;
-
-    @PostMapping
-    public ResponseEntity<OrderResponseDto> insertOrder(@RequestBody @Valid OrderResponseDto orderResponseDto) {
-        OrderResponseDto orderResponseDtoResponce = orderService.insertOrder(orderResponseDto);
-        return new ResponseEntity<>(orderResponseDtoResponce, HttpStatus.OK);
+    @GetMapping(value = "/{orderId}")
+    @ResponseStatus(HttpStatus.OK)
+    public OrderResponseDto getOrderById(@PathVariable @Positive(message = "User id must be a positive" +
+            " number") Long orderId){
+        return orderService.getOrderById(orderId);
     }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Status> getOrderStatusById(@PathVariable long id) {
-        Status orderStatusById = orderService.getOrderStatusById(id);
-        return new ResponseEntity<>(orderStatusById, HttpStatus.OK);
-
+    @GetMapping(value = "/history/{orderId}")
+    @ResponseStatus(HttpStatus.OK)
+    public Set<OrderResponseDto> getOrderHistoryByUserId(@PathVariable @Positive(message = "User id must be a " +
+            "positive" +
+            " number") Long orderId){
+        return orderService.getOrderHistoryByUserId(orderId);
+    }
+    @PostMapping(value = "/{userId}")
+    @ResponseStatus(HttpStatus.OK)
+    public void insertOrder(@RequestBody @Valid OrderRequestDto orderRequestDto, @PathVariable @Positive(message =
+            "User id must be a positive" +
+            " number") Long userId){
+        orderService.insertOrder(orderRequestDto, userId);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.onlineshopproject.configuration;
 
+import com.example.onlineshopproject.dto.ProductResponseDto;
+import com.example.onlineshopproject.entity.ProductEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,4 +31,5 @@ public class MapperConfiguration {
                 .map(e -> converter.apply(e))
                 .collect(Collectors.toSet());
     }
+
 }

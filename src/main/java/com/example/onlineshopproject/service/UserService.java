@@ -5,7 +5,9 @@ import com.example.onlineshopproject.dto.CartResponseDto;
 import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.entity.CartEntity;
 import com.example.onlineshopproject.entity.UserEntity;
+import com.example.onlineshopproject.enums.UserRole;
 import com.example.onlineshopproject.exceptions.NotFoundInDbException;
+import com.example.onlineshopproject.exceptions.UserInvalidArgumentException;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.CartRepository;
 import com.example.onlineshopproject.repository.UserRepository;
@@ -15,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -31,8 +34,17 @@ public class UserService {
     private final ModelMapper modelMapper;
     private final PasswordEncoder passwordEncoder;
 
-    public UserRequestDto registerUser(UserRequestDto userRequestDto) {
-        return null;
+    public void registerUser(UserRequestDto userRequestDto) {
+        if(userRepository.existsByEmail(userRequestDto.getEmail())){
+            throw new UserInvalidArgumentException("User already exists.");
+        }
+        UserEntity userEntity = mappers.convertToUserEntity(userRequestDto);
+        userEntity.setRole(UserRole.USER);
+        CartEntity cartEntity = new CartEntity();
+        cartEntity.setUserEntity(userEntity);
+        cartRepository.save(cartEntity);
+        userEntity.setCartEntity(cartEntity);
+        userRepository.save(userEntity);
     }
 
     public UserEntity getByLogin(String username) {
@@ -70,11 +82,11 @@ public class UserService {
                 return mappers.convertToUserResponseDto(userUpdate);
             } else {
 
-                log.error("Не найден пользователь с Id " + userRequestDto.getUserId());
-                throw new NotFoundInDbException("Не найден пользователь с Id " + userRequestDto.getUserId());
+                log.error("User with Id not found." + userRequestDto.getUserId());
+                throw new NotFoundInDbException("User with Id not found." + userRequestDto.getUserId());
             }
         } else {
-            throw new FileNotFoundException("Не корректный параметр userDto");
+            throw new FileNotFoundException("Invalid userDto parameter.");
         }
     }
 
@@ -105,4 +117,42 @@ public class UserService {
 
         return mappers.convertToUserResponseDto(userEntityResponce);
     }
+
+    @Transactional
+    public void deleteUser(Long id){
+        UserEntity userEntity = userRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundInDbException("User not found"));
+        if(userEntity.getCartEntity() != null){
+            cartRepository.delete(userEntity.getCartEntity());
+        }
+        userRepository.deleteById(id);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
