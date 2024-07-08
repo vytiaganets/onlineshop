@@ -70,8 +70,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Transactional
-    public ProductResponseDto getById(Long id) {
-        ProductEntity productEntity = productRepository.findById(id).orElse(null);
+    public ProductResponseDto getById(Long productId) {
+        ProductEntity productEntity = productRepository.findById(productId).orElse(null);
         if (productEntity != null) {
             return mappers.convertToProductResponseDto(productEntity);
         } else {
@@ -79,9 +79,9 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    public void deleteById(Long id) {
-        if (productRepository.findById(id).isPresent()) {
-            productRepository.findById(id).ifPresent(productRepository::delete);
+    public void deleteById(Long userId) {
+        if (productRepository.findById(userId).isPresent()) {
+            productRepository.findById(userId).ifPresent(productRepository::delete);
         } else {
             throw new NotFoundInDbException("Data not found in database.");
         }
@@ -103,9 +103,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Transactional
-    public void update(ProductRequestDto productRequestDto, Long id) {
-        if (id > 0) {
-            ProductEntity productEntity = productRepository.findById(id).orElse(null);
+    public void update(ProductRequestDto productRequestDto, Long productId) {
+        if (productId > 0) {
+            ProductEntity productEntity = productRepository.findById(productId).orElse(null);
             CategoryEntity categoryEntity =
                     categoryRepository.findCategoryEntityByName(productRequestDto.getCategoryEntity());
             if (productEntity != null && categoryEntity != null) {

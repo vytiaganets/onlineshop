@@ -41,16 +41,16 @@ public class UserServiceImplTest {
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)
                 .name("Test")
-                .phoneNumber("012 345 6789")
-                .passwordHash("*****")
+                .phoneNumber("123456789012")
+                .passwordHash("1234")
                 .build();
         expectedUser = UserEntity.builder()
                 .userId(1L)
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)
                 .name("Test")
-                .phoneNumber("012 345 6789")
-                .passwordHash("*****")
+                .phoneNumber("123456789012")
+                .passwordHash("1234")
                 .build();
     }
     @Test

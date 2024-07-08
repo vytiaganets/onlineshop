@@ -14,13 +14,13 @@ public interface ProductService {
 
     List<ProductResponseDto> getAll();
 
-    ProductResponseDto getById(Long id);
+    ProductResponseDto getById(Long productId);
 
-    void deleteById(Long id);
+    void deleteById(Long productId);
 
     void insert(ProductRequestDto productRequestDto);
 
-    void update(ProductRequestDto productRequestDto, Long id);
+    void update(ProductRequestDto productRequestDto, Long productId);
 
     List<ProductResponseDto> findByFilter(Long category, Double minPrice, Double maxPrice,
                                           Boolean isDiscount, String sort);

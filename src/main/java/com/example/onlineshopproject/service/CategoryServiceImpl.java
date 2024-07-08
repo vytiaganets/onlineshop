@@ -30,8 +30,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Transactional
-    public CategoryResponseDto getById(Long id) {
-        Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(id);
+    public CategoryResponseDto getById(Long categoryId) {
+        Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(categoryId);
         CategoryResponseDto categoryResponseDto = null;
         if (!categoryEntityOptional.isPresent()) {
             categoryResponseDto = categoryEntityOptional.map(mappers::convertToCategoryResponseDto).orElse(null);
@@ -47,7 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
             categoryEntity.setCategoryId(0L);
             categoryRepository.save(categoryEntity);
         } else {
-            throw new NotFoundInDbException("The category withname already exists.");
+            throw new NotFoundInDbException("The category with name already exists.");
         }
     }
 
@@ -59,19 +59,19 @@ public class CategoryServiceImpl implements CategoryService {
         return mappers.convertToCategoryResponseDto(savedCategory);
     }
 
-    public void deleteById(Long id) {
-        Optional<CategoryEntity> categoryEntity = categoryRepository.findById(id);
+    public void deleteById(Long categoryId) {
+        Optional<CategoryEntity> categoryEntity = categoryRepository.findById(categoryId);
         if (categoryEntity.isPresent()) {
-            categoryRepository.deleteById(id);
+            categoryRepository.deleteById(categoryId);
         } else {
             throw new NotFoundInDbException("Data not found  in database.");
         }
     }
 
     @Transactional
-    public void update(CategoryRequestDto categoryRequestDto, Long id) {
-        if (id > 0) {
-            CategoryEntity categoryEntity = categoryRepository.findById(id).orElse(null);
+    public void update(CategoryRequestDto categoryRequestDto, Long categoryId) {
+        if (categoryId > 0) {
+            CategoryEntity categoryEntity = categoryRepository.findById(categoryId).orElse(null);
             if (categoryEntity != null) {
                 categoryEntity.setName(categoryRequestDto.getName());
                 categoryRepository.save(categoryEntity);

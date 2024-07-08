@@ -51,8 +51,8 @@ public class CategoryController {
                     content = @Content)})
     @GetMapping(value = "/{categoryId}")
     @ResponseStatus(HttpStatus.OK)
-    public CategoryResponseDto getById(@PathVariable Long userId) {
-        return categoryServiceImpl.getById(userId);
+    public CategoryResponseDto getById(@PathVariable Long categoryId) {
+        return categoryServiceImpl.getById(categoryId);
     }
 
     @Operation(summary = "Create a new category")
@@ -88,8 +88,8 @@ public class CategoryController {
     @ResponseStatus(HttpStatus.OK)
     public void update(@RequestBody @Valid CategoryRequestDto categoryRequestDto,
                        @PathVariable
-                               @Positive(message = "Category id must be a positive number") Long id) {
-        categoryServiceImpl.update(categoryRequestDto, id);
+                               @Positive(message = "Category id must be a positive number") Long categoryId) {
+        categoryServiceImpl.update(categoryRequestDto, categoryId);
     }
 
     @Operation(summary = "Delete a category")
@@ -101,7 +101,7 @@ public class CategoryController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping(value = "/{categoryId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(@PathVariable @Positive(message = "Category id must be a positive number") Long id) {
-        categoryServiceImpl.deleteById(id);
+    public void deleteById(@PathVariable @Positive(message = "Category id must be a positive number") Long categoryId) {
+        categoryServiceImpl.deleteById(categoryId);
     }
 }

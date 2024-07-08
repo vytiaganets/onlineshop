@@ -10,6 +10,6 @@ public interface CategoryService {
     CategoryResponseDto getById(Long id);
     void insert(CategoryRequestDto categoryRequestDto);
     CategoryResponseDto create(CategoryRequestDto categoryRequestDto);
-    void deleteById(Long id);
+    void deleteById(Long userId);
     void update(CategoryRequestDto categoryRequestDto, Long id);
 }

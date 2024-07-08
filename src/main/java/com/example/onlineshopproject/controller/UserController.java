@@ -103,7 +103,7 @@ public class UserController {
     @DeleteMapping("/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable @Positive(message = "Product id must be a positive " +
-            "number") Long id) {
-        userServiceImpl.delete(id);
+            "number") Long userId) {
+        userServiceImpl.delete(userId);
     }
 }

@@ -25,7 +25,7 @@ import java.util.Set;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/favorities")
+@RequestMapping("/favorites")
 public class FavoriteController {
     private final FavoriteServiceImpl favoriteServiceImpl;
 

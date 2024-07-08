@@ -67,8 +67,8 @@ public class ProductController {
     @GetMapping(value = "/{productId}")
     @ResponseStatus(HttpStatus.OK)
     public ProductResponseDto getById(@PathVariable @Positive(message = "Product id must be a positive " +
-            "number") Long id) {
-        return productServiceImpl.getById(id);
+            "number") Long productId) {
+        return productServiceImpl.getById(productId);
     }
 
     @Operation(summary = "Delete a product", description = "Deletes a product by its id")
@@ -84,8 +84,8 @@ public class ProductController {
     @DeleteMapping(value = "/{productId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable @Positive(message = "Product id must be a positive " +
-            "number") Long id) {
-        productServiceImpl.deleteById(id);
+            "number") Long productId) {
+        productServiceImpl.deleteById(productId);
     }
 
     @Operation(summary = "Insert a product", description = "Inserts a new product with the provided details")
@@ -122,8 +122,8 @@ public class ProductController {
     @ResponseStatus(HttpStatus.OK)
     @Validated
     public void update(@RequestBody @Valid ProductRequestDto productRequestDto, @PathVariable @Positive(message = "Product id must be a positive " +
-            "number") Long id) {
-        productServiceImpl.update(productRequestDto, id);
+            "number") Long productId) {
+        productServiceImpl.update(productRequestDto, productId);
     }
 
     @Operation(summary = "Get top 10 products")

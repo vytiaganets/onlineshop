@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "Favorities")
+@Table(name = "Favorites")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class FavoriteEntity {
     @Id
-    @Column(name = "FavoritiesID")
+    @Column(name = "FavoriteID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long favoriteId;
 
