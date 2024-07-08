@@ -2,7 +2,7 @@ package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.FavoriteRequestDto;
 import com.example.onlineshopproject.dto.FavoriteResponseDto;
-import com.example.onlineshopproject.service.FavoriteService;
+import com.example.onlineshopproject.service.FavoriteServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -25,9 +25,9 @@ import java.util.Set;
 @Validated
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/v1/favorities")
+@RequestMapping("/favorities")
 public class FavoriteController {
-    private final FavoriteService favoriteService;
+    private final FavoriteServiceImpl favoriteServiceImpl;
 
     @Operation(summary = "Get favorite by user id")
     @ApiResponses(value = {
@@ -35,13 +35,14 @@ public class FavoriteController {
                     description = "Favorite found successfully",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = FavoriteResponseDto.class))}),
-            @ApiResponse(responseCode = "404",
-                    description = "Favorite not found")})
+            @ApiResponse(responseCode = "401",
+                    description = "Unauthorized",
+                    content = @Content)})
     @GetMapping(value = "/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public Set<FavoriteResponseDto> getFavoriteByUserId(@PathVariable @Positive(message = "User id must be a positive" +
+    public Set<FavoriteResponseDto> getByUserId(@PathVariable @Positive(message = "User id must be a positive" +
             " number") Long userId) {
-        return favoriteService.getFavoriteByUserId(userId);
+        return favoriteServiceImpl.getByUserId(userId);
     }
 
     @Operation(summary = "Add a product to favorite", description = "Adds a specified product to the current user's favorites")
@@ -52,10 +53,10 @@ public class FavoriteController {
                             schema = @Schema(implementation = FavoriteResponseDto.class))})})
     @PostMapping(value = "/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public void insertFavorite(@RequestBody @Valid FavoriteRequestDto favoriteRequestDto,
-                               @PathVariable @Positive(message = "User id must be a positive" +
+    public void insert(@RequestBody @Valid FavoriteRequestDto favoriteRequestDto,
+                       @PathVariable @Positive(message = "User id must be a positive" +
                                        " number") Long userId) {
-        favoriteService.insertFavorite(favoriteRequestDto, userId);
+        favoriteServiceImpl.insert(favoriteRequestDto, userId);
     }
 
     @Operation(summary = "Delete a product from favorites", description = "Delete a specified product from the " +
@@ -67,10 +68,10 @@ public class FavoriteController {
                             schema = @Schema(implementation = FavoriteResponseDto.class))})})
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteFavoriteByProductId(@RequestParam("userId") @Positive(message = "User id must be a positive" +
+    public void deleteByProductId(@RequestParam("userId") @Positive(message = "User id must be a positive" +
             " number") Long userId,
-                                          @RequestParam("productId") @Positive(message = "User id must be a positive " +
+                                  @RequestParam("productId") @Positive(message = "User id must be a positive " +
                                                   "number") Long productId) {
-        favoriteService.deleteFavoiteByProductId(userId, productId);
+        favoriteServiceImpl.deleteByProductId(userId, productId);
     }
 }

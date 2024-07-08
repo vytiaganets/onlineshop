@@ -1,7 +1,7 @@
 package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.CartResponseDto;
-import com.example.onlineshopproject.service.CartService;
+import com.example.onlineshopproject.service.CartServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "/v1/cart")
+@RequestMapping(value = "/cart")
 public class CartController {
-    private final CartService cartService;
+    private final CartServiceImpl cartServiceImpl;
 
     @Operation(summary = "Create a cart")
     @ApiResponses(value = {
@@ -31,14 +31,12 @@ public class CartController {
                             schema = @Schema(implementation = CartResponseDto.class))}),
             @ApiResponse(responseCode = "400",
                     description = "Invalid request body",
-                    content = @Content),
-            @ApiResponse(responseCode = "500",
-                    description = "Internal server error")})
+                    content = @Content)})
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public CartResponseDto insertCart(@RequestBody CartResponseDto cartResponseDto) {
+    public CartResponseDto insert(@RequestBody CartResponseDto cartResponseDto) {
         log.debug("Request to create cart: {}", cartResponseDto);
-        return cartService.insertCart(cartResponseDto);
+        return cartServiceImpl.insert(cartResponseDto);
     }
 
     @Operation(summary = "Get cart by user id")
@@ -56,7 +54,7 @@ public class CartController {
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<CartResponseDto> getByUserId(@PathVariable Long userId) {
         log.debug("Request to get cart for user id: {}", userId);
-        CartResponseDto cartResponseDto = cartService.getCartById(userId);
+        CartResponseDto cartResponseDto = cartServiceImpl.getById(userId);
         return ResponseEntity.ok(cartResponseDto);
     }
 }

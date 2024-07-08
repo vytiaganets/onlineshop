@@ -2,7 +2,7 @@ package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.enums.UserRole;
-import com.example.onlineshopproject.service.UserService;
+import com.example.onlineshopproject.service.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -26,20 +26,20 @@ public class UserControllerTest {
     @Autowired
     private MockMvc mockMvc;
     @MockBean
-    private UserService userServiceMock;
+    private UserServiceImpl userServiceImplMock;
 
     @Test
     void getUserTest() throws Exception {
-        when(userServiceMock.getUser()).thenReturn(List.of(UserRequestDto.builder().userId(1L).build()));
-        this.mockMvc.perform(get("/uses")).andDo(print())
+        when(userServiceImplMock.getAll()).thenReturn(List.of(UserRequestDto.builder().userId(1L).build()));
+        this.mockMvc.perform(get("/users")).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$..userId").exists());
     }
 
     @Test
     void getUserByIdTest() throws Exception {
-        when(userServiceMock.getUserById(anyLong())).thenReturn(UserRequestDto.builder().userId(1L).build());
-        this.mockMvc.perform(get("/users/{id}", 1)).andDo(print())
+        when(userServiceImplMock.getById(anyLong())).thenReturn(UserRequestDto.builder().userId(1L).build());
+        this.mockMvc.perform(get("/users/{userId}", 1)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.userId").value(1));
     }
@@ -51,16 +51,16 @@ public class UserControllerTest {
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)
                 .name("Test")
-                .phoneNumber("0123456789")
-                .passwordHash("*****")
+                .phoneNumber("123456789012")
+                .passwordHash("1234")
                 .build();
-        when(userServiceMock.updateUser(any(UserRequestDto.class))).thenReturn(expectedUser);
+        when(userServiceImplMock.update(any(UserRequestDto.class))).thenReturn(expectedUser);
         this.mockMvc.perform(put("/users")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {
                                 "userId":1,
-                                "phoneNumber":"0123456789",
+                                "phoneNumber":"123456789012",
                                 "name":"testName"
                                 }
                                 """))

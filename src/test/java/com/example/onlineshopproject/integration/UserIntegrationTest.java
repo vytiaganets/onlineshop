@@ -2,9 +2,8 @@ package com.example.onlineshopproject.integration;
 
 import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.enums.UserRole;
-import com.example.onlineshopproject.service.UserService;
+import com.example.onlineshopproject.service.UserServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -29,18 +28,18 @@ public class UserIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
     @Test
     void getAllUsersTest() throws Exception{
         //Assertions.assertEquals(2,userService.getUser().size());//сервис репо
         //RestAssure почитать
-        this.mockMvc.perform(get("/v1/users")).andDo(print())
+        this.mockMvc.perform(get("/users")).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$..userId").exists());
     }
     @Test
-    void getUserByIdTest() throws Exception{
-        ResultActions resultActions = this.mockMvc.perform(get("/v1/users/{id}", 1)).andDo(print())
+    void getByIdTest() throws Exception{
+        ResultActions resultActions = this.mockMvc.perform(get("/users/{userId}", 1)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.userId").value(1));
     }
@@ -55,7 +54,7 @@ public class UserIntegrationTest {
                 .passwordHash("1234")
                 .build();
         String requestBody = objectMapper.writeValueAsString(expectedUser);
-        this.mockMvc.perform(put("/v1/users")
+        this.mockMvc.perform(put("/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(requestBody))
                 .andDo(print())

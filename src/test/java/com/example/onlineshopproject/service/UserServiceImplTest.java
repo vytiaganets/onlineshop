@@ -23,7 +23,7 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class UserServiceTest {
+public class UserServiceImplTest {
     @Mock
     private UserRepository userRepositoryMock;
     @Mock
@@ -31,7 +31,7 @@ public class UserServiceTest {
     @Mock
     private ModelMapper modelMapperMock;
     @InjectMocks
-    private UserService userServiceTest;
+    private UserServiceImpl userServiceImplTest;
     private UserRequestDto expectedUserRequestDto;
     private UserEntity expectedUser;
     @BeforeEach
@@ -57,14 +57,14 @@ public class UserServiceTest {
     void getUserTest(){
         when(userRepositoryMock.findAll()).thenReturn(Arrays.asList(expectedUser));
         when(mappersMock.convertToUserResponseDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
-        List<UserRequestDto> actualUserRequestDtoList = userServiceTest.getUser();
+        List<UserRequestDto> actualUserRequestDtoList = userServiceImplTest.getAll();
         assertEquals(Arrays.asList(expectedUserRequestDto), actualUserRequestDtoList);
     }
     @Test
     void getUserByIdTest(){
         when(userRepositoryMock.findById(anyLong())).thenReturn(Optional.of(expectedUser));
         when(mappersMock.convertToUserResponseDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
-        UserRequestDto actualUserRequestDto = userServiceTest.getUserById(1L);
+        UserRequestDto actualUserRequestDto = userServiceImplTest.getById(1L);
         assertEquals(expectedUserRequestDto, actualUserRequestDto);
     }
     @Test

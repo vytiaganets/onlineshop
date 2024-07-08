@@ -2,7 +2,7 @@ package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.CartItemRequestDto;
 import com.example.onlineshopproject.dto.CartItemResponseDto;
-import com.example.onlineshopproject.service.CartItemService;
+import com.example.onlineshopproject.service.CartItemServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -26,10 +26,24 @@ import java.util.Set;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/v1/cartitems")
+@RequestMapping("/cartitems")
 @Validated
 public class CartItemController {
-    private final CartItemService cartItemService;
+    private final CartItemServiceImpl cartItemServiceImpl;
+
+    @Operation(summary = "Get all cart items")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",
+                    description = "Found all cart items",
+                    content = {@Content(mediaType = "application/json",
+                            array = @ArraySchema(schema = @Schema(implementation = CartItemResponseDto.class)))}),
+            @ApiResponse(responseCode = "500",
+                    description = "Internal server error")})
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<CartItemResponseDto> getAll() {
+        return cartItemServiceImpl.getAll();
+    }
 
     @Operation(summary = "Get cart item by user id")
     @ApiResponses(value = {
@@ -44,9 +58,9 @@ public class CartItemController {
                     description = "Internal server error")})
     @GetMapping(value = "/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public Set<CartItemResponseDto> getCartItemByUserId(@PathVariable @Positive(message = "User id must be a positive" +
+    public Set<CartItemResponseDto> getByUserId(@PathVariable @Positive(message = "User id must be a positive" +
             " number") Long userId) {
-        return cartItemService.getCartItemByUserId(userId);
+        return cartItemServiceImpl.getById(userId);
     }
 
     @Operation(summary = "Create a cart item")
@@ -62,9 +76,9 @@ public class CartItemController {
                     description = "Internal server error")})
     @PostMapping(value = "/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public void insertCartItem(@RequestBody @Valid CartItemRequestDto cartItemRequestDto, @PathVariable @Positive(message = "User id must be a positive" +
+    public void insert(@RequestBody @Valid CartItemRequestDto cartItemRequestDto, @PathVariable @Positive(message = "User id must be a positive" +
             " number") Long userId) {
-        cartItemService.insertCartItem(cartItemRequestDto, userId);
+        cartItemServiceImpl.insert(cartItemRequestDto, userId);
     }
 
     @Operation(summary = "Delete a cart item")
@@ -78,40 +92,26 @@ public class CartItemController {
                     description = "Internal server error")})
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public void deleteCarItemByProductId(@RequestParam("userId") @Positive(message = "User id must be a positive" +
+    public void deleteByProductId(@RequestParam("userId") @Positive(message = "User id must be a positive" +
             " number") Long userId, @RequestParam("productId") @Positive(message = "Product id must be a positive" +
             " number") Long productId) {
-        cartItemService.deleteCarItemByProductId(userId, productId);
+        cartItemServiceImpl.deleteByProductId(userId, productId);
     }
 
-    @Operation(summary = "Get all cart items")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Found all cart items",
-                    content = {@Content(mediaType = "application/json",
-                            array = @ArraySchema(schema = @Schema(implementation = CartItemResponseDto.class)))}),
-            @ApiResponse(responseCode = "500",
-                    description = "Internal server error")})
-    @GetMapping
-    @ResponseStatus(HttpStatus.OK)
-    public List<CartItemResponseDto> getCartItem() {
-        return cartItemService.getCartItem();
-    }
-
-    @Operation(summary = "Get a cart item by id")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Found the cart item",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = CartItemResponseDto.class))}),
-            @ApiResponse(responseCode = "404",
-                    description = "Cart item not found",
-                    content = @Content)})
-    @GetMapping(value = "/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public CartItemResponseDto getCartItemById(@PathVariable Long id) {
-        return cartItemService.getCartItemById(id);
-    }
+//    @Operation(summary = "Get a cart item by id")
+//    @ApiResponses(value = {
+//            @ApiResponse(responseCode = "200",
+//                    description = "Found the cart item",
+//                    content = {@Content(mediaType = "application/json",
+//                            schema = @Schema(implementation = CartItemResponseDto.class))}),
+//            @ApiResponse(responseCode = "404",
+//                    description = "Cart item not found",
+//                    content = @Content)})
+//    @GetMapping(value = "/{userId}")
+//    @ResponseStatus(HttpStatus.OK)
+//    public CartItemResponseDto getById(@PathVariable Long id) {
+//        return cartItemServiceImpl.getById(id);
+//    }
 
     @Operation(summary = "Delete a cart item by id")
     @ApiResponses(value = {
@@ -124,9 +124,9 @@ public class CartItemController {
                     content = @Content),
             @ApiResponse(responseCode = "500",
                     description = "Internal server error")})
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{userId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCartItemById(@PathVariable Long id) {
-        cartItemService.deleteCartItemEntityById(id);
+    public void deleteById(@PathVariable Long userId) {
+        cartItemServiceImpl.deleteById(userId);
     }
 }
