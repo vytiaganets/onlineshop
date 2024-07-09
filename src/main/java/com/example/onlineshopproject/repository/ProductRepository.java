@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity, Long>, ProductCustomRepository {
     @Query(value =
-            "SELECT p.ProductID as productId, p.Name as name, SUM(Quantuty) as count, SUM(Quantity*Price) as sum " +
+            "SELECT p.ProductID as productId, p.Name as name, SUM(Quantity) as count, SUM(Quantity*Price) as sum " +
                     "FROM Products p JOIN " +
                     "OrderItems oi ON p.ProductID = oi.ProductID " +
                     "JOIN Orders o ON oi.OrderId = o.OrderID " +

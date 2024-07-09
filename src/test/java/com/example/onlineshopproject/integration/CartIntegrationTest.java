@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.integration;
 
-import com.example.onlineshopproject.service.CartServiceImpl;
+import com.example.onlineshopproject.service.CartService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -20,13 +20,13 @@ public class CartIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
     @Autowired
-    private CartServiceImpl cartServiceImpl;
+    private CartService cartService;
 
     @Test
     void getByIdTest() throws Exception {
         mockMvc.perform(get("/cart/{userId}", 1)).andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$..userId").value(1));
+                .andExpect(jsonPath("$.userId").value(1));
     }
 
 }

@@ -1,7 +1,7 @@
 package com.example.onlineshopproject.controller;
 import com.example.onlineshopproject.dto.*;
 import com.example.onlineshopproject.enums.UserRole;
-import com.example.onlineshopproject.service.CartServiceImpl;
+import com.example.onlineshopproject.service.CartService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,7 +33,7 @@ class CartControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
     @MockBean
-    private CartServiceImpl cartServiceImplMock;
+    private CartService cartServiceMock;
 
     private UserResponseDto userResponseDto;
     private CartResponseDto cartResponseDto;
@@ -84,7 +84,7 @@ class CartControllerTest {
     @Test
     void getByUserId() throws Exception{
         Long userId = 1L;
-        when(cartServiceImplMock.getByUserId(anyLong())).thenReturn(cartItemResponseDtoSet);
+        when(cartServiceMock.getByUserId(anyLong())).thenReturn(cartItemResponseDtoSet);
         this.mockMvc.perform(get("/cartitems/{userId}", userId)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$..cartItemId").value(1))

@@ -2,7 +2,7 @@ package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.*;
 import com.example.onlineshopproject.enums.UserRole;
-import com.example.onlineshopproject.service.FavoriteServiceImpl;
+import com.example.onlineshopproject.service.FavoriteService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,7 +34,7 @@ public class FavoritesControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
     @MockBean
-    private FavoriteServiceImpl favoriteServiceImplMock;
+    private FavoriteService favoriteServiceMock;
 
     private UserResponseDto userResponseDto;
     private FavoriteResponseDto favoriteResponseDto;
@@ -77,7 +77,7 @@ public class FavoritesControllerTest {
     @Test
     void getByUserId() throws Exception{
         Long userId = 1L;
-        when(favoriteServiceImplMock.getByUserId(anyLong())).thenReturn(favoriteResponseDtoSet);
+        when(favoriteServiceMock.getByUserId(anyLong())).thenReturn(favoriteResponseDtoSet);
         this.mockMvc.perform(get("/favorites/{userId}", userId)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$..favoriteId").value(1));

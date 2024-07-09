@@ -2,7 +2,7 @@ package com.example.onlineshopproject.integration;
 
 import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.enums.UserRole;
-import com.example.onlineshopproject.service.UserServiceImpl;
+import com.example.onlineshopproject.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -29,7 +29,7 @@ public class UserIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
-    private UserServiceImpl userServiceImpl;
+    private UserService userService;
     @Test
     void getAllUsersTest() throws Exception{
         //Assertions.assertEquals(2,userServiceImpl.getAll().size());
@@ -54,11 +54,11 @@ public class UserIntegrationTest {
                 .passwordHash("1234")
                 .build();
         String requestBody = objectMapper.writeValueAsString(expectedUser);
-        this.mockMvc.perform(put("/users/{userId}")
+        this.mockMvc.perform(put("/users")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(requestBody))
                 .andDo(print())
-                .andExpect(status().isOk());
-                //.andExpect(jsonPath("$.userId").value(1));
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.userId").value(1));
     }
 }

@@ -1,5 +1,5 @@
 package com.example.onlineshopproject.integration;
-import com.example.onlineshopproject.service.FavoriteServiceImpl;
+import com.example.onlineshopproject.service.FavoriteService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -24,7 +24,7 @@ public class FavoritesIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
-    private FavoriteServiceImpl favoriteServiceImpl;
+    private FavoriteService favoriteService;
 
 
     @Test

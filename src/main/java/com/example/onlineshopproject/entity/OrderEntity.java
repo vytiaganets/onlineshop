@@ -13,9 +13,10 @@ import java.util.Set;
 
 @Table(name = "Orders")
 @Entity
-@Data
 @Setter
 @Getter
+@EqualsAndHashCode
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderEntity {

@@ -9,6 +9,8 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
+@ToString
 public class CartItemEntity {
     @Id
     @Column(name = "CartItemID")

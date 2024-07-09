@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.integration;
 
-import com.example.onlineshopproject.service.ProductServiceImpl;
+import com.example.onlineshopproject.service.ProductService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -25,11 +25,11 @@ public class ProductIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
-    private ProductServiceImpl productServiceImpl;
+    private ProductService productService;
 
     @Test
     void getAllTest() throws Exception {
-        Assertions.assertEquals(1, productServiceImpl.getAll().size());
+        Assertions.assertEquals(1, productService.getAll().size());
 //        this.mockMvc.perform(get("/products")).andDo(print())
 //                .andExpect(status().isOk())
 //                .andExpect(jsonPath("$..productId").exists());

@@ -2,7 +2,7 @@ package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.CategoryRequestDto;
 import com.example.onlineshopproject.dto.CategoryResponseDto;
-import com.example.onlineshopproject.service.CategoryServiceImpl;
+import com.example.onlineshopproject.service.CategoryService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ class CategoryControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
     @MockBean
-    private CategoryServiceImpl categoryServiceImplMock;
+    private CategoryService categoryServiceMock;
     private CategoryRequestDto categoryRequestDto;
     private CategoryResponseDto categoryResponseDto;
     @BeforeEach
@@ -44,7 +44,7 @@ class CategoryControllerTest {
     }
     @Test
     void getAll() throws Exception{
-        when(categoryServiceImplMock.getAll()).thenReturn(List.of(categoryResponseDto));
+        when(categoryServiceMock.getAll()).thenReturn(List.of(categoryResponseDto));
         this.mockMvc.perform(get("/categories"))
                 .andDo(print())
                 .andExpect(status().isOk())

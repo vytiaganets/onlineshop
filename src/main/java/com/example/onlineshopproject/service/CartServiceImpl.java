@@ -108,7 +108,7 @@ public class CartServiceImpl implements CartService {
 //    private final UserRepository userRepository;
 //    private final ProductRepository productRepository;
 //    private final CartItemRepository cartItemRepository;
-//    private final UserServiceImpl userServiceImpl;
+//    private final UserService userService;
 //    private final Mappers mappers;
 
 //    public CartResponseDto getById(Long userId) {

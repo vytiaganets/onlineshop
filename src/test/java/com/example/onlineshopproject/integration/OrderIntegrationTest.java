@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.integration;
-import com.example.onlineshopproject.service.OrderServiceImpl;
-import com.example.onlineshopproject.service.ProductServiceImpl;
+import com.example.onlineshopproject.service.OrderService;
+import com.example.onlineshopproject.service.ProductService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -24,12 +24,12 @@ public class OrderIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
-    private OrderServiceImpl orderServiceImpl;
+    private OrderService orderService;
 
     @Test
     void getByIdTest() throws Exception {
         mockMvc.perform(get("/orders/{orderId}", 1)).andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$..orderId").value(1));
+                .andExpect(jsonPath("$.orderId").value(1));
     }
 }

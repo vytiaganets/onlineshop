@@ -5,7 +5,7 @@ import com.example.onlineshopproject.dto.UserResponseDto;
 import com.example.onlineshopproject.entity.UserEntity;
 import com.example.onlineshopproject.enums.UserRole;
 import com.example.onlineshopproject.service.UserService;
-import com.example.onlineshopproject.service.UserServiceImpl;
+import com.example.onlineshopproject.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,7 +36,7 @@ public class UserControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
     @MockBean
-    private UserServiceImpl userServiceImplMock;
+    private UserService userServiceMock;
     private UserRequestDto userRequestDto;
 @BeforeEach
 void setUp(){
@@ -52,7 +52,7 @@ void setUp(){
 
     @Test
     void getAll() throws Exception {
-        when(userServiceImplMock
+        when(userServiceMock
                 .getAll())
                 .thenReturn(List
                         .of(UserRequestDto
@@ -70,7 +70,7 @@ void setUp(){
 
     @Test
     void getByIdTest() throws Exception {
-        when(userServiceImplMock
+        when(userServiceMock
                 .getById(anyLong()))
                 .thenReturn(UserRequestDto
                         .builder()
@@ -87,7 +87,7 @@ void setUp(){
 
     @Test
     void update() throws Exception {
-    when(userServiceImplMock.update(any(UserRequestDto.class))).thenReturn(userRequestDto);
+    when(userServiceMock.update(any(UserRequestDto.class))).thenReturn(userRequestDto);
         this.mockMvc
                 .perform(put("/users")
                         .contentType(MediaType
