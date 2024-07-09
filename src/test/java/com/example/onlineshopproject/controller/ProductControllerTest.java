@@ -2,7 +2,7 @@ package com.example.onlineshopproject.controller;
 import com.example.onlineshopproject.dto.CategoryResponseDto;
 import com.example.onlineshopproject.dto.ProductRequestDto;
 import com.example.onlineshopproject.dto.ProductResponseDto;
-import com.example.onlineshopproject.service.ProductServiceImpl;
+import com.example.onlineshopproject.service.ProductService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,7 +31,7 @@ public class ProductControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
     @MockBean
-    private ProductServiceImpl productServiceImplMock;
+    private ProductService productServiceMock;
     private ProductRequestDto productRequestDto;
     private ProductResponseDto productResponseDto;
     @BeforeEach
@@ -65,7 +65,7 @@ public class ProductControllerTest {
     @Test
     void getById() throws Exception{
         Long productId = 1L;
-        when(productServiceImplMock.getById(anyLong())).thenReturn(productResponseDto);
+        when(productServiceMock.getById(anyLong())).thenReturn(productResponseDto);
         this.mockMvc.perform(get("/products/{productId}"))
                 .andDo(print())
                 .andExpect(status().isOk())

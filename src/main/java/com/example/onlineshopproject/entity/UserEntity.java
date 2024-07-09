@@ -14,9 +14,12 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Users")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 @Builder
 public class UserEntity {
     @Id
@@ -58,4 +61,5 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<HistoryEntity> historyEntityList;
+
 }

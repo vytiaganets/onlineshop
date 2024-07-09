@@ -4,7 +4,7 @@ import com.example.onlineshopproject.dto.*;
 import com.example.onlineshopproject.enums.DeliveryMethod;
 import com.example.onlineshopproject.enums.Status;
 import com.example.onlineshopproject.enums.UserRole;
-import com.example.onlineshopproject.service.OrderServiceImpl;
+import com.example.onlineshopproject.service.OrderService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,7 +36,7 @@ public class OrderControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
     @MockBean
-    private OrderServiceImpl orderServiceImplMock;
+    private OrderService orderServiceMock;
 
     private UserResponseDto userResponseDto;
     private OrderResponseDto orderResponseDto;
@@ -107,7 +107,7 @@ public class OrderControllerTest {
     @Test
     void getOrderById() throws Exception {
         Long orderId = 1L;
-        when(orderServiceImplMock.getById(anyLong())).thenReturn(orderResponseDto);
+        when(orderServiceMock.getById(anyLong())).thenReturn(orderResponseDto);
         this.mockMvc.perform(get("/orders/{orderId}", orderId)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.orderId").value(orderId));
@@ -118,7 +118,7 @@ public class OrderControllerTest {
         Long userId = 1L;
         Set<OrderResponseDto> orderResponseDtoSet = new HashSet<>();
         orderResponseDtoSet.add(orderResponseDto);
-        when(orderServiceImplMock.getHistoryByUserId(anyLong())).thenReturn(orderResponseDtoSet);
+        when(orderServiceMock.getHistoryByUserId(anyLong())).thenReturn(orderResponseDtoSet);
         this.mockMvc.perform(get("/orders/history/{orderId}", userId)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.contactPhone").value(orderResponseDto.getContactPhone()));

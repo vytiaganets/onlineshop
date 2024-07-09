@@ -1,6 +1,6 @@
 package com.example.onlineshopproject.integration;
 
-import com.example.onlineshopproject.service.CategoryServiceImpl;
+import com.example.onlineshopproject.service.CategoryService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -25,11 +25,11 @@ public class CategoryIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
-    private CategoryServiceImpl categoryServiceImpl;
+    private CategoryService categoryService;
 
     @Test
     void getAllTest() throws Exception {
-        Assertions.assertEquals(4, categoryServiceImpl.getAll().size());
+        Assertions.assertEquals(4, categoryService.getAll().size());
     }
 
     @Test

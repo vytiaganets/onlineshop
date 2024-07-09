@@ -10,7 +10,8 @@ import java.util.Set;
 @Table(name = "Categories")
 @Setter
 @Getter
-@Data
+@EqualsAndHashCode
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategoryEntity {

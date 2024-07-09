@@ -18,63 +18,31 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
-@Tag(name = "Auth Controller", description = "Controller for auth operations")
+
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-public class AuthController {
+public class AuthController implements AuthControllerInterface {
     private final AuthServiceImpl authServiceImpl;
-    @Operation(summary = "Login")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Login successfully",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = UserResponseDto.class))}),
-            @ApiResponse(responseCode = "401",
-                    description = "Unauthorized",
-                    content = @Content)})
+
     @PostMapping("/login")
     public ResponseEntity<JwtResponce> login(@RequestBody JwtRequest authRequest) throws AuthException {
         final JwtResponce token = authServiceImpl.login(authRequest);
         return ResponseEntity.ok(token);
     }
-    @Operation(summary = "Get a new access token")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "Access token found successfully",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = UserResponseDto.class))}),
-            @ApiResponse(responseCode = "400",
-                    description = "Invalid request body",
-                    content = @Content)})
+
     @PostMapping("/token")
     public ResponseEntity<JwtResponce> getNewAccessToken(@RequestBody JwtRequestRefresh jwtRequestRefresh) throws AuthException {
         final JwtResponce token = authServiceImpl.getAccessToken(jwtRequestRefresh.getRefreshToken());
         return ResponseEntity.ok(token);
     }
-    @Operation(summary = "Get a new refresh token")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200",
-                    description = "New refresh token found successfully",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = UserResponseDto.class))}),
-            @ApiResponse(responseCode = "400",
-                    description = "Invalid request body",
-                    content = @Content)})
+
     @PostMapping("/refresh")
     public ResponseEntity<JwtResponce> getNewRefreshToken(@RequestBody JwtRequestRefresh jwtRequestRefresh) throws AuthException {
         final JwtResponce token = authServiceImpl.refresh(jwtRequestRefresh.getRefreshToken());
         return ResponseEntity.ok(token);
     }
-    @Operation(summary = "Register")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "201",
-                    description = "Register created successfully",
-                    content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = UserResponseDto.class))}),
-            @ApiResponse(responseCode = "400",
-                    description = "Invalid request body",
-                    content = @Content)})
+
     @PostMapping("/register")
     @ResponseStatus(code = HttpStatus.CREATED)
     public ResponseEntity<UserRequestDto> register(@RequestBody UserRequestDto userCredentialsDto) throws ResponseException {

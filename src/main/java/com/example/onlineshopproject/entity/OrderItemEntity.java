@@ -7,7 +7,10 @@ import java.math.BigDecimal;
 
 @Table(name = "OrderItems")
 @Entity
-@Data
+@Setter
+@Getter
+@EqualsAndHashCode
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItemEntity {
