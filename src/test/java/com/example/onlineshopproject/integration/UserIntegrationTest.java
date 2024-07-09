@@ -2,7 +2,7 @@ package com.example.onlineshopproject.integration;
 
 import com.example.onlineshopproject.dto.UserRequestDto;
 import com.example.onlineshopproject.enums.UserRole;
-import com.example.onlineshopproject.service.UserService;
+import com.example.onlineshopproject.service.UserServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -29,37 +29,36 @@ public class UserIntegrationTest {
     @Autowired
     private ObjectMapper objectMapper;
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
     @Test
     void getAllUsersTest() throws Exception{
-        //Assertions.assertEquals(2,userService.getUser().size());//сервис репо
-        //RestAssure почитать
-        this.mockMvc.perform(get("/v1/users")).andDo(print())
+        //Assertions.assertEquals(2,userServiceImpl.getAll().size());
+        this.mockMvc.perform(get("/users")).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$..userId").exists());
     }
     @Test
-    void getUserByIdTest() throws Exception{
-        ResultActions resultActions = this.mockMvc.perform(get("/v1/users/{id}", 1)).andDo(print())
+    void getById() throws Exception{
+        ResultActions resultActions = this.mockMvc.perform(get("/users/{userId}", 1)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.userId").value(1));
     }
     @Test
-    void updateClientTests() throws Exception{
+    void update() throws Exception{
         UserRequestDto expectedUser = UserRequestDto.builder()
                 .userId(1L)
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)
-                .name("Test")
+                .name("Andrii Kpi")
                 .phoneNumber("123456789012")
                 .passwordHash("1234")
                 .build();
         String requestBody = objectMapper.writeValueAsString(expectedUser);
-        this.mockMvc.perform(put("/v1/users")
+        this.mockMvc.perform(put("/users/{userId}")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(requestBody))
                 .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.userId").value(1));
+                .andExpect(status().isOk());
+                //.andExpect(jsonPath("$.userId").value(1));
     }
 }

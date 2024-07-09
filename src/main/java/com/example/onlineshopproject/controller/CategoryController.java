@@ -2,7 +2,7 @@ package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.CategoryRequestDto;
 import com.example.onlineshopproject.dto.CategoryResponseDto;
-import com.example.onlineshopproject.service.CategoryService;
+import com.example.onlineshopproject.service.CategoryServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -24,23 +24,20 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/v1/categories")
+@RequestMapping("/categories")
 public class CategoryController {
-    private final CategoryService categoryService;
+    private final CategoryServiceImpl categoryServiceImpl;
 
     @Operation(summary = "List all categories")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "Found the categories",
                     content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = CategoryResponseDto.class))}),
-            @ApiResponse(responseCode = "404",
-                    description = "Categories not found",
-                    content = @Content)})
+                            schema = @Schema(implementation = CategoryResponseDto.class))})})
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<CategoryResponseDto> getCategory() {
-        return categoryService.getCategory();
+    public List<CategoryResponseDto> getAll() {
+        return categoryServiceImpl.getAll();
     }
 
     @Operation(summary = "Get a category by id")
@@ -52,10 +49,10 @@ public class CategoryController {
             @ApiResponse(responseCode = "404",
                     description = "Category not found",
                     content = @Content)})
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{categoryId}")
     @ResponseStatus(HttpStatus.OK)
-    public CategoryResponseDto getCategoryById(@PathVariable Long id) {
-        return categoryService.getCategoryById(id);
+    public CategoryResponseDto getById(@PathVariable Long categoryId) {
+        return categoryServiceImpl.getById(categoryId);
     }
 
     @Operation(summary = "Create a new category")
@@ -63,12 +60,15 @@ public class CategoryController {
             @ApiResponse(responseCode = "201",
                     description = "Category created successfully",
                     content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = CategoryResponseDto.class))})})
+                            schema = @Schema(implementation = CategoryResponseDto.class))}),
+            @ApiResponse(responseCode = "400",
+                    description = "Invalid request body",
+                    content = @Content)})
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void insertCategory(@RequestBody @Valid CategoryRequestDto categoryRequestDto) {
-        categoryService.createCategory(categoryRequestDto);
+    public void insert(@RequestBody @Valid CategoryRequestDto categoryRequestDto) {
+        categoryServiceImpl.create(categoryRequestDto);
     }
 
     @Operation(summary = "Update an existing category")
@@ -77,16 +77,19 @@ public class CategoryController {
                     description = "Category updated successfully",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = CategoryResponseDto.class))}),
+            @ApiResponse(responseCode = "400",
+                    description = "Invalid request body",
+                    content = @Content),
             @ApiResponse(responseCode = "404",
                     description = "Category not found",
                     content = @Content)})
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{categoryId}")
     @ResponseStatus(HttpStatus.OK)
-    public void updateCategory(@RequestBody @Valid CategoryRequestDto categoryRequestDto,
-                               @PathVariable
-                               @Positive(message = "Category id must be a positive number") Long id) {
-        categoryService.updateCategory(categoryRequestDto, id);
+    public void update(@RequestBody @Valid CategoryRequestDto categoryRequestDto,
+                       @PathVariable
+                               @Positive(message = "Category id must be a positive number") Long categoryId) {
+        categoryServiceImpl.update(categoryRequestDto, categoryId);
     }
 
     @Operation(summary = "Delete a category")
@@ -96,9 +99,9 @@ public class CategoryController {
             @ApiResponse(responseCode = "404",
                     description = "Category not found")})
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{categoryId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCategoryById(@PathVariable @Positive(message = "Category id must be a positive number") Long id) {
-        categoryService.deleteCategoryById(id);
+    public void deleteById(@PathVariable @Positive(message = "Category id must be a positive number") Long categoryId) {
+        categoryServiceImpl.deleteById(categoryId);
     }
 }

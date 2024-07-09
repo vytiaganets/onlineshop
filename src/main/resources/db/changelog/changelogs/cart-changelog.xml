@@ -17,4 +17,9 @@
             </column>
         </createTable>
     </changeSet>
+    <changeSet id="2" author="Andrii">
+        <insert tableName="Cart">
+            <column name="UserID" value="1"></column>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

@@ -12,5 +12,5 @@ public class CartResponseDto {
     private Long cartId;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("user")
-    private UserRequestDto userRequestDto;
+    private UserResponseDto userResponseDto;
 }

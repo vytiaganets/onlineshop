@@ -2,7 +2,7 @@ package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.OrderRequestDto;
 import com.example.onlineshopproject.dto.OrderResponseDto;
-import com.example.onlineshopproject.service.OrderService;
+import com.example.onlineshopproject.service.OrderServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -23,11 +23,11 @@ import java.util.Set;
         description = "Order for product operations")
 @Slf4j
 @RestController
-@RequestMapping("/v1/orders")
+@RequestMapping("/orders")
 @RequiredArgsConstructor
 @Validated
 public class OrderController {
-    private final OrderService orderService;
+    private final OrderServiceImpl orderServiceImpl;
 
     @Operation(summary = "Get order by id")
     @ApiResponses(value = {
@@ -40,9 +40,9 @@ public class OrderController {
                     content = @Content)})
     @GetMapping(value = "/{orderId}")
     @ResponseStatus(HttpStatus.OK)
-    public OrderResponseDto getOrderById(@PathVariable @Positive(message = "User id must be a positive" +
+    public OrderResponseDto getById(@PathVariable @Positive(message = "User id must be a positive" +
             " number") Long orderId) {
-        return orderService.getOrderById(orderId);
+        return orderServiceImpl.getById(orderId);
     }
 
     @Operation(summary = "Get order history by user id")
@@ -51,15 +51,15 @@ public class OrderController {
                     description = "Order history found",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = OrderResponseDto.class))}),
-            @ApiResponse(responseCode = "404",
-                    description = "Order history not found",
+            @ApiResponse(responseCode = "401",
+                    description = "Unauthorized",
                     content = @Content)})
     @GetMapping(value = "/history/{orderId}")
     @ResponseStatus(HttpStatus.OK)
-    public Set<OrderResponseDto> getOrderHistoryByUserId(@PathVariable @Positive(message = "User id must be a " +
+    public Set<OrderResponseDto> getHistoryByUserId(@PathVariable @Positive(message = "User id must be a " +
             "positive" +
             " number") Long orderId) {
-        return orderService.getOrderHistoryByUserId(orderId);
+        return orderServiceImpl.getHistoryByUserId(orderId);
     }
 
     @Operation(summary = "Insert order")
@@ -70,14 +70,12 @@ public class OrderController {
                             schema = @Schema(implementation = OrderResponseDto.class))}),
             @ApiResponse(responseCode = "400",
                     description = "Invalid request body",
-                    content = @Content),
-            @ApiResponse(responseCode = "500",
-                    description = "Internal server error")})
+                    content = @Content)})
     @PostMapping(value = "/{userId}")
     @ResponseStatus(HttpStatus.OK)
-    public void insertOrder(@RequestBody @Valid OrderRequestDto orderRequestDto, @PathVariable @Positive(message =
+    public void insert(@RequestBody @Valid OrderRequestDto orderRequestDto, @PathVariable @Positive(message =
             "User id must be a positive" +
                     " number") Long userId) {
-        orderService.insertOrder(orderRequestDto, userId);
+        orderServiceImpl.insert(orderRequestDto, userId);
     }
 }

@@ -1,8 +1,9 @@
 package com.example.onlineshopproject.controller;
 
+import com.example.onlineshopproject.dto.ProductCountDto;
 import com.example.onlineshopproject.dto.ProductRequestDto;
 import com.example.onlineshopproject.dto.ProductResponseDto;
-import com.example.onlineshopproject.service.ProductService;
+import com.example.onlineshopproject.service.ProductServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -19,6 +20,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @Tag(name = "Product Controller",
         description = "Controller for product operations")
 @Slf4j
@@ -27,22 +29,32 @@ import java.util.List;
 @RequestMapping("/products")
 @Validated
 public class ProductController {
-    private final ProductService productService;
-
-    @Operation(summary = "Get a product")
+    private final ProductServiceImpl productServiceImpl;
+    @Operation(summary = "Get products")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
-                    description = "Product found successfully",
+                    description = "Products count found successfully",
                     content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = ProductResponseDto.class))}),
-            @ApiResponse(responseCode = "404",
-                    description = "Product not found",
-                    content = @Content)})
-    @GetMapping
+                            schema = @Schema(implementation = ProductCountDto.class))})})
     @ResponseStatus(HttpStatus.OK)
-    public List<ProductResponseDto> getProduct() {
-        return productService.getProduct();
+    @GetMapping
+    public List<ProductResponseDto> getAll(
+            @RequestParam(value = "category", required = false) Long categoryId,
+            @RequestParam(value = "minPrice", required = false) Double minPrice,
+            @RequestParam(value = "maxPrice", required = false) Double maxPrice,
+            @RequestParam(value = "isDiscount", required = false, defaultValue = "false") Boolean isDiscount,
+            @RequestParam(value = "sort", required = false) String sort
+    ){
+        List<ProductResponseDto> productDtoList = productServiceImpl.findByFilter(
+                categoryId,
+                minPrice,
+                maxPrice,
+                isDiscount,
+                sort
+        );
+        return productDtoList;
     }
+
     @Operation(summary = "Get product by id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
@@ -52,50 +64,78 @@ public class ProductController {
             @ApiResponse(responseCode = "404",
                     description = "Product not found",
                     content = @Content)})
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{productId}")
     @ResponseStatus(HttpStatus.OK)
-    public ProductResponseDto getProductById(@PathVariable @Positive(message = "Product id must be a positive " +
-            "number") Long id) {
-        return productService.getProductById(id);
+    public ProductResponseDto getById(@PathVariable @Positive(message = "Product id must be a positive " +
+            "number") Long productId) {
+        return productServiceImpl.getById(productId);
     }
+
     @Operation(summary = "Delete a product", description = "Deletes a product by its id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204",
-                    description = "Product deleted successfully",
+            @ApiResponse(responseCode = "200",
+                    description = "Product update successfully",
                     content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = ProductResponseDto.class))})})
+                            schema = @Schema(implementation = ProductResponseDto.class))}),
+            @ApiResponse(responseCode = "404",
+                    description = "Product not found",
+                    content = @Content)})
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{productId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteProductById(@PathVariable @Positive(message = "Product id must be a positive " +
-            "number") Long id) {
-        productService.deleteProductById(id);
+    public void deleteById(@PathVariable @Positive(message = "Product id must be a positive " +
+            "number") Long productId) {
+        productServiceImpl.deleteById(productId);
     }
+
     @Operation(summary = "Insert a product", description = "Inserts a new product with the provided details")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201",
                     description = "Product created successfully",
                     content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = ProductResponseDto.class))})})
+                            schema = @Schema(implementation = ProductResponseDto.class))}),
+            @ApiResponse(responseCode = "400",
+                    description = "Invalid request body",
+                    content = @Content)})
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void insertProduct(@RequestBody @Valid ProductRequestDto productRequestDto) {
-        productService.insertProduct(productRequestDto);
+    public void insert(@RequestBody @Valid ProductRequestDto productRequestDto) {
+        productServiceImpl.insert(productRequestDto);
     }
+
     @Operation(summary = "Update a product", description = "Updates an existing product by id with the provided new " +
             "details")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "Product update successfully",
                     content = {@Content(mediaType = "application/json",
-                            schema = @Schema(implementation = ProductResponseDto.class))})})
+                            schema = @Schema(implementation = ProductResponseDto.class))}),
+            @ApiResponse(responseCode = "400",
+                    description = "Invalid request body",
+                    content = @Content),
+            @ApiResponse(responseCode = "404",
+                    description = "Product not found",
+                    content = @Content)})
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{productId}")
     @ResponseStatus(HttpStatus.OK)
     @Validated
-    public void updateProduct(@RequestBody @Valid ProductRequestDto productRequestDto, @PathVariable @Positive(message = "Product id must be a positive " +
-            "number")Long id) {
-        productService.updateProduct(productRequestDto, id);
+    public void update(@RequestBody @Valid ProductRequestDto productRequestDto, @PathVariable @Positive(message = "Product id must be a positive " +
+            "number") Long productId) {
+        productServiceImpl.update(productRequestDto, productId);
+    }
+
+    @Operation(summary = "Get top 10 products")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",
+                    description = "Top 10 products found successfully",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ProductCountDto.class))})})
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(value = "/top10")
+    public List<ProductCountDto> getTop10(@RequestParam(value = "status", required = false) String status){
+        return productServiceImpl.getTop10(status);
     }
 }

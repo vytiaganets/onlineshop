@@ -1,5 +1,6 @@
 package com.example.onlineshopproject.dto;
 
+import com.example.onlineshopproject.enums.DeliveryMethod;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;

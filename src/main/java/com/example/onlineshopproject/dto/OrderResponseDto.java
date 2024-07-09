@@ -1,11 +1,12 @@
 package com.example.onlineshopproject.dto;
 
+import com.example.onlineshopproject.enums.DeliveryMethod;
 import com.example.onlineshopproject.enums.Status;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 import java.util.Set;
 
 @Data
@@ -17,7 +18,7 @@ public class OrderResponseDto {
     private Timestamp createdAt;
     private String deliveryAddress;
     private String contactPhone;
-    private String deliveryMethod;
+    private DeliveryMethod deliveryMethod;
     private Status status;
     private Timestamp updatedAt;
 

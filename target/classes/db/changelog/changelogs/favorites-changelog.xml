@@ -23,4 +23,10 @@
             </column>
         </createTable>
     </changeSet>
+    <changeSet id="2" author="Andrii">
+        <insert tableName="Favorites">
+            <column name="UserID" value="1"/>
+            <column name="ProductID" value="1"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

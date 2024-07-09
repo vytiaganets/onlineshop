@@ -1,6 +1,7 @@
 package com.example.onlineshopproject.dto;
 
 import com.example.onlineshopproject.enums.UserRole;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,6 +16,7 @@ public class UserResponseDto {
     public String name;
     private String email;
     private String phone;
-//    private String password;//!!!!????
+    @JsonIgnore
+    private String password;
     private UserRole userRole;
 }

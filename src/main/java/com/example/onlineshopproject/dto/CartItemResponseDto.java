@@ -12,9 +12,9 @@ public class CartItemResponseDto {
     private Long cartItemId;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("cart")
-    private CartResponseDto cart;
+    private CartResponseDto cartResponseDto;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("product")
-    private ProductResponseDto product;
+    private ProductResponseDto productResponseDto;
     private Integer quantity;
 }

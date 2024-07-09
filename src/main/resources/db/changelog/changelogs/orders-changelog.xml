@@ -45,7 +45,7 @@
         <insert tableName="Orders">
             <column name="UserID" value="1"/>
             <column name="DeliveryAddress" value="Kiev, Ukraine"/>
-            <column name="DeliveryMethod" value="by post"/>
+            <column name="DeliveryMethod" value="COURIER_DELIVERY"/>
             <column name="ContactPhone" value="+1 234 567 890"/>
             <column name="Status" value="PAID"/>
             <column name="CreatedAt" value="2024-06-24 18:21:03.123000"/>

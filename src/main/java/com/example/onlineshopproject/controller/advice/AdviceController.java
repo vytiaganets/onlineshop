@@ -187,13 +187,13 @@ public class AdviceController {
         errorResponse.put("errors", errors);
         return errorResponse;
     }
-
+//temporary
     //AV Handling other exceptions
-    @ExceptionHandler(Exception.class)
-    public final ResponseEntity<ErrorMessage> handleException(Exception exception) {
-        log.error("Exception: {}", exception.getMessage());
-        return ResponseEntity
-                .status(HttpStatus.I_AM_A_TEAPOT)
-                .body(new ErrorMessage("Sorry, something went wrong. Please try again later"));
-    }
+//    @ExceptionHandler(Exception.class)
+//    public final ResponseEntity<ErrorMessage> handleException(Exception exception) {
+//        log.error("Exception: {}", exception.getMessage());
+//        return ResponseEntity
+//                .status(HttpStatus.I_AM_A_TEAPOT)
+//                .body(new ErrorMessage("Sorry, something went wrong. Please try again later"));
+//    }
 }
