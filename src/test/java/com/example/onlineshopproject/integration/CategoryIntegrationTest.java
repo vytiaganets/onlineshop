@@ -37,6 +37,5 @@ public class CategoryIntegrationTest {
         ResultActions resultActions = this.mockMvc.perform(get("/categories/{categoryId}", 1)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.categoryId").value(1));
-        //java.lang.AssertionError: No value at JSON path "$.categoryId"
     }
 }

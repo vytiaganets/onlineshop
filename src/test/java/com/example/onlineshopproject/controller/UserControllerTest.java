@@ -42,6 +42,7 @@ public class UserControllerTest {
 void setUp(){
     userRequestDto = UserRequestDto
             .builder()
+            .userId(1L)
             .name("Andreas Schwarzberg")
             .email("schwarzberd@web.de")
             .phoneNumber("123456789012")
@@ -49,28 +50,54 @@ void setUp(){
             .build();
 }
 
-//    @Test
-//    void getUserTest() throws Exception {
-//        when(userServiceImplMock.getAll()).thenReturn(List.of(UserRequestDto.builder().userId(1L).build()));
-//        this.mockMvc.perform(get("/users")).andDo(print())
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$..userId").exists());
-//    }
-//
-//    @Test
-//    void getUserByIdTest() throws Exception {
-//        when(userServiceImplMock.getById(anyLong())).thenReturn(UserRequestDto.builder().userId(1L).build());
-//        this.mockMvc.perform(get("/users/{userId}", 1)).andDo(print())
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.userId").value(1));
-//    }
+    @Test
+    void getAll() throws Exception {
+        when(userServiceImplMock
+                .getAll())
+                .thenReturn(List
+                        .of(UserRequestDto
+                                .builder()
+                                .userId(1L)
+                                .build()));
+        this.mockMvc
+                .perform(get("/users"))
+                .andDo(print())
+                .andExpect(status()
+                        .isOk())
+                .andExpect(jsonPath("$..userId")
+                        .exists());
+    }
 
-//    @Test
-//    void updateUserTest() throws Exception {
-//    Long userId = 1L;
-//        mockMvc.perform(put("/users/{id}", userId)
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(objectMapper.writeValueAsString(userRequestDto)))
-//                .andExpect(status().isOk());
-//    }
+    @Test
+    void getByIdTest() throws Exception {
+        when(userServiceImplMock
+                .getById(anyLong()))
+                .thenReturn(UserRequestDto
+                        .builder()
+                        .userId(1L)
+                        .build());
+        this.mockMvc
+                .perform(get("/users/{userId}", 1))
+                .andDo(print())
+                .andExpect(status()
+                        .isOk())
+                .andExpect(jsonPath("$.userId")
+                        .value(1));
+    }
+
+    @Test
+    void update() throws Exception {
+    when(userServiceImplMock.update(any(UserRequestDto.class))).thenReturn(userRequestDto);
+        this.mockMvc
+                .perform(put("/users")
+                        .contentType(MediaType
+                                .APPLICATION_JSON)
+                        .content(objectMapper
+                                .writeValueAsString(userRequestDto)))
+                .andDo(print())
+                .andExpect(status()
+                        .isOk())
+                .andExpect(jsonPath("$.userId")
+                        .value(1));
+    }
 }

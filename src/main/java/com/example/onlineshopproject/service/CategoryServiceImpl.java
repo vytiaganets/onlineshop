@@ -58,7 +58,7 @@ public class CategoryServiceImpl implements CategoryService {
         CategoryEntity savedCategory = categoryRepository.save(categoryEntity);
         return mappers.convertToCategoryResponseDto(savedCategory);
     }
-
+    @Transactional
     public void deleteById(Long categoryId) {
         Optional<CategoryEntity> categoryEntity = categoryRepository.findById(categoryId);
         if (categoryEntity.isPresent()) {

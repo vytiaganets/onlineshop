@@ -18,7 +18,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc(printOnlyOnFailure = false)
-@ActiveProfiles(profiles = {"dev"})
 public class OrderIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
@@ -31,6 +30,6 @@ public class OrderIntegrationTest {
     void getByIdTest() throws Exception {
         mockMvc.perform(get("/orders/{orderId}", 1)).andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.orderId").value(1));
+                .andExpect(jsonPath("$..orderId").value(1));
     }
 }

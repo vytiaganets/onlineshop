@@ -6,7 +6,7 @@ import com.example.onlineshopproject.dto.OrderResponseDto;
 import java.util.Set;
 
 public interface OrderService {
-    void insert(OrderRequestDto orderRequestDto, Long userId);
-    OrderResponseDto getById(Long orderId);
-    Set<OrderResponseDto> getHistoryByUserId(Long userId);
+    public void insert(OrderRequestDto orderRequestDto, Long userId);
+    public OrderResponseDto getById(Long orderId);
+    public Set<OrderResponseDto> getHistoryByUserId(Long userId);
 }

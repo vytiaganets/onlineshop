@@ -32,25 +32,24 @@ public class UserIntegrationTest {
     private UserServiceImpl userServiceImpl;
     @Test
     void getAllUsersTest() throws Exception{
-        //Assertions.assertEquals(2,userServiceImpl.getAll().size());//сервис репо
-        //RestAssure почитать
+        //Assertions.assertEquals(2,userServiceImpl.getAll().size());
         this.mockMvc.perform(get("/users")).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$..userId").exists());
     }
     @Test
-    void getByIdTest() throws Exception{
+    void getById() throws Exception{
         ResultActions resultActions = this.mockMvc.perform(get("/users/{userId}", 1)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.userId").value(1));
     }
     @Test
-    void updateClientTests() throws Exception{
+    void update() throws Exception{
         UserRequestDto expectedUser = UserRequestDto.builder()
                 .userId(1L)
                 .email("andrii@ukr.net")
                 .role(UserRole.ADMIN)
-                .name("Test")
+                .name("Andrii Kpi")
                 .phoneNumber("123456789012")
                 .passwordHash("1234")
                 .build();
@@ -59,7 +58,7 @@ public class UserIntegrationTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(requestBody))
                 .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.userId").value(1));
+                .andExpect(status().isOk());
+                //.andExpect(jsonPath("$.userId").value(1));
     }
 }

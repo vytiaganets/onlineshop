@@ -114,14 +114,13 @@ public class UserServiceImpl implements UserService {
         return mappers.convertToUserResponseDto(userEntityResponce);
     }
 
-    @Transactional
     public void delete(Long userId) {
         UserEntity userEntity = userRepository
                 .findById(userId)
                 .orElseThrow(() -> new NotFoundInDbException("User not found"));
-        if (userEntity.getCartEntity() != null) {
-            cartRepository.delete(userEntity.getCartEntity());
-        }
+//        if (userEntity.getCartEntity() != null) {
+//            cartRepository.delete(userEntity.getCartEntity());
+//        }
         userRepository.deleteById(userId);
     }
 }

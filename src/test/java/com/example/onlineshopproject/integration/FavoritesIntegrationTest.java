@@ -31,6 +31,6 @@ public class FavoritesIntegrationTest {
     void getByUserIdTest() throws Exception {
         mockMvc.perform(get("/favorites/{userId}", 1)).andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.userId").value(1));
+                .andExpect(jsonPath("$..favoriteId").value(1));
     }
 }

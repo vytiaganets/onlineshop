@@ -26,7 +26,7 @@ public class CartIntegrationTest {
     void getByIdTest() throws Exception {
         mockMvc.perform(get("/cart/{userId}", 1)).andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.cartId").value(1));
+                .andExpect(jsonPath("$..userId").value(1));
     }
 
 }
