@@ -12,6 +12,7 @@ import com.example.onlineshopproject.entity.UserEntity;
 import com.example.onlineshopproject.enums.DeliveryMethod;
 import com.example.onlineshopproject.enums.Status;
 import com.example.onlineshopproject.exceptions.NotFoundInDbException;
+import com.example.onlineshopproject.exceptions.OrderNotFoundException;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.OrderItemRepository;
 import com.example.onlineshopproject.repository.OrderRepository;
@@ -53,7 +54,7 @@ public class OrderServiceImpl implements OrderService {
             orderEntity = orderRepository.save(orderEntity);
         } else {
             log.error("Order not found: {}", userId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new OrderNotFoundException("Data not found in database.");
         }
         Set<OrderItemRequestDto> orderItemRequestDtoSet = orderRequestDto.getOrderItemSet();
         Set<OrderItemEntity> orderItemEntitySet = new HashSet<>();
@@ -73,7 +74,7 @@ public class OrderServiceImpl implements OrderService {
                 orderItemEntitySet.add(orderItemEntity);
             } else {
                 log.error("Order not found: {}", userId);
-                throw new NotFoundInDbException("Data not found in database.");
+                throw new OrderNotFoundException("Data not found in database.");
             }
         }
         orderEntity.setOrderItemEntityHashSet(orderItemEntitySet);
@@ -94,7 +95,7 @@ public class OrderServiceImpl implements OrderService {
             return orderResponseDto;
         } else {
             log.error("Order wit id {} not found.", orderId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new OrderNotFoundException("Data not found in database.");
         }
     }
 
@@ -117,10 +118,10 @@ public class OrderServiceImpl implements OrderService {
                 return orderResponseDtoSet;
             }
             log.error("History by user id not found: {}", userId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new OrderNotFoundException("Data not found in database.");
         } else {
             log.error("User not found: {}", userId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new OrderNotFoundException("Data not found in database.");
         }
     }
 }

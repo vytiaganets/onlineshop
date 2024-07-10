@@ -6,7 +6,8 @@ import com.example.onlineshopproject.dto.ProductResponseDto;
 import com.example.onlineshopproject.dto.ProductRequestDto;
 import com.example.onlineshopproject.entity.CategoryEntity;
 import com.example.onlineshopproject.entity.ProductEntity;
-import com.example.onlineshopproject.exceptions.NotFoundInDbException;
+import com.example.onlineshopproject.exceptions.ProductInvalidArgumentException;
+import com.example.onlineshopproject.exceptions.ProductNotFoundException;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.CategoryRepository;
 import com.example.onlineshopproject.repository.ProductRepository;
@@ -17,7 +18,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.lang.module.ResolutionException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -83,7 +83,7 @@ public class ProductServiceImpl implements ProductService {
             return mappers.convertToProductResponseDto(productEntity);
         } else {
             log.error("Product with id {} not found.", productId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new ProductNotFoundException("Data not found in database.");
         }
     }
 
@@ -93,7 +93,7 @@ public class ProductServiceImpl implements ProductService {
             productRepository.findById(productId).ifPresent(productRepository::delete);
         } else {
             log.error("Product with id not found: {}", productId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new ProductNotFoundException("Data not found in database.");
         }
     }
 
@@ -110,7 +110,7 @@ public class ProductServiceImpl implements ProductService {
             productRepository.save(productEntity);
         } else {
             log.error("Product not found", productRequestDto.getName());
-            throw new NotFoundInDbException("Data not find in database.");
+            throw new ProductNotFoundException("Data not find in database.");
         }
     }
 
@@ -132,11 +132,11 @@ public class ProductServiceImpl implements ProductService {
                 productRepository.save(productEntity);
             } else {
                 log.error("Can't find the product with id: {}", productId);
-                throw new NotFoundInDbException("Data not found in database.");
+                throw new ProductNotFoundException("Data not found in database.");
             }
         } else {
             log.error("Product id not valid: {}", productId);
-            throw new ResolutionException("The value is not valid.");
+            throw new ProductInvalidArgumentException("The value is not valid.");
         }
     }
 

@@ -4,6 +4,7 @@ import com.example.onlineshopproject.configuration.MapperConfiguration;
 import com.example.onlineshopproject.dto.CategoryRequestDto;
 import com.example.onlineshopproject.dto.CategoryResponseDto;
 import com.example.onlineshopproject.entity.CategoryEntity;
+import com.example.onlineshopproject.exceptions.CategoryNotFoundException;
 import com.example.onlineshopproject.exceptions.NotFoundInDbException;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.CategoryRepository;
@@ -55,7 +56,7 @@ public class CategoryServiceImpl implements CategoryService {
             categoryRepository.save(categoryEntity);
         } else {
             log.error("Category not found: {}", categoryRequestDto.getName());
-            throw new NotFoundInDbException("The category with name already exists.");
+            throw new CategoryNotFoundException("The category with name already exists.");
         }
     }
 
@@ -75,7 +76,7 @@ public class CategoryServiceImpl implements CategoryService {
             categoryRepository.deleteById(categoryId);
         } else {
             log.error("Category not found: {}", categoryId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new CategoryNotFoundException("Data not found in database.");
         }
     }
 
@@ -89,7 +90,7 @@ public class CategoryServiceImpl implements CategoryService {
                 categoryRepository.save(categoryEntity);
             } else {
                 log.error("Category not found: {}", categoryId);
-                throw new NotFoundInDbException("The value is not valid.");
+                throw new CategoryNotFoundException("The value is not valid.");
             }
         }
     }

@@ -8,6 +8,8 @@ import com.example.onlineshopproject.entity.CartEntity;
 import com.example.onlineshopproject.entity.CartItemEntity;
 import com.example.onlineshopproject.entity.ProductEntity;
 import com.example.onlineshopproject.entity.UserEntity;
+import com.example.onlineshopproject.exceptions.CartItemNotFoundException;
+import com.example.onlineshopproject.exceptions.CartNotFoundException;
 import com.example.onlineshopproject.exceptions.NotFoundInDbException;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.CartItemRepository;
@@ -44,7 +46,7 @@ public class CartServiceImpl implements CartService {
             return MapperConfiguration.convertSet(cartItemEntitySet, mappers::convertToCartItemResponseDto);
         } else {
             log.error("Cart not found: {}", userId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new CartNotFoundException("Cart not found in database.");
         }
     }
 
@@ -63,7 +65,7 @@ public class CartServiceImpl implements CartService {
             cartItemRepository.save(cartItemEntityToInsert);
         } else {
             log.error("User or product not found: {}", userId);
-            throw new NotFoundInDbException("Data not found in database");
+            throw new CartItemNotFoundException("CartItem not found in database");
         }
     }
 
@@ -81,7 +83,7 @@ public class CartServiceImpl implements CartService {
             }
         } else {
             log.error("Product or user not found: {}", productId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new CartNotFoundException("Data not found in database.");
         }
     }
 

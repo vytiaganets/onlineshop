@@ -3,12 +3,15 @@ package com.example.onlineshopproject.controller;
 import com.example.onlineshopproject.dto.ProductCountDto;
 import com.example.onlineshopproject.dto.ProductRequestDto;
 import com.example.onlineshopproject.dto.ProductResponseDto;
+import com.example.onlineshopproject.exceptions.ProductInvalidArgumentException;
+import com.example.onlineshopproject.exceptions.ProductNotFoundException;
 import com.example.onlineshopproject.service.ProductService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -74,10 +77,21 @@ public class ProductController implements ProductControllerInterface {
         productService.update(productRequestDto, productId);
     }
 
-    //    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    ///    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/top10")
     public List<ProductCountDto> getTop10(@RequestParam(value = "status", required = true) String status) {
         return productService.getTop10(status);
+    }
+    @ExceptionHandler(ProductNotFoundException.class)
+    public ResponseEntity<String> handleProductNotFoundException(ProductNotFoundException productNotFoundException) {
+        log.error("Product not found:{}", productNotFoundException.getMessage());
+        return ResponseEntity.notFound().build();
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleException(Exception exception) {
+        log.error("Internal server error: {}", exception.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error.");
     }
 }

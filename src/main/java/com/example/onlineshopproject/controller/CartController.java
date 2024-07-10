@@ -2,12 +2,17 @@ package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.CartItemRequestDto;
 import com.example.onlineshopproject.dto.CartItemResponseDto;
+import com.example.onlineshopproject.exceptions.CartInvalidArgumentException;
+import com.example.onlineshopproject.exceptions.CartNotFoundException;
+import com.example.onlineshopproject.exceptions.UserInvalidArgumentException;
+import com.example.onlineshopproject.exceptions.UserNotFoundException;
 import com.example.onlineshopproject.service.CartService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
@@ -42,7 +47,17 @@ public class CartController implements CartControllerInterface {
             " number") Long productId) {
         cartService.deleteByProductId(userId, productId);
     }
+    @ExceptionHandler(CartNotFoundException.class)
+    public final ResponseEntity<Object> handleCartNotFoundException(CartNotFoundException userNotFoundException) {
+        log.error("Cart not found: {}", userNotFoundException.getMessage());
+        return new ResponseEntity<>(userNotFoundException.getMessage(), HttpStatus.NOT_FOUND);
+    }
 
+    @ExceptionHandler(CartInvalidArgumentException.class)
+    public final ResponseEntity<Object> handleCartInvalidArgumentException(CartInvalidArgumentException userInvalidArgumentException) {
+        log.error("Invalid cart argument: {}", userInvalidArgumentException.getMessage());
+        return new ResponseEntity<>(userInvalidArgumentException.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 //    @Operation(summary = "Get a cart item by id")
 //    @ApiResponses(value = {
 //            @ApiResponse(responseCode = "200",

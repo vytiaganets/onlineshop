@@ -128,9 +128,9 @@ public class AdviceController {
     }
 
     //AV Error handling incorrect product value
-    @ExceptionHandler(ProductIllegalArgumentException.class)
-    public final ResponseEntity<ErrorMessage> handleException(ProductIllegalArgumentException productIllegalArgumentException) {
-        log.error("Incorrect product value: {}", productIllegalArgumentException.getMessage());
+    @ExceptionHandler(ProductInvalidArgumentException.class)
+    public final ResponseEntity<ErrorMessage> handleException(ProductInvalidArgumentException productInvalidArgumentException) {
+        log.error("Incorrect product value: {}", productInvalidArgumentException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(new ErrorMessage("Incorrect product value."));

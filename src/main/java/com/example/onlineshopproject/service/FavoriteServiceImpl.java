@@ -6,6 +6,7 @@ import com.example.onlineshopproject.dto.FavoriteResponseDto;
 import com.example.onlineshopproject.entity.FavoriteEntity;
 import com.example.onlineshopproject.entity.ProductEntity;
 import com.example.onlineshopproject.entity.UserEntity;
+import com.example.onlineshopproject.exceptions.FavoriteNotFoundException;
 import com.example.onlineshopproject.exceptions.NotFoundInDbException;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.FavoriteRepository;
@@ -37,7 +38,7 @@ public class FavoriteServiceImpl implements FavoriteService {
             return MapperConfiguration.convertSet(favoriteEntitySet, mappers::convertToFavoriteResponseDto);
         } else {
             log.error("Favorite by userId {} not found.", userId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new FavoriteNotFoundException("Data not found in database.");
         }
     }
 
@@ -53,7 +54,7 @@ public class FavoriteServiceImpl implements FavoriteService {
             favoriteRepository.save(favoriteEntity);
         } else {
             log.error("Favorite not found", userId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new FavoriteNotFoundException("Data not found in database.");
         }
     }
 
@@ -71,7 +72,7 @@ public class FavoriteServiceImpl implements FavoriteService {
             }
         } else {
             log.error("Favorite by productId not found", productId);
-            throw new NotFoundInDbException("Data not found in database.");
+            throw new FavoriteNotFoundException("Data not found in database.");
         }
     }
 }

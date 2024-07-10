@@ -1,6 +1,8 @@
 package com.example.onlineshopproject.controller;
 
 import com.example.onlineshopproject.dto.UserRequestDto;
+import com.example.onlineshopproject.exceptions.UserInvalidArgumentException;
+import com.example.onlineshopproject.exceptions.UserNotFoundException;
 import com.example.onlineshopproject.service.UserService;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
@@ -38,20 +40,6 @@ public class UserController implements UserControllerInterface {
         return new ResponseEntity<>(userRequestDto, HttpStatus.OK);
     }
 
-//    @Operation(summary = "Register user")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200",
-//                    description = "Users registered successfully",
-//                    content = {@Content(mediaType = "application/json",
-//                            schema = @Schema(implementation = UserResponseDto.class))}),
-//            @ApiResponse(responseCode = "404", description = "Users not registered", content = @Content)})
-//    @Validated
-//    @PostMapping("/register")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public void register(@RequestBody UserRequestDto userRequestDto) {
-//        userServiceImpl.register((userRequestDto));
-//    }
-
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
     public UserRequestDto update(@RequestBody UserRequestDto userRequestDto) throws FileNotFoundException {
@@ -64,4 +52,30 @@ public class UserController implements UserControllerInterface {
             "number") Long userId) {
         userService.delete(userId);
     }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFoundException(UserNotFoundException userNotFoundException) {
+        log.error("User not found:{}", userNotFoundException.getMessage());
+        return ResponseEntity.notFound().build();
+    }
+
+    @ExceptionHandler(UserInvalidArgumentException.class)
+    public ResponseEntity<String> handleUserInvalidArgumentException(UserInvalidArgumentException userInvalidArgumentException) {
+        log.error("Invalid user argument: {}", userInvalidArgumentException.getMessage());
+        return ResponseEntity.badRequest().body(userInvalidArgumentException.getMessage());
+    }
+
+    //    @Operation(summary = "Register user")
+//    @ApiResponses(value = {
+//            @ApiResponse(responseCode = "200",
+//                    description = "Users registered successfully",
+//                    content = {@Content(mediaType = "application/json",
+//                            schema = @Schema(implementation = UserResponseDto.class))}),
+//            @ApiResponse(responseCode = "404", description = "Users not registered", content = @Content)})
+//    @Validated
+//    @PostMapping("/register")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public void register(@RequestBody UserRequestDto userRequestDto) {
+//        userServiceImpl.register((userRequestDto));
+//    }
 }
