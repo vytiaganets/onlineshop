@@ -26,7 +26,7 @@ public class AuthServiceImpl implements AuthService {
     private final JwtProvider jwtProvider;
     private final PasswordEncoder passwordEncoder;
 
-    public JwtResponce login(JwtRequest authRequest) throws AuthException {
+    public JwtResponse login(JwtRequest authRequest) throws AuthException {
         final UserRequestDto userRequestDto = userService.getByEmail(authRequest.getLogin());
         if (userRequestDto == null) new AuthException("Пользователь не найден");
 
@@ -34,13 +34,13 @@ public class AuthServiceImpl implements AuthService {
             final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
             final String refreshToken = jwtProvider.generateRefreshToken(userRequestDto);
             refreshStorage.put(userRequestDto.getEmail(), refreshToken);
-            return new JwtResponce(accessToken, refreshToken);
+            return new JwtResponse(accessToken, refreshToken);
         } else {
             throw new AuthException("Неправильный пароль.");
         }
     }
 
-    public JwtResponce getAccessToken(@NotNull String refreshToken) throws AuthException {
+    public JwtResponse getAccessToken(@NotNull String refreshToken) throws AuthException {
         if (jwtProvider.validateRefreshToken(refreshToken)) {
             final Claims claims = jwtProvider.getRefreshClaims(refreshToken);
             final String login = claims.getSubject();
@@ -49,13 +49,13 @@ public class AuthServiceImpl implements AuthService {
                 final UserRequestDto userRequestDto = userService.getByEmail(login);
                 if (userRequestDto == null) new AuthException("Пользователь не найден.");
                 final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
-                return new JwtResponce(accessToken, null);
+                return new JwtResponse(accessToken, null);
             }
         }
-        return new JwtResponce(null, null);
+        return new JwtResponse(null, null);
     }
 
-    public JwtResponce refresh(@NotNull String refreshToken) throws AuthException {
+    public JwtResponse refresh(@NotNull String refreshToken) throws AuthException {
         if (jwtProvider.validateRefreshToken(refreshToken)) {
             final Claims claims = jwtProvider.getRefreshClaims(refreshToken);
             final String login = claims.getSubject();
@@ -66,7 +66,7 @@ public class AuthServiceImpl implements AuthService {
                 final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
                 final String newRefreshToken = jwtProvider.generateRefreshToken(userRequestDto);
                 refreshStorage.put(userRequestDto.getEmail(), newRefreshToken);
-                return new JwtResponce(accessToken, newRefreshToken);
+                return new JwtResponse(accessToken, newRefreshToken);
             }
         }
         throw new AuthException("Неверный токен JWT.");

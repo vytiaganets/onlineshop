@@ -5,7 +5,7 @@ import com.example.onlineshopproject.dto.UserResponseDto;
 import com.example.onlineshopproject.exceptions.ResponseException;
 import com.example.onlineshopproject.security.jwt.JwtRequest;
 import com.example.onlineshopproject.security.jwt.JwtRequestRefresh;
-import com.example.onlineshopproject.security.jwt.JwtResponce;
+import com.example.onlineshopproject.security.jwt.JwtResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -27,7 +27,7 @@ public interface AuthControllerInterface {
             @ApiResponse(responseCode = "401",
                     description = "Unauthorized",
                     content = @Content)})
-    public ResponseEntity<JwtResponce> login(@RequestBody JwtRequest authRequest) throws AuthException;
+    public ResponseEntity<JwtResponse> login(@RequestBody JwtRequest authRequest) throws AuthException;
 
     @Operation(summary = "Get a new access token")
     @ApiResponses(value = {
@@ -38,7 +38,7 @@ public interface AuthControllerInterface {
             @ApiResponse(responseCode = "400",
                     description = "Invalid request body",
                     content = @Content)})
-    public ResponseEntity<JwtResponce> getNewAccessToken(@RequestBody JwtRequestRefresh jwtRequestRefresh) throws AuthException;
+    public ResponseEntity<JwtResponse> getNewAccessToken(@RequestBody JwtRequestRefresh jwtRequestRefresh) throws AuthException;
 
     @Operation(summary = "Get a new refresh token")
     @ApiResponses(value = {
@@ -49,7 +49,7 @@ public interface AuthControllerInterface {
             @ApiResponse(responseCode = "400",
                     description = "Invalid request body",
                     content = @Content)})
-    public ResponseEntity<JwtResponce> getNewRefreshToken(@RequestBody JwtRequestRefresh jwtRequestRefresh) throws AuthException;
+    public ResponseEntity<JwtResponse> getNewRefreshToken(@RequestBody JwtRequestRefresh jwtRequestRefresh) throws AuthException;
 
     @Operation(summary = "Register")
     @ApiResponses(value = {

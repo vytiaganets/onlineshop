@@ -34,6 +34,7 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public List<ProductResponseDto> getAll(Long categoryId, Double minPrice, Double maxPrice, Boolean isDiscount,
                                            String sort) {
+        log.debug("Attempting receive all products.");
         log.info("categoryId = " + categoryId);
         log.info("minPrice = " + minPrice);
         log.info("maxPrice = " + maxPrice);
@@ -44,11 +45,13 @@ public class ProductServiceImpl implements ProductService {
                 maxPrice, isDiscount, sort);
         List<ProductResponseDto> productDtoList = MapperConfiguration.convertList(productEntityList,
                 mappers::convertToProductResponseDto);
+        log.debug("Returning all products: {}", productDtoList.size());
         return productDtoList;
     }
 
     @Transactional
     public List<ProductCountDto> getTop10(String status) {
+        log.debug("Receiving top 10 products by status", status);
         List<String> stringList = productRepository.findTop10Products(status);
         List<ProductCountDto> productCountDtoList = new ArrayList<>();
         for (String entry : stringList) {
@@ -59,36 +62,44 @@ public class ProductServiceImpl implements ProductService {
                     BigDecimalParser.parseWithFastParser(string[3]));
             productCountDtoList.add(productCountDto);
         }
+        log.info("Returning top 10 products by status", productCountDtoList.size());
         return productCountDtoList;
     }
 
     public List<ProductResponseDto> getAll() {
+        log.debug("Obtaining all products: {}");
         List<ProductEntity> productEntityList = productRepository.findAll();
         List<ProductResponseDto> productResponseDtoList = MapperConfiguration.convertList(productEntityList,
                 mappers::convertToProductResponseDto);
+        log.debug("Returning all products: {}", productResponseDtoList.size());
         return productResponseDtoList;
     }
 
     @Transactional
     public ProductResponseDto getById(Long productId) {
+        log.debug("Attempting product with id: {}", productId);
         ProductEntity productEntity = productRepository.findById(productId).orElse(null);
         if (productEntity != null) {
             return mappers.convertToProductResponseDto(productEntity);
         } else {
+            log.error("Product with id {} not found.", productId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }
 
-    public void deleteById(Long userId) {
-        if (productRepository.findById(userId).isPresent()) {
-            productRepository.findById(userId).ifPresent(productRepository::delete);
+    public void deleteById(Long productId) {
+        log.debug("Attempting delete product by id: {}", productId);
+        if (productRepository.findById(productId).isPresent()) {
+            productRepository.findById(productId).ifPresent(productRepository::delete);
         } else {
+            log.error("Product with id not found: {}", productId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }
 
     @Transactional
     public void insert(ProductRequestDto productRequestDto) {
+        log.debug("Attempting insert product: {}", productRequestDto.getName());
         CategoryEntity categoryEntity =
                 categoryRepository.findCategoryEntityByName(productRequestDto.getCategoryEntity());
         if (categoryEntity != null) {
@@ -98,12 +109,14 @@ public class ProductServiceImpl implements ProductService {
             productEntity.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
             productRepository.save(productEntity);
         } else {
+            log.error("Product not found", productRequestDto.getName());
             throw new NotFoundInDbException("Data not find in database.");
         }
     }
 
     @Transactional
     public void update(ProductRequestDto productRequestDto, Long productId) {
+        log.debug("Attempting update product", productId);
         if (productId > 0) {
             ProductEntity productEntity = productRepository.findById(productId).orElse(null);
             CategoryEntity categoryEntity =
@@ -118,9 +131,11 @@ public class ProductServiceImpl implements ProductService {
                 productEntity.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
                 productRepository.save(productEntity);
             } else {
+                log.error("Can't find the product with id: {}", productId);
                 throw new NotFoundInDbException("Data not found in database.");
             }
         } else {
+            log.error("Product id not valid: {}", productId);
             throw new ResolutionException("The value is not valid.");
         }
     }
@@ -128,6 +143,7 @@ public class ProductServiceImpl implements ProductService {
     @Transactional
     public List<ProductResponseDto> findByFilter(Long category, Double minPrice, Double maxPrice,
                                                  Boolean isDiscount, String sort) {
+       log.debug("Attempting find products:{}");
         boolean isCategory = false;
         if (category == null) {
             isCategory = true;

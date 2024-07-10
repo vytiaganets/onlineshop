@@ -12,6 +12,8 @@ import com.example.onlineshopproject.repository.FavoriteRepository;
 import com.example.onlineshopproject.repository.ProductRepository;
 import com.example.onlineshopproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +22,7 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 public class FavoriteServiceImpl implements FavoriteService {
+    private static final Logger log = LoggerFactory.getLogger(FavoriteServiceImpl.class);
     private final FavoriteRepository favoriteRepository;
     private final UserRepository userRepository;
     private final ProductRepository productRepository;
@@ -27,17 +30,20 @@ public class FavoriteServiceImpl implements FavoriteService {
 
     @Transactional
     public Set<FavoriteResponseDto> getByUserId(Long userId) {
+        log.debug("Attempting favorite by userId: {}", userId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
         if (userEntity != null) {
             Set<FavoriteEntity> favoriteEntitySet = userEntity.getFavoriteEntitySet();
             return MapperConfiguration.convertSet(favoriteEntitySet, mappers::convertToFavoriteResponseDto);
         } else {
+            log.error("Favorite by userId {} not found.", userId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }
 
     @Transactional
     public void insert(FavoriteRequestDto favoriteRequestDto, Long userId) {
+        log.debug("Attempting insert favorite: {}", favoriteRequestDto.getProductId());
         FavoriteEntity favoriteEntity = new FavoriteEntity();
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
         ProductEntity productEntity = productRepository.findById(favoriteRequestDto.getProductId()).orElse(null);
@@ -46,13 +52,15 @@ public class FavoriteServiceImpl implements FavoriteService {
             favoriteEntity.setUserEntity(userEntity);
             favoriteRepository.save(favoriteEntity);
         } else {
+            log.error("Favorite not found", userId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }
 
     @Transactional
-    public void deleteByProductId(Long usserId, Long productId) {
-        UserEntity userEntity = userRepository.findById(usserId).orElse(null);
+    public void deleteByProductId(Long userId, Long productId) {
+        log.debug("Attempting delete by productId", productId);
+        UserEntity userEntity = userRepository.findById(userId).orElse(null);
         ProductEntity productEntity = productRepository.findById(productId).orElse(null);
         if (userEntity != null && productEntity != null) {
             Set<FavoriteEntity> favoriteEntitySet = userEntity.getFavoriteEntitySet();
@@ -62,6 +70,7 @@ public class FavoriteServiceImpl implements FavoriteService {
                 }
             }
         } else {
+            log.error("Favorite by productId not found", productId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }
