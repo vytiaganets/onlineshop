@@ -8,25 +8,23 @@ import com.example.onlineshopproject.entity.UserEntity;
 import com.example.onlineshopproject.enums.UserRole;
 import com.example.onlineshopproject.exceptions.NotFoundInDbException;
 import com.example.onlineshopproject.exceptions.UserInvalidArgumentException;
+import com.example.onlineshopproject.exceptions.UserNotFoundException;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.CartRepository;
 import com.example.onlineshopproject.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-//@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -90,11 +88,11 @@ public class UserServiceImpl implements UserService {
                 return mappers.convertToUserResponseDto(userUpdate);
             } else {
                 log.error("User with id {} not found." + userRequestDto.getUserId());
-                throw new NotFoundInDbException("User with id " + userRequestDto.getUserId() + " not found.");
+                throw new UserNotFoundException("User with id " + userRequestDto.getUserId() + " not found.");
             }
         } else {
             log.error("User not found with id: {}", userRequestDto.getUserId());
-            throw new FileNotFoundException("Invalid userRequestDto parameter.");
+            throw new UserInvalidArgumentException("Invalid userRequestDto parameter.");
         }
     }
 
@@ -106,7 +104,7 @@ public class UserServiceImpl implements UserService {
             userRequestDto = mappers.convertToUserResponseDto(userEntityList.get(0));
         } else {
             log.error("User not found with email: {}", email);
-            new NotFoundInDbException("The user with e-mail was not found in the database:" + email);
+            throw new UserNotFoundException("The user with e-mail was not found in the database:" + email);
         }
         return userRequestDto;
     }
@@ -121,7 +119,7 @@ public class UserServiceImpl implements UserService {
             cartEntity = cartRepository.findById(cartResponseDto.getCartId())
                     .orElseThrow(() -> {
                         log.error("Cart not found with id: {}", cartResponseDto.getCartId());
-                        throw  new NotFoundInDbException("Cart with id not found in the database " + cartResponseDto.getCartId());
+                        throw  new UserNotFoundException("Cart with id not found in the database " + cartResponseDto.getCartId());
                     });
         }
         UserEntity userEntityResponse = userRepository.save(userEntity);
@@ -134,7 +132,7 @@ public class UserServiceImpl implements UserService {
                 .findById(userId)
                 .orElseThrow(() -> {
                     log.error("Attempted to delete non-existing user with id: {}", userId);
-                    throw new NotFoundInDbException("User not found");
+                    throw new UserNotFoundException("User not found");
                 });
         if (userEntity.getCartEntity() != null) {
             cartRepository.delete(userEntity.getCartEntity());
