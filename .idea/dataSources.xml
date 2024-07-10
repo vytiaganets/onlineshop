@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="onlineshopproject@localhost" uuid="eee341aa-ce38-4f1c-9567-56d0187d574a">
+    <data-source source="LOCAL" name="onlineshopproject/Hibernate" uuid="8a9e1ca0-735d-4cb1-8a63-cd7880d49e71">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/onlineshopproject</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>

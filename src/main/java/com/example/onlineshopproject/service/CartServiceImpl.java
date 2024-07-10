@@ -16,6 +16,8 @@ import com.example.onlineshopproject.repository.ProductRepository;
 import com.example.onlineshopproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,10 +25,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class CartServiceImpl implements CartService {
+    private static final Logger log = LoggerFactory.getLogger(CartServiceImpl.class);
     private final CartRepository cartRepository;
     private final CartItemRepository cartItemRepository;
     private final UserRepository userRepository;
@@ -35,17 +37,20 @@ public class CartServiceImpl implements CartService {
 
     @Transactional
     public Set<CartItemResponseDto> getByUserId(Long userId) {
+        log.debug("Attempting get by userId: {}", userId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
         if (userEntity != null) {
             Set<CartItemEntity> cartItemEntitySet = userEntity.getCartEntity().getCartItemEntitySet();
             return MapperConfiguration.convertSet(cartItemEntitySet, mappers::convertToCartItemResponseDto);
         } else {
+            log.error("Cart not found: {}", userId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }
 
     @Transactional
     public void insert(CartItemRequestDto cartItemRequestDto, Long userId) {
+        log.debug("Attempting insert cart: {}", userId);
         CartItemEntity cartItemEntityToInsert = new CartItemEntity();
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
         ProductEntity productEntity = productRepository.findById(cartItemRequestDto.getProductId()).orElse(null);
@@ -57,12 +62,14 @@ public class CartServiceImpl implements CartService {
             cartItemEntityToInsert.setQuantity(cartItemRequestDto.getQuantity());
             cartItemRepository.save(cartItemEntityToInsert);
         } else {
+            log.error("User or product not found: {}", userId);
             throw new NotFoundInDbException("Data not found in database");
         }
     }
 
     @Transactional
     public void deleteByProductId(Long userId, Long productId) {
+        log.debug("Attempting delete by productId: {}", productId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
         ProductEntity productEntity = productRepository.findById(productId).orElse(null);
         if (userEntity != null && productEntity != null) {
@@ -73,6 +80,7 @@ public class CartServiceImpl implements CartService {
                 }
             }
         } else {
+            log.error("Product or user not found: {}", productId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }

@@ -18,6 +18,8 @@ import com.example.onlineshopproject.repository.OrderRepository;
 import com.example.onlineshopproject.repository.ProductRepository;
 import com.example.onlineshopproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +31,7 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
+    private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
     private final OrderRepository orderRepository;
     private final OrderItemRepository orderItemRepository;
     private final UserRepository userRepository;
@@ -37,6 +40,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Transactional
     public void insert(OrderRequestDto orderRequestDto, Long userId) {
+        log.debug("Attempting insert order by userId: {}", userId);
         OrderEntity orderEntity = new OrderEntity();
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
         if (userEntity != null) {
@@ -48,6 +52,7 @@ public class OrderServiceImpl implements OrderService {
             orderEntity.setStatus(Status.ORDERED);
             orderEntity = orderRepository.save(orderEntity);
         } else {
+            log.error("Order not found: {}", userId);
             throw new NotFoundInDbException("Data not found in database.");
         }
         Set<OrderItemRequestDto> orderItemRequestDtoSet = orderRequestDto.getOrderItemSet();
@@ -67,7 +72,8 @@ public class OrderServiceImpl implements OrderService {
                 orderItemRepository.save(orderItemEntity);
                 orderItemEntitySet.add(orderItemEntity);
             } else {
-                throw new NotFoundInDbException("Data not foundin database.");
+                log.error("Order not found: {}", userId);
+                throw new NotFoundInDbException("Data not found in database.");
             }
         }
         orderEntity.setOrderItemEntityHashSet(orderItemEntitySet);
@@ -77,6 +83,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Transactional
     public OrderResponseDto getById(Long orderId) {
+        log.debug("Attempting receive product by id: {}", orderId);
         OrderEntity orderEntity = orderRepository.findById(orderId).orElse(null);
         if (orderEntity != null) {
             OrderResponseDto orderResponseDto = mappers.convertToOrderResponseDto(orderEntity);
@@ -86,12 +93,14 @@ public class OrderServiceImpl implements OrderService {
             orderResponseDto.setOrderItemResponseDtoSet(orderItemResponseDtoSet);
             return orderResponseDto;
         } else {
+            log.error("Order wit id {} not found.", orderId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }
 
     @Transactional
     public Set<OrderResponseDto> getHistoryByUserId(Long userId) {
+        log.debug("Attempting history by user id", userId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
         if (userEntity != null) {
             Set<OrderEntity> orderEntitySet = userEntity.getOrderEntitySet();
@@ -107,8 +116,10 @@ public class OrderServiceImpl implements OrderService {
                 }
                 return orderResponseDtoSet;
             }
+            log.error("History by user id not found: {}", userId);
             throw new NotFoundInDbException("Data not found in database.");
         } else {
+            log.error("User not found: {}", userId);
             throw new NotFoundInDbException("Data not found in database.");
         }
     }

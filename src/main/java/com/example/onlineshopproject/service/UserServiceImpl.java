@@ -15,6 +15,8 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,10 +26,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Slf4j
+//@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
     private final UserRepository userRepository;
     private final CartRepository cartRepository;
     private final Mappers mappers;
@@ -35,7 +38,9 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     public void register(UserRequestDto userRequestDto) {
+        log.info("Attempting to registration a user:{}", userRequestDto.getEmail());
         if (userRepository.existsByEmail(userRequestDto.getEmail())) {
+            log.error("User with email already exists: {}", userRequestDto.getEmail());
             throw new UserInvalidArgumentException("User already exists.");
         }
         UserEntity userEntity = mappers.convertToUserEntity(userRequestDto);
@@ -48,6 +53,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<UserRequestDto> getAll() {
+        log.debug("Fetching all users.");
         List<UserEntity> userEntityList = new ArrayList<>();
         userRepository.findAll().forEach(userEntityList::add);
         List<UserRequestDto> userRequestDtoList = MapperConfiguration.convertList(userEntityList,
@@ -56,13 +62,18 @@ public class UserServiceImpl implements UserService {
     }
 
     public UserRequestDto getById(Long userId) {
+        log.debug("Attempting to find a user by id: {}", userId);
         UserEntity userEntity = userRepository.findById(userId)
-                .orElseThrow(() -> new EntityNotFoundException("Не найден пользователь с таким Id"));
+                .orElseThrow(() ->{
+                    log.error("User not found with id: {}", userId);
+                   return new EntityNotFoundException("User with id not found");
+                });
         UserRequestDto userRequestDto = mappers.convertToUserResponseDto(userEntity);
         return userRequestDto;
     }
 
     public UserRequestDto update(UserRequestDto userRequestDto) throws FileNotFoundException {
+        log.debug("Attempting to update user with id: {}", userRequestDto.getUserId());
         if (userRequestDto.getUserId() != null) {
             Optional<UserEntity> userEntityOptional = userRepository.findById(userRequestDto.getUserId());
             if (userEntityOptional.isPresent()) {
@@ -75,28 +86,29 @@ public class UserServiceImpl implements UserService {
                 userEntity.setRole((userRequestDto.getRole() != null) ? userRequestDto.getRole() :
                         userEntity.getRole());
                 UserEntity userUpdate = userRepository.save(userEntity);
+                log.info("User with id: {} successfully updated.");
                 return mappers.convertToUserResponseDto(userUpdate);
             } else {
-
-                log.error("User with Id not found." + userRequestDto.getUserId());
-                throw new NotFoundInDbException("User with Id not found." + userRequestDto.getUserId());
+                log.error("User with id {} not found." + userRequestDto.getUserId());
+                throw new NotFoundInDbException("User with id " + userRequestDto.getUserId() + " not found.");
             }
         } else {
-            throw new FileNotFoundException("Invalid userDto parameter.");
+            log.error("User not found with id: {}", userRequestDto.getUserId());
+            throw new FileNotFoundException("Invalid userRequestDto parameter.");
         }
     }
 
     public UserRequestDto getByEmail(String email) {
+        log.debug("Attempting to find a user by email: {}", email);
         List<UserEntity> userEntityList = userRepository.getByEmail(email);
         UserRequestDto userRequestDto = null;
         if (userEntityList != null && !userEntityList.isEmpty()) {
-            //userDto = mappers.convertToUserDto(userEntityList.getFirst());
             userRequestDto = mappers.convertToUserResponseDto(userEntityList.get(0));
         } else {
-            new NotFoundInDbException("Не найден в БД пользователь с e-mail: " + email);
+            log.error("User not found with email: {}", email);
+            new NotFoundInDbException("The user with e-mail was not found in the database:" + email);
         }
         return userRequestDto;
-
     }
 
     public UserRequestDto create(UserRequestDto userCredentialsDto) {
@@ -107,20 +119,26 @@ public class UserServiceImpl implements UserService {
         CartEntity cartEntity = null;
         if (cartResponseDto != null) {
             cartEntity = cartRepository.findById(cartResponseDto.getCartId())
-                    .orElseThrow(() -> new NotFoundInDbException("Не найдена в БД корзина с id " + cartResponseDto.getCartId()));
+                    .orElseThrow(() -> {
+                        log.error("Cart not found with id: {}", cartResponseDto.getCartId());
+                        throw  new NotFoundInDbException("Cart with id not found in the database " + cartResponseDto.getCartId());
+                    });
         }
-        UserEntity userEntityResponce = userRepository.save(userEntity);
-
-        return mappers.convertToUserResponseDto(userEntityResponce);
+        UserEntity userEntityResponse = userRepository.save(userEntity);
+        return mappers.convertToUserResponseDto(userEntityResponse);
     }
 
     public void delete(Long userId) {
+        log.debug("Attempting to delete use with id: {}", userId);
         UserEntity userEntity = userRepository
                 .findById(userId)
-                .orElseThrow(() -> new NotFoundInDbException("User not found"));
-//        if (userEntity.getCartEntity() != null) {
-//            cartRepository.delete(userEntity.getCartEntity());
-//        }
+                .orElseThrow(() -> {
+                    log.error("Attempted to delete non-existing user with id: {}", userId);
+                    throw new NotFoundInDbException("User not found");
+                });
+        if (userEntity.getCartEntity() != null) {
+            cartRepository.delete(userEntity.getCartEntity());
+        }
         userRepository.deleteById(userId);
     }
 }
