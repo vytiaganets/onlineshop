@@ -32,14 +32,14 @@ class UserRepositoryTest {
     }
 
     @Test
-    void testGet() {
+    void getAll() {
         Optional<UserEntity> userEntityOptional = userRepositoryTest.findById(TEST_ID);
         assertTrue(userEntityOptional.isPresent());
         assertEquals(TEST_ID, userEntityOptional.get().getUserId());
     }
 
     @Test
-    void testInsert() {
+    void insert() {
         UserEntity returnUser = userRepositoryTest.save(testNewUser);
         assertNotNull(returnUser);
         assertTrue(returnUser.getUserId() > 0);
@@ -49,7 +49,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void testEdit() {
+    void edit() {
         Optional<UserEntity> userEntityOptional = userRepositoryTest.findById(TEST_ID);
         assertTrue(userEntityOptional.isPresent());
 
@@ -65,7 +65,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void testDelete() {
+    void delete() {
         UserEntity returnUser = userRepositoryTest.save(testNewUser);
         assertNotNull(returnUser);
         assertTrue(returnUser.getUserId() > 0);

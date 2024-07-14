@@ -19,10 +19,12 @@ public class OrderItemEntity {
     @Column(name = "OrderItemID")
     private Long orderItemId;
 
+    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "orderId", nullable = false)
     private OrderEntity orderEntity;
 
+    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ProductId", nullable = false)
     private ProductEntity productEntity;

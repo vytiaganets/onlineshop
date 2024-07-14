@@ -134,9 +134,9 @@ public class UserServiceImpl implements UserService {
                     log.error("Attempted to delete non-existing user with id: {}", userId);
                     throw new UserNotFoundException("User not found");
                 });
-        if (userEntity.getCartEntity() != null) {
-            cartRepository.delete(userEntity.getCartEntity());
-        }
-        userRepository.deleteById(userId);
+//        if (userEntity.getCartEntity() != null) {
+//            cartRepository.delete(userEntity.getCartEntity());
+//        }
+        userRepository.delete(userEntity);
     }
 }

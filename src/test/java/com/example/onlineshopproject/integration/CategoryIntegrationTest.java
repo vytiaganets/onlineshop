@@ -37,5 +37,10 @@ public class CategoryIntegrationTest {
         ResultActions resultActions = this.mockMvc.perform(get("/categories/{categoryId}", 1)).andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.categoryId").value(1));
+///Question
+        //Request processing failed: java.lang.NullPointerException: Cannot invoke "com.example.onlineshopproject.dto.CategoryResponseDto.getCategoryId()" because "categoryResponseDto" is null
+        //
+        //	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022)
+        //	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
     }
 }

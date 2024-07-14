@@ -32,13 +32,13 @@
         <insert tableName="OrderItems">
             <column name="OrderID" value="1"/>
             <column name="ProductID" value="1"/>
-            <column name="Quantity" value="2"/>
+            <column name="Quantity" value="1"/>
             <column name="PriceAtPurchase" value="11"/>
         </insert>
         <insert tableName="OrderItems">
             <column name="OrderID" value="1"/>
             <column name="ProductID" value="1"/>
-            <column name="Quantity" value="4"/>
+            <column name="Quantity" value="1"/>
             <column name="PriceAtPurchase" value="3.44"/>
         </insert>
         <insert tableName="OrderItems">

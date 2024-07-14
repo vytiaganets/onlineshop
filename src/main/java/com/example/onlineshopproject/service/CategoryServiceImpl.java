@@ -34,16 +34,18 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryResponseDtoList;
     }
 
-    @Transactional
+//    @Transactional
     public CategoryResponseDto getById(Long categoryId) {
         log.debug("Attempting category with id: {}", categoryId);
-        Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findById(categoryId);
-        CategoryResponseDto categoryResponseDto = null;
-        if (!categoryEntityOptional.isPresent()) {
-            categoryResponseDto = categoryEntityOptional.map(mappers::convertToCategoryResponseDto).orElse(null);
-        }
-        log.debug("Returning category by id: {}", categoryResponseDto.getCategoryId());
-        return categoryResponseDto;
+        CategoryEntity categoryEntity =
+                categoryRepository.findById(categoryId).orElseThrow(() -> new NotFoundInDbException("Category with " +
+                        "this id was not found"));
+//        CategoryResponseDto categoryResponseDto = null;
+//        if (!categoryEntityOptional.isPresent()) {
+//            categoryResponseDto = categoryEntityOptional.map(mappers::convertToCategoryResponseDto).orElse(null);
+//        }
+        log.debug("Returning category by id: {}", categoryEntity.getCategoryId());
+        return mappers.convertToCategoryResponseDto(categoryEntity);
     }
 
     @Transactional

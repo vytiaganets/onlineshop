@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +29,7 @@ public class AuthServiceImpl implements AuthService {
 
     public JwtResponse login(JwtRequest authRequest) throws AuthException {
         final UserRequestDto userRequestDto = userService.getByEmail(authRequest.getLogin());
-        if (userRequestDto == null) new AuthException("Пользователь не найден");
+        if (userRequestDto == null) new AuthException("User is not found");
 
         if (passwordEncoder.matches(authRequest.getPassword(), userRequestDto.getPasswordHash())) {
             final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
@@ -36,7 +37,7 @@ public class AuthServiceImpl implements AuthService {
             refreshStorage.put(userRequestDto.getEmail(), refreshToken);
             return new JwtResponse(accessToken, refreshToken);
         } else {
-            throw new AuthException("Неправильный пароль.");
+            throw new AuthException("Incorrect password.");
         }
     }
 
@@ -47,7 +48,7 @@ public class AuthServiceImpl implements AuthService {
             final String savedRefreshToken = refreshStorage.get(login);
             if (savedRefreshToken != null && savedRefreshToken.equals(refreshToken)) {
                 final UserRequestDto userRequestDto = userService.getByEmail(login);
-                if (userRequestDto == null) new AuthException("Пользователь не найден.");
+                if (userRequestDto == null) new AuthException("User is not found.");
                 final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
                 return new JwtResponse(accessToken, null);
             }
@@ -62,14 +63,14 @@ public class AuthServiceImpl implements AuthService {
             final String savedRefreshToken = refreshStorage.get(login);
             if (savedRefreshToken != null && savedRefreshToken.equals(refreshToken)) {
                 final UserRequestDto userRequestDto = userService.getByEmail(login);
-                if (userRequestDto == null) new AuthException("Пользователь не найден.");
+                if (userRequestDto == null) new AuthException("User is not found.");
                 final String accessToken = jwtProvider.generateAccessToken(userRequestDto);
                 final String newRefreshToken = jwtProvider.generateRefreshToken(userRequestDto);
                 refreshStorage.put(userRequestDto.getEmail(), newRefreshToken);
                 return new JwtResponse(accessToken, newRefreshToken);
             }
         }
-        throw new AuthException("Неверный токен JWT.");
+        throw new AuthException("Invalid JWT token.");
     }
 
     public JwtAuth getAuthInfo() {

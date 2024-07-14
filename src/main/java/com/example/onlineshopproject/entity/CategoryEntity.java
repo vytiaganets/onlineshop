@@ -23,6 +23,6 @@ public class CategoryEntity {
     @Column(name = "Name")
     private String name;
 
-    @OneToMany(mappedBy = "categoryEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categoryEntity", fetch = FetchType.LAZY)
     private Set<ProductEntity> products = new HashSet<>();
 }

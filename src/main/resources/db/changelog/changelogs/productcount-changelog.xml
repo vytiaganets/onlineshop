@@ -20,4 +20,12 @@
             <column name="Sum" type="DECIMAL(10,2)"/>
         </createTable>
     </changeSet>
+    <changeSet id="2" author="Andrii">
+    <comment>Insert sample products count</comment>
+    <insert tableName="ProductCount">
+        <column name="Name" value="Spade"/>
+        <column name="Count" value="5"/>
+        <column name="Sum" value="10.12"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

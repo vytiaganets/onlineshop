@@ -42,14 +42,54 @@
     <changeSet id="2" author="Andrii">
         <comment>Insert sample products for each category</comment>
         <insert tableName="Products">
-            <column name="Name" value="Lopata 1"/>
-            <column name="Description" value="Lopata for garden."/>
+            <column name="Name" value="Spade"/>
+            <column name="Description" value="Spade for the garden."/>
             <column name="Price" value="2.43"/>
-            <column name="ImageURL" value="lopata.jpg"/>
+            <column name="ImageURL" value="spade.jpg"/>
             <column name="CreatedAt" value="2024-06-24 18:34:12"/>
-            <column name="UpdatedAt" value="2024-06-24 18:34:12"/>
+            <column name="UpdatedAt" value="2024-06-24 18:34:13"/>
             <column name="DiscountPrice" value="3.44"/>
             <column name="CategoryID" value="1"/>
+        </insert>
+        <insert tableName="Products">
+            <column name="Name" value="Braid"/>
+            <column name="Description" value="Braid for the garden."/>
+            <column name="Price" value="7.73"/>
+            <column name="ImageURL" value="braid.jpg"/>
+            <column name="CreatedAt" value="2024-06-26 17:36:11"/>
+            <column name="UpdatedAt" value="2024-06-26 17:36:12"/>
+            <column name="DiscountPrice" value="4.34"/>
+            <column name="CategoryID" value="2"/>
+        </insert>
+        <insert tableName="Products">
+            <column name="Name" value="Bucket"/>
+            <column name="Description" value="Bucket for the garden."/>
+            <column name="Price" value="2.13"/>
+            <column name="ImageURL" value="bucket.jpg"/>
+            <column name="CreatedAt" value="2024-06-27 17:34:12"/>
+            <column name="UpdatedAt" value="2024-06-27 19:34:11"/>
+            <column name="DiscountPrice" value="1.44"/>
+            <column name="CategoryID" value="3"/>
+        </insert>
+        <insert tableName="Products">
+            <column name="Name" value="Rake"/>
+            <column name="Description" value="Rake for the garden."/>
+            <column name="Price" value="5.63"/>
+            <column name="ImageURL" value="rake.jpg"/>
+            <column name="CreatedAt" value="2024-06-23 19:34:12"/>
+            <column name="UpdatedAt" value="2024-06-23 20:34:17"/>
+            <column name="DiscountPrice" value="4.54"/>
+            <column name="CategoryID" value="4"/>
+        </insert>
+        <insert tableName="Products">
+            <column name="Name" value="Scissors"/>
+            <column name="Description" value="Scissors for trees."/>
+            <column name="Price" value="1.43"/>
+            <column name="ImageURL" value="scissors.jpg"/>
+            <column name="CreatedAt" value="2024-07-02 11:32:19"/>
+            <column name="UpdatedAt" value="2024-07-02 12:39:12"/>
+            <column name="DiscountPrice" value="0.98"/>
+            <column name="CategoryID" value="3"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

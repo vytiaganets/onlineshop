@@ -37,7 +37,7 @@ public class CartServiceImpl implements CartService {
     private final ProductRepository productRepository;
     private final Mappers mappers;
 
-    @Transactional
+//    @Transactional
     public Set<CartItemResponseDto> getByUserId(Long userId) {
         log.debug("Attempting get by userId: {}", userId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
@@ -50,7 +50,7 @@ public class CartServiceImpl implements CartService {
         }
     }
 
-    @Transactional
+//    @Transactional
     public void insert(CartItemRequestDto cartItemRequestDto, Long userId) {
         log.debug("Attempting insert cart: {}", userId);
         CartItemEntity cartItemEntityToInsert = new CartItemEntity();
@@ -69,7 +69,7 @@ public class CartServiceImpl implements CartService {
         }
     }
 
-    @Transactional
+    @Transactional //2+ записи в БД
     public void deleteByProductId(Long userId, Long productId) {
         log.debug("Attempting delete by productId: {}", productId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
