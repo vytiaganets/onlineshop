@@ -58,8 +58,4 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
     private Set<OrderEntity> orderEntitySet = new HashSet<>();
-
-    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<HistoryEntity> historyEntityList;
-
 }

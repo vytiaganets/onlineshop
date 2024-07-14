@@ -28,7 +28,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="Status"
-                    type="ENUM('ORDERED', 'PAID', 'ON_THE_WAY', 'DELIVERED','CANCELED')">
+                    type="ENUM('ORDERED', 'PAID', 'ON_THE_WAY', 'PENDING_PAYMENT', 'DELIVERED','CANCELLED')">
                 <constraints nullable="false"/>
             </column>
             <column name="CreatedAt" type="TIMESTAMP">
@@ -46,9 +46,36 @@
             <column name="UserID" value="1"/>
             <column name="DeliveryAddress" value="Kiev, Ukraine"/>
             <column name="DeliveryMethod" value="COURIER_DELIVERY"/>
-            <column name="ContactPhone" value="+1 234 567 890"/>
+            <column name="ContactPhone" value="123456789012"/>
             <column name="Status" value="PAID"/>
+            <column name="CreatedAt" value="2024-06-22 17:31:03.122000"/>
+            <column name="UpdatedAt" value="2024-06-22 18:21:03.123000"/>
+        </insert>
+        <insert tableName="Orders">
+            <column name="UserID" value="2"/>
+            <column name="DeliveryAddress" value="Berlin, Germany"/>
+            <column name="DeliveryMethod" value="CUSTOMER_PICKUP"/>
+            <column name="ContactPhone" value="789123456012"/>
+            <column name="Status" value="ORDERED"/>
+            <column name="CreatedAt" value="2024-06-27 18:21:03.123000"/>
+            <column name="UpdatedAt" value="2024-06-28 19:21:03.133000"/>
+        </insert>
+        <insert tableName="Orders">
+            <column name="UserID" value="2"/>
+            <column name="DeliveryAddress" value="Rome, Italy"/>
+            <column name="DeliveryMethod" value="COURIER_DELIVERY"/>
+            <column name="ContactPhone" value="789123456012"/>
+            <column name="Status" value="ON_THE_WAY"/>
             <column name="CreatedAt" value="2024-06-24 18:21:03.123000"/>
+            <column name="UpdatedAt" value="2024-06-24 18:21:03.123000"/>
+        </insert>
+        <insert tableName="Orders">
+            <column name="UserID" value="4"/>
+            <column name="DeliveryAddress" value="Hamburg, Germany"/>
+            <column name="DeliveryMethod" value="COURIER_DELIVERY"/>
+            <column name="ContactPhone" value="167890122345"/>
+            <column name="Status" value="DELIVERED"/>
+            <column name="CreatedAt" value="2024-06-23 19:21:03.123000"/>
             <column name="UpdatedAt" value="2024-06-24 18:21:03.123000"/>
         </insert>
     </changeSet>

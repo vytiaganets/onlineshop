@@ -30,6 +30,7 @@ public class ProductIntegrationTest {
     @Test
     void getAllTest() throws Exception {
         Assertions.assertEquals(1, productService.getAll().size());
+        ///Question
 //        this.mockMvc.perform(get("/products")).andDo(print())
 //                .andExpect(status().isOk())
 //                .andExpect(jsonPath("$..productId").exists());

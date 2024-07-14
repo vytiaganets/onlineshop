@@ -2,7 +2,6 @@ package com.example.onlineshopproject.repository;
 
 import com.example.onlineshopproject.entity.ProductEntity;
 import com.example.onlineshopproject.entity.UserEntity;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +44,12 @@ public class ProductRepositoryTest {
     @Test
     void insert(){
         ProductEntity returnProduct = productRepository.save(productEntity);
+        ///Question
+        //java.lang.StackOverflowError
+        //
+        //	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:281)
+        //	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+        //	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
         assertNotNull(returnProduct);
         assertTrue(returnProduct.getProductId() > 0);
         Optional<ProductEntity> findProduct = productRepository.findById(returnProduct.getProductId());
@@ -68,6 +73,11 @@ public class ProductRepositoryTest {
     @Test
     void delete(){
         ProductEntity returnProduct = productRepository.save(productEntity);
+        ///Question
+        //java.lang.StackOverflowError
+        //
+        //	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:281)
+        //	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
         assertNotNull(returnProduct);
         assertTrue(returnProduct.getProductId() > 0);
         Optional<ProductEntity> findProduct = productRepository.findById(returnProduct.getProductId());

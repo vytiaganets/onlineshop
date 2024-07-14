@@ -28,13 +28,11 @@ public class SecurityConfiguration {
             "v3/api-docs",
             "/swagger-resources/**",
             "/swagger-resources",
-            "swagger-ui/",
-            "swagger-ui.html",
-            "swagger-ui/**",
+            "/swagger-ui/",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
             "/swagger-resources/configuration/ui",
-            "/swagger-resources/configuration/security",
-            "/auth/registration",
-            "/"
+            "/swagger-resources/configuration/security"
     };
     //AV Authorization check filter by token
     @Autowired
@@ -49,11 +47,13 @@ public class SecurityConfiguration {
                                 //AB is allowed for the swagger
                                 .requestMatchers(SWAGGER).permitAll()
                                 //AB allow the user to log in to receive a token
-                                .requestMatchers("/auth/login").permitAll()
+                                .requestMatchers("/users/login", "/users/token").permitAll()
                                 //AB allows registering a new user without a token and passwords
-                                .requestMatchers("/auth/registration").permitAll()
+                                .requestMatchers("/users/register").permitAll()
                                 .anyRequest().permitAll())
                                 //.authenticated())
+                //Question http://localhost:8080/swagger-ui/index.html Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long';
+                // For input string: "login"]
                 //AB basic authentication
                 .httpBasic(Customizer.withDefaults())
                 //AB disable state storage between requests

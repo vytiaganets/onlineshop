@@ -44,9 +44,30 @@
         <insert tableName="Users">
             <column name="Name" value="Andreas Schwarzberg"/>
             <column name="Email" value="andreas@web.de"/>
-            <column name="PhoneNumber" value="+0 123 456 789"/>
+            <column name="PhoneNumber" value="210987654321"/>
             <column name="PasswordHash" value="$2a$10$917c2G9DXbVUXtBw2TMaZ.6eZAsS5LD2v9WSObUQdqYrRo9SzSvHO"/>
             <column name="Role" value="USER"/>
+        </insert>
+        <insert tableName="Users">
+            <column name="Name" value="Andrey Padalka"/>
+            <column name="Email" value="andrey@ukr.net"/>
+            <column name="PhoneNumber" value="654321098721"/>
+            <column name="PasswordHash" value="$2a$10$917c2G9DXbVUXtBw2TMaZ.6eZAsS5LD2v9WSObUQdqYrRo9SzSvHO"/>
+            <column name="Role" value="USER"/>
+        </insert>
+        <insert tableName="Users">
+            <column name="Name" value="Andriukha Padalko"/>
+            <column name="Email" value="andriukha@web.de"/>
+            <column name="PhoneNumber" value="987652104321"/>
+            <column name="PasswordHash" value="$2a$10$917c2G9DXbVUXtBw2TMaZ.6eZAsS5LD2v9WSObUQdqYrRo9SzSvHO"/>
+            <column name="Role" value="USER"/>
+        </insert>
+        <insert tableName="Users">
+            <column name="Name" value="Andrey Pik"/>
+            <column name="Email" value="andrey@web.de"/>
+            <column name="PhoneNumber" value="654210987321"/>
+            <column name="PasswordHash" value="$2a$10$917c2G9DXbVUXtBw2TMaZ.6eZAsS5LD2v9WSObUQdqYrRo9SzSvHO"/>
+            <column name="Role" value="ADMIN"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

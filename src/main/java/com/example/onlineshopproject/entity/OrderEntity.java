@@ -37,6 +37,7 @@ public class OrderEntity {
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
+    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserId", nullable = false)
     private UserEntity userEntity;

@@ -43,6 +43,7 @@ public class ProductEntity {
     @Column(name = "UpdatedAt")
     private Timestamp updatedAt;
 
+    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CategoryID")
     private CategoryEntity categoryEntity;

@@ -17,14 +17,16 @@ public class CartItemEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartItemId;
 
+    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CartID")
     private CartEntity cartEntity;
 
+    @EqualsAndHashCode.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ProductID")
     private ProductEntity productEntity;
 
     @Column(name = "Quantity")
-    private int quantity;
+    private Integer quantity;
 }

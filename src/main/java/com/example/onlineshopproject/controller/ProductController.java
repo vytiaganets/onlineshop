@@ -68,7 +68,7 @@ public class ProductController implements ProductControllerInterface {
         productService.insert(productRequestDto);
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping(value = "/{productId}")
     @ResponseStatus(HttpStatus.OK)
     @Validated
