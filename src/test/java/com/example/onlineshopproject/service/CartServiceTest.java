@@ -148,11 +148,6 @@ public class CartServiceTest {
         assertEquals(cartItemResponseDtoSet.hashCode(), actualCartItemSet.hashCode());
         when(userRepositoryMock.findById(incorrectUserId)).thenReturn((Optional.empty()));
         cartNotFoundException = assertThrows(CartNotFoundException.class, () -> cartServiceMock.getByUserId(incorrectUserId));
-        ///Question
-        //ERROR com.example.onlineshopproject.service.CartServiceImpl -- Cart not found: 9
-        //Cart not found in database.
-        //	at com.example.onlineshopproject.service.CartServiceImpl.getByUserId(CartServiceImpl.java:49)
-        //	at com.example.onlineshopproject.service.CartServiceTest.lambda$getByUserId$0(CartServiceTest.java:148)
         assertEquals("Cart not found in database.", cartNotFoundException.getMessage());
     }
     @Test

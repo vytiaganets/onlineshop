@@ -68,7 +68,7 @@ public class CategoryServiceImplTest {
 //    void insert(){
 //        when(categoryRepositoryMock.findCategoryEntityByName(categoryRequestDto.getName())).thenReturn(null);
 //        when(mappersMock.convertToCategoryEntity(any(CategoryRequestDto.class))).thenReturn(categoryEntity);
-//        categoryEntity.setCategoryId(0L);
+//        categoryEntity.setCategoryId(1L);
 //        categoryServiceMock.insert(categoryRequestDto);
 //        verify(categoryRepositoryMock, times(1)).save(any(CategoryEntity.class));
 //        when(categoryRepositoryMock.findCategoryEntityByName(incorrectCategoryRequestDto.getName())).thenReturn(categoryEntity);
