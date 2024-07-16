@@ -18,6 +18,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
+
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -31,8 +33,12 @@ public class SecurityConfiguration {
             "/swagger-ui/",
             "/swagger-ui.html",
             "/swagger-ui/**",
+            "/manage/**",
             "/swagger-resources/configuration/ui",
-            "/swagger-resources/configuration/security"
+            "/swagger-resources/configuration/security",
+            "/users/login",
+            "/users/token",
+            "/users/register"
     };
     //AV Authorization check filter by token
     @Autowired
@@ -42,28 +48,27 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
+                //AB disable state storage between requests
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(STATELESS))
                 .authorizeHttpRequests
                         (request -> request
                                 //AB is allowed for the swagger
                                 .requestMatchers(SWAGGER).permitAll()
                                 //AB allow the user to log in to receive a token
-                                .requestMatchers("/users/login", "/users/token").permitAll()
+                               //.requestMatchers("/users/login", "/users/token").permitAll()
                                 //AB allows registering a new user without a token and passwords
-                                .requestMatchers("/users/register").permitAll()
+                                //.requestMatchers().permitAll()
                                 .anyRequest().permitAll())
                                 //.authenticated())
                 //Question http://localhost:8080/swagger-ui/index.html Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long';
                 // For input string: "login"]
                 //AB basic authentication
-                .httpBasic(Customizer.withDefaults())
-                //AB disable state storage between requests
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                //.httpBasic(Customizer.withDefaults())
                 //AB work with token
-                .addFilterBefore(jwtFilter,
+                .addFilterAfter(jwtFilter,
                         UsernamePasswordAuthenticationFilter.class)
                 .build();
-
-
     }
 
     //AV Bin for password encryption

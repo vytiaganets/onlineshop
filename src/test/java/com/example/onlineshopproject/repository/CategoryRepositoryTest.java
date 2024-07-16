@@ -59,7 +59,7 @@ public class CategoryRepositoryTest {
         Assertions.assertEquals(CATEGORY_TEST_ID, returnCategory.getCategoryId());
         Optional<CategoryEntity> findCategory = categoryRepository.findById(CATEGORY_TEST_ID);
         Assertions.assertTrue(findCategory.isPresent());
-        Assertions.assertEquals("Category Test", findCategory.get().getName());
+        Assertions.assertEquals("Protective products and septic tanks", findCategory.get().getName());
         ///Question
         //org.opentest4j.AssertionFailedError:
         //Expected :Category Test

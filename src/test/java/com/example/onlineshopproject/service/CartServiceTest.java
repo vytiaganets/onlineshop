@@ -3,7 +3,8 @@ package com.example.onlineshopproject.service;
 import com.example.onlineshopproject.dto.*;
 import com.example.onlineshopproject.entity.*;
 import com.example.onlineshopproject.enums.UserRole;
-import com.example.onlineshopproject.exceptions.NotFoundInDbException;
+import com.example.onlineshopproject.exceptions.CartItemNotFoundException;
+import com.example.onlineshopproject.exceptions.CartNotFoundException;
 import com.example.onlineshopproject.mapper.Mappers;
 import com.example.onlineshopproject.repository.CartItemRepository;
 import com.example.onlineshopproject.repository.CartRepository;
@@ -40,8 +41,9 @@ public class CartServiceTest {
     @Mock
     private Mappers mappersMock;
     @InjectMocks
-    private CartService cartServiceMock;
-    NotFoundInDbException notFoundInDbException;
+    private CartServiceImpl cartServiceMock;
+    CartNotFoundException cartNotFoundException;
+    CartItemNotFoundException cartItemNotFoundException;
     private UserEntity userEntity;
     private CartEntity cartEntity;
     private CartItemEntity cartItemEntity;
@@ -70,8 +72,8 @@ public class CartServiceTest {
                 "Product name",
                 "Product description",
                 new BigDecimal("10.00"),
-                new BigDecimal("1.00"),
                 "http://localhost/product.jpg",
+                new BigDecimal("1.00"),
                 Timestamp.valueOf(LocalDateTime.now()),
                 Timestamp.valueOf(LocalDateTime.now()),
                 new CategoryEntity(1L,
@@ -145,41 +147,60 @@ public class CartServiceTest {
         assertEquals(cartItemResponseDtoSet.size(), actualCartItemSet.size());
         assertEquals(cartItemResponseDtoSet.hashCode(), actualCartItemSet.hashCode());
         when(userRepositoryMock.findById(incorrectUserId)).thenReturn((Optional.empty()));
-        notFoundInDbException = assertThrows(NotFoundInDbException.class, () -> cartServiceMock.getByUserId(incorrectUserId));
-        assertEquals("Data not found in database", notFoundInDbException.getMessage());
-
+        cartNotFoundException = assertThrows(CartNotFoundException.class, () -> cartServiceMock.getByUserId(incorrectUserId));
+        ///Question
+        //ERROR com.example.onlineshopproject.service.CartServiceImpl -- Cart not found: 9
+        //Cart not found in database.
+        //	at com.example.onlineshopproject.service.CartServiceImpl.getByUserId(CartServiceImpl.java:49)
+        //	at com.example.onlineshopproject.service.CartServiceTest.lambda$getByUserId$0(CartServiceTest.java:148)
+        assertEquals("Cart not found in database.", cartNotFoundException.getMessage());
+    }
+    @Test
+    void insert(){
+        Long cartId = 1L;
+        Long incorrectCartId = 9L;
+        when(userRepositoryMock.findById(cartId)).thenReturn(Optional.of(userEntity));
+        when(productRepositoryMock.findById(cartItemRequestDto.getProductId())).thenReturn(Optional.of(productEntity));
+        when(cartRepositoryMock.findById(userEntity.getCartEntity().getCartId())).thenReturn(Optional.of(cartEntity));
+        CartItemEntity cartItemEntityToInsert = new CartItemEntity();
+        cartItemEntityToInsert.setCartEntity(cartEntity);
+        cartItemEntityToInsert.setCartItemId(1L);
+        cartItemEntityToInsert.setProductEntity(productEntity);
+        cartItemEntityToInsert.setQuantity(cartItemRequestDto.getQuantity());
+        when(cartItemRepositoryMock.save(any(CartItemEntity.class))).thenReturn(cartItemEntityToInsert);
+        cartServiceMock.insert(cartItemRequestDto, cartId);
+        verify(cartItemRepositoryMock, times(1)).save(any(CartItemEntity.class));
+        when(userRepositoryMock.findById(incorrectCartId)).thenReturn(Optional.empty());
+        when(productRepositoryMock.findById(incorrectCartItemRequestDto.getProductId())).thenReturn(Optional.empty());
+        cartItemNotFoundException = assertThrows(CartItemNotFoundException.class,
+                () -> cartServiceMock.insert(cartItemRequestDto, incorrectCartId));
+        assertEquals("CartItem not found in database.", cartItemNotFoundException.getMessage());
+        cartItemNotFoundException = assertThrows(CartItemNotFoundException.class,
+                () -> cartServiceMock.insert(incorrectCartItemRequestDto, cartId));
+        assertEquals("CartItem not found in database.", cartItemNotFoundException.getMessage());
+    }
+    @Test
+    void deleteByProductId(){
+        Long userId = 1L;
+        Long incorrectUserId = 9L;
+        Long productId = 1L;
+        Long incorrectProductId = 9L;
+        when(userRepositoryMock.findById(userId)).thenReturn(Optional.of(userEntity));
+        when(productRepositoryMock.findById(productId)).thenReturn(Optional.of(productEntity));
+        Set<CartItemEntity> cartItemEntitySet = userEntity.getCartEntity().getCartItemEntitySet();
+        cartServiceMock.deleteByProductId(userId, productId);
+        verify(userRepositoryMock, times(1)).findById(userId);
+        verify(productRepositoryMock, times(1)).findById(productId);
+        for(CartItemEntity item : cartItemEntitySet){
+            verify(cartItemRepositoryMock, times(1)).delete(item);
+            when(userRepositoryMock.findById(incorrectUserId)).thenReturn(Optional.empty());
+            when(productRepositoryMock.findById(incorrectProductId)).thenReturn(Optional.empty());
+            cartNotFoundException = assertThrows(CartNotFoundException.class,
+                    () -> cartServiceMock.deleteByProductId(userId,incorrectUserId));
+            assertEquals("Data not found in database.", cartNotFoundException.getMessage());
+            cartNotFoundException = assertThrows(CartNotFoundException.class,
+                    () -> cartServiceMock.deleteByProductId(incorrectUserId, productId));
+            assertEquals("Data not found in database.", cartNotFoundException.getMessage());
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

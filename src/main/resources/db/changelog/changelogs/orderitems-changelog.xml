@@ -28,12 +28,18 @@
     </changeSet>
 
     <changeSet id="2" author="Andrii">
-        <comment>I</comment>
+        <comment>OrderItems data</comment>
+        <insert tableName="OrderItems">
+            <column name="OrderID" value="2"/>
+            <column name="ProductID" value="1"/>
+            <column name="Quantity" value="3"/>
+            <column name="PriceAtPurchase" value="10.00"/>
+        </insert>
         <insert tableName="OrderItems">
             <column name="OrderID" value="1"/>
             <column name="ProductID" value="1"/>
             <column name="Quantity" value="1"/>
-            <column name="PriceAtPurchase" value="11"/>
+            <column name="PriceAtPurchase" value="11.00"/>
         </insert>
         <insert tableName="OrderItems">
             <column name="OrderID" value="1"/>

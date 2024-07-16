@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  app:
+    image: onlineshop-service:latest
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/app
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1944_NotaBene
+    depends_on:
+      - mysql-db
+
+  mysql-db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1944_NotaBene
+      MYSQL_DATABASE: app
+    ports:
+      - "3306:3306"

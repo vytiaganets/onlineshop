@@ -1,0 +1,13 @@
+com/example/onlineshopproject/repository/OrderRepositoryTest.class
+com/example/onlineshopproject/repository/UserRepositoryTest.class
+com/example/onlineshopproject/service/UserServiceImplTest.class
+com/example/onlineshopproject/repository/CategoryRepositoryTest.class
+com/example/onlineshopproject/repository/CartItemRepositoryTest.class
+com/example/onlineshopproject/repository/FavoritesRepositoryTest.class
+com/example/onlineshopproject/repository/CartRepositoryTest.class
+com/example/onlineshopproject/service/CategoryServiceImplTest.class
+com/example/onlineshopproject/service/FavoritesServiceImplTest.class
+com/example/onlineshopproject/repository/ProductRepositoryTest.class
+com/example/onlineshopproject/service/ProductServiceImplTest.class
+com/example/onlineshopproject/service/OrderServiceImplTest.class
+com/example/onlineshopproject/service/CartServiceTest.class

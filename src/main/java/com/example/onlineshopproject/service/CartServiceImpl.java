@@ -3,7 +3,6 @@ package com.example.onlineshopproject.service;
 import com.example.onlineshopproject.configuration.MapperConfiguration;
 import com.example.onlineshopproject.dto.CartItemRequestDto;
 import com.example.onlineshopproject.dto.CartItemResponseDto;
-import com.example.onlineshopproject.dto.CartResponseDto;
 import com.example.onlineshopproject.entity.CartEntity;
 import com.example.onlineshopproject.entity.CartItemEntity;
 import com.example.onlineshopproject.entity.ProductEntity;
@@ -17,14 +16,11 @@ import com.example.onlineshopproject.repository.CartRepository;
 import com.example.onlineshopproject.repository.ProductRepository;
 import com.example.onlineshopproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -65,7 +61,7 @@ public class CartServiceImpl implements CartService {
             cartItemRepository.save(cartItemEntityToInsert);
         } else {
             log.error("User or product not found: {}", userId);
-            throw new CartItemNotFoundException("CartItem not found in database");
+            throw new CartItemNotFoundException("CartItem not found in database.");
         }
     }
 
