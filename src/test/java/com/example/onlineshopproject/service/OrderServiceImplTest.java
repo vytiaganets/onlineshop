@@ -40,7 +40,7 @@ public class OrderServiceImplTest {
     @Mock
     private ProductRepository productRepositoryMock;
     @InjectMocks
-    private OrderService orderServiceMock;
+    private OrderServiceImpl orderServiceMock;
     @Mock
     private Mappers mappersMock;
     OrderNotFoundException orderNotFoundException;
@@ -190,6 +190,8 @@ public class OrderServiceImplTest {
 //        orderNotFoundException = assertThrows(OrderNotFoundException.class,
 //                () -> orderServiceMock.getById(incorrectOrderId));
 //        assertEquals("Data not found in database.", orderNotFoundException.getMessage());
+//        ///Question
+//        //java.lang.NullPointerException: Cannot invoke "java.util.Set.stream()" because "set" is null
 //    }
 //    @Test
 //    void getHistoryByUserId(){
@@ -215,48 +217,50 @@ public class OrderServiceImplTest {
 //        orderNotFoundException = assertThrows(OrderNotFoundException.class,
 //                () -> orderServiceMock.getHistoryByUserId(incorrectUserId));
 //        assertEquals("Data not found in database.", orderNotFoundException.getMessage());
+//        //        ///Question
+////        //java.lang.NullPointerException: Cannot invoke "java.util.Set.stream()" because "set" is null
 //    }
-//    @Test
-//    void insert(){
-//        Long userId = 1L;
-//        Long incorrectUserId = 9L;
-//        when(userRepositoryMock.findById(userId)).thenReturn(Optional.of(userEntity));
-//        OrderEntity orderToInsert = new OrderEntity();
-//        //orderToInsert.setUserEntity(userEntity);
-//        orderToInsert.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
-//        orderToInsert.setContactPhone(userEntity.getPhoneNumber());
-//        orderToInsert.setDeliveryAddress(orderRequestDto.getDeliveryAddress());
-//        orderToInsert.setDeliveryMethod(DeliveryMethod.valueOf(orderRequestDto.getDeliveryMethod()));
-//        orderToInsert.setStatus(Status.PAID);
-//        for(OrderItemRequestDto orderItem : orderItemRequestDtoSet){
-//            when(productRepositoryMock.findById(orderItem.getProductId())).thenReturn(Optional.of(productEntity));
-//        }
-//        Set<OrderItemEntity> orderItemEntitySet = new HashSet<>();
-//        OrderItemEntity orderItemEntityToInsert = new OrderItemEntity();
-//        orderItemEntityToInsert.setProductEntity(productEntity);
-//        if(productEntity.getDiscountPrice() == null){
-//            orderItemEntityToInsert.setPriceAtPurchase(productEntity.getPrice());
-//        } else {
-//            orderItemEntityToInsert.setPriceAtPurchase(productEntity.getDiscountPrice());
-//        }
-//        orderItemEntityToInsert.setQuantity(orderItemEntity.getQuantity());
-//        //orderItemEntityToInsert.setOrderEntity(orderToInsert);
-//        when(orderItemRepositoryMock.save(any(OrderItemEntity.class))).thenReturn(orderItemEntityToInsert);
-//        orderItemEntitySet.add(orderItemEntityToInsert);
-//        orderToInsert.setOrderItemEntityHashSet(orderItemEntitySet);
-//        when(orderRepositoryMock.save(any(OrderEntity.class))).thenReturn(orderToInsert);
-//        orderServiceMock.insert(orderRequestDto, userId);
-//        verify(orderRepositoryMock, times(2)).save(any(OrderEntity.class));
-//        verify(orderItemRepositoryMock,times(1)).save(any(OrderItemEntity.class));
-//        when(userRepositoryMock.findById(incorrectUserId)).thenReturn(Optional.empty());
-//        orderNotFoundException = assertThrows(OrderNotFoundException.class,
-//                () -> orderServiceMock.insert(orderRequestDto, incorrectUserId));
-//        assertEquals("Data not found in database.", orderNotFoundException.getMessage());
-//        for (OrderItemRequestDto incorrectOrderItemRequestDto : incorrectOrderItemRequestDtoSet){
-//            when(productRepositoryMock.findById(incorrectOrderItemRequestDto.getProductId())).thenReturn(Optional.empty());
-//            orderNotFoundException = assertThrows(OrderNotFoundException.class,
-//                    () -> orderServiceMock.insert(incorrectOrderRequestDto, userId));
-//            assertEquals("Data not found in databasse.", orderNotFoundException.getMessage());
-//        }
-//    }
+    @Test
+    void insert(){
+        Long userId = 1L;
+        Long incorrectUserId = 9L;
+        when(userRepositoryMock.findById(userId)).thenReturn(Optional.of(userEntity));
+        OrderEntity orderToInsert = new OrderEntity();
+        //orderToInsert.setUserEntity(userEntity);
+        orderToInsert.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
+        orderToInsert.setContactPhone(userEntity.getPhoneNumber());
+        orderToInsert.setDeliveryAddress(orderRequestDto.getDeliveryAddress());
+        orderToInsert.setDeliveryMethod(DeliveryMethod.valueOf(orderRequestDto.getDeliveryMethod()));
+        orderToInsert.setStatus(Status.PAID);
+        for(OrderItemRequestDto orderItem : orderItemRequestDtoSet){
+            when(productRepositoryMock.findById(orderItem.getProductId())).thenReturn(Optional.of(productEntity));
+        }
+        Set<OrderItemEntity> orderItemEntitySet = new HashSet<>();
+        OrderItemEntity orderItemEntityToInsert = new OrderItemEntity();
+        orderItemEntityToInsert.setProductEntity(productEntity);
+        if(productEntity.getDiscountPrice() == null){
+            orderItemEntityToInsert.setPriceAtPurchase(productEntity.getPrice());
+        } else {
+            orderItemEntityToInsert.setPriceAtPurchase(productEntity.getDiscountPrice());
+        }
+        orderItemEntityToInsert.setQuantity(orderItemEntity.getQuantity());
+        //orderItemEntityToInsert.setOrderEntity(orderToInsert);
+        when(orderItemRepositoryMock.save(any(OrderItemEntity.class))).thenReturn(orderItemEntityToInsert);
+        orderItemEntitySet.add(orderItemEntityToInsert);
+        orderToInsert.setOrderItemEntityHashSet(orderItemEntitySet);
+        when(orderRepositoryMock.save(any(OrderEntity.class))).thenReturn(orderToInsert);
+        orderServiceMock.insert(orderRequestDto, userId);
+        verify(orderRepositoryMock, times(2)).save(any(OrderEntity.class));
+        verify(orderItemRepositoryMock,times(1)).save(any(OrderItemEntity.class));
+        when(userRepositoryMock.findById(incorrectUserId)).thenReturn(Optional.empty());
+        orderNotFoundException = assertThrows(OrderNotFoundException.class,
+                () -> orderServiceMock.insert(orderRequestDto, incorrectUserId));
+        assertEquals("Data not found in database.", orderNotFoundException.getMessage());
+        for (OrderItemRequestDto incorrectOrderItemRequestDto : incorrectOrderItemRequestDtoSet){
+            when(productRepositoryMock.findById(incorrectOrderItemRequestDto.getProductId())).thenReturn(Optional.empty());
+            orderNotFoundException = assertThrows(OrderNotFoundException.class,
+                    () -> orderServiceMock.insert(incorrectOrderRequestDto, userId));
+            assertEquals("Data not found in database.", orderNotFoundException.getMessage());
+        }
+    }
 }
