@@ -49,7 +49,6 @@ public class ProductServiceImpl implements ProductService {
         return productDtoList;
     }
 
-    @Transactional
     public List<ProductCountDto> getTop10(String status) {
         log.debug("Receiving top 10 products by status", status);
         List<String> stringList = productRepository.findTop10Products(status);
@@ -75,7 +74,7 @@ public class ProductServiceImpl implements ProductService {
         return productResponseDtoList;
     }
 
-    @Transactional
+
     public ProductResponseDto getById(Long productId) {
         log.debug("Attempting product with id: {}", productId);
         ProductEntity productEntity = productRepository.findById(productId).orElse(null);
@@ -110,7 +109,7 @@ public class ProductServiceImpl implements ProductService {
             productRepository.save(productEntity);
         } else {
             log.error("Product not found", productRequestDto.getName());
-            throw new ProductNotFoundException("Data not find in database.");
+            throw new ProductNotFoundException("Data not found in database.");
         }
     }
 
@@ -140,7 +139,7 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-    @Transactional
+
     public List<ProductResponseDto> findByFilter(Long category, Double minPrice, Double maxPrice,
                                                  Boolean isDiscount, String sort) {
        log.debug("Attempting find products:{}");

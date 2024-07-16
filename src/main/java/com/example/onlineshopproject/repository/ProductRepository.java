@@ -30,6 +30,6 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long>, P
             "AND (?5 OR DiscountPrice IS NOT NULL) " +
             "ORDER BY ?6 ASC ",
             nativeQuery = true)
-    List<ProductEntity> findProductByFilter(Boolean isCategory, Long category, Double moinPrice, Double maxPrice,
+    List<ProductEntity> findProductByFilter(Boolean isCategory, Long category, Double minPrice, Double maxPrice,
                                             Boolean isDiscount, String sort);
 }

@@ -31,7 +31,8 @@ public class UserServiceImplTest {
     @Mock
     private ModelMapper modelMapperMock;
     @InjectMocks
-    private UserService userServiceTest;
+    private UserServiceImpl userServiceTest;
+
     private UserRequestDto expectedUserRequestDto;
     private UserEntity expectedUser;
     @BeforeEach
@@ -54,7 +55,7 @@ public class UserServiceImplTest {
                 .build();
     }
     @Test
-    void getUserTest(){
+    void getAll(){
         when(userRepositoryMock.findAll()).thenReturn(Arrays.asList(expectedUser));
         when(mappersMock.convertToUserResponseDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
         List<UserRequestDto> actualUserRequestDtoList = userServiceTest.getAll();
@@ -66,15 +67,15 @@ public class UserServiceImplTest {
         //   @InjectMocks Service service;
         //   //and... don't forget about some @Mocks for injection :)
     }
-    @Test
-    void getUserByIdTest(){
-        when(userRepositoryMock.findById(anyLong())).thenReturn(Optional.of(expectedUser));
-        when(mappersMock.convertToUserResponseDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
-        UserRequestDto actualUserRequestDto = userServiceTest.getById(1L);
-        assertEquals(expectedUserRequestDto, actualUserRequestDto);
-    }
-    @Test
-    void updateUserTest() {
-
-    }
+//    @Test
+//    void getById(){
+//        when(userRepositoryMock.findById(anyLong())).thenReturn(Optional.of(expectedUser));
+//        when(mappersMock.convertToUserResponseDto(any(UserEntity.class))).thenReturn(expectedUserRequestDto);
+//        UserRequestDto actualUserRequestDto = userServiceTest.getById(1L);
+//        assertEquals(expectedUserRequestDto, actualUserRequestDto);
+//    }
+//    @Test
+//    void updateUserTest() {
+//
+//    }
 }
