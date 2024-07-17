@@ -193,11 +193,11 @@ public class ProductServiceImplTest {
     @Test
     void findByFilter(){
         Long category = 1L;
-        Double minPrice = 0.00;
-        Double maxPrice = 100.00;
+        BigDecimal minPrice = BigDecimal.valueOf(0.00);
+        BigDecimal maxPrice = BigDecimal.valueOf(100.00);
         Boolean isDiscount = true;
         String sort = "Price";
-        when(productRepositoryMock.findProductByFilter(false, category, minPrice, maxPrice, isDiscount, sort)).thenReturn(List.of(productEntity));
+        when(productRepositoryMock.findByFilter(false, category, minPrice, maxPrice, isDiscount, sort)).thenReturn(List.of(productEntity));
         when(mappersMock.convertToProductResponseDto(any(ProductEntity.class))).thenReturn(productResponseDto);
         List<ProductResponseDto> actualProductResponseDto = productServiceMock.findByFilter(category, minPrice, maxPrice, isDiscount, sort);
         verify(mappersMock, times(1)).convertToProductResponseDto(any(ProductEntity.class));

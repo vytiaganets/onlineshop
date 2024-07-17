@@ -23,4 +23,11 @@
             </column>
         </createTable>
     </changeSet>
+<changeSet id="2" author="Andrii">
+<insert tableName="CartItems">
+    <column name="CartID" value="1"></column>
+    <column name="ProductID" value="1"></column>
+    <column name="Quantity" value="3"></column>
+</insert>
+</changeSet>
 </databaseChangeLog>

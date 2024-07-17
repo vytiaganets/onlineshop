@@ -39,7 +39,6 @@ public class OrderServiceImpl implements OrderService {
     private final ProductRepository productRepository;
     private final Mappers mappers;
 
-    @Transactional
     public void insert(OrderRequestDto orderRequestDto, Long userId) {
         log.debug("Attempting insert order by userId: {}", userId);
         OrderEntity orderEntity = new OrderEntity();
@@ -81,8 +80,6 @@ public class OrderServiceImpl implements OrderService {
         orderRepository.save(orderEntity);
     }
 
-
-    @Transactional
     public OrderResponseDto getById(Long orderId) {
         log.debug("Attempting receive product by id: {}", orderId);
         OrderEntity orderEntity = orderRepository.findById(orderId).orElse(null);
@@ -99,7 +96,6 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
-    @Transactional
     public Set<OrderResponseDto> getHistoryByUserId(Long userId) {
         log.debug("Attempting history by user id", userId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);

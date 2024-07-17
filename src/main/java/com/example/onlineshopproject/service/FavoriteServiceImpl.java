@@ -29,7 +29,6 @@ public class FavoriteServiceImpl implements FavoriteService {
     private final ProductRepository productRepository;
     private final Mappers mappers;
 
-    @Transactional
     public Set<FavoriteResponseDto> getByUserId(Long userId) {
         log.debug("Attempting favorite by userId: {}", userId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);
@@ -42,7 +41,6 @@ public class FavoriteServiceImpl implements FavoriteService {
         }
     }
 
-    @Transactional
     public void insert(FavoriteRequestDto favoriteRequestDto, Long userId) {
         log.debug("Attempting insert favorite: {}", favoriteRequestDto.getProductId());
         FavoriteEntity favoriteEntity = new FavoriteEntity();
@@ -58,7 +56,6 @@ public class FavoriteServiceImpl implements FavoriteService {
         }
     }
 
-    @Transactional
     public void deleteByProductId(Long userId, Long productId) {
         log.debug("Attempting delete by productId", productId);
         UserEntity userEntity = userRepository.findById(userId).orElse(null);

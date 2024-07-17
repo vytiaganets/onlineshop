@@ -1,8 +1,6 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.ProductCountDto;
-import com.example.onlineshopproject.dto.ProductRequestDto;
-import com.example.onlineshopproject.dto.ProductResponseDto;
+import com.example.onlineshopproject.dto.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -15,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.List;
 
 @Tag(name = "Product Controller",
@@ -28,8 +28,8 @@ public interface ProductControllerInterface {
                             schema = @Schema(implementation = ProductCountDto.class))})})
     public List<ProductResponseDto> getAll(
             @RequestParam(value = "category", required = false) Long categoryId,
-            @RequestParam(value = "minPrice", required = false) Double minPrice,
-            @RequestParam(value = "maxPrice", required = false) Double maxPrice,
+            @RequestParam(value = "minPrice", required = false) BigDecimal minPrice,
+            @RequestParam(value = "maxPrice", required = false) BigDecimal maxPrice,
             @RequestParam(value = "isDiscount", required = false, defaultValue = "false") Boolean isDiscount,
             @RequestParam(value = "sort", required = false) String sort
     );
@@ -87,4 +87,18 @@ public interface ProductControllerInterface {
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = ProductCountDto.class))})})
     public List<ProductCountDto> getTop10(@RequestParam(value = "status", required = true) String status);
+    @Operation(summary = "Get pending products")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",
+                    description = "Pending products found successfully",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ProductPendingDto.class))})})
+    public List<ProductPendingDto> findProductsPending(Integer days) throws ParseException;
+    @Operation(summary = "Get profit products")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",
+                    description = "Profit products found successfully",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ProductProfitDto.class))})})
+    public List<ProductProfitDto> findProductsProfitByPeriod(String period, Integer value);
 }

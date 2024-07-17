@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class ScheduledService {
     @Autowired
     private OrderRepository orderRepository;
-//AV Выполнение задания с задержкой 30сек
+//AV Executing a task with a delay of 30 seconds
     @Scheduled(fixedRateString = "${fixedDelay.in.milliseconds}")
 
     @Async

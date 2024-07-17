@@ -1,0 +1,79 @@
+SELECT p.ProductID           as productId,
+       p.Name                as name,
+       SUM(Quantity)         as count,
+       SUM(Quantity * Price) as sum
+FROM Products p
+         JOIN OrderItems oi ON p.ProductID = oi.ProductID
+         JOIN Orders o ON oi.OrderId = o.OrderID
+WHERE o.Status = ?1
+GROUP BY p.ProductID, p.Name
+ORDER BY Count DESC
+LIMIT 10;
+
+   List<String> findTop10Products(String status);
+
+SELECT ProductID,
+       Name,
+       Description,
+       Price,
+       DiscountPrice,
+       CategoryID,
+       ImageURL,
+       CreatedAt,
+       UpdatedAt
+FROM Products
+WHERE (?1 OR CategoryID = ?2)
+  AND (?5 OR DiscountPrice IS NOT NULL)
+ORDER BY ?6 ASC
+
+    List<ProductEntity> findByFilter(Boolean isCategory, Long category, BigDecimal minPrice, BigDecimal maxPrice, Boolean isDiscount, String sort);
+
+SELECT ProductID,
+       Name,
+       Description,
+       Price,
+       DiscountPrice,
+       CategoryID,
+       ImageURL,
+       CreatedAt,
+       UpdatedAt
+FROM Products as product
+WHERE (:isCategory = TRUE OR product.CategoryId = :category)
+  AND product.Price BETWEEN :minPrice and :maxPrice
+  AND (:isDiscount = TRUE OR product.DiscountPrice IS NOT NULL);
+
+    List<ProductEntity> findByFilter(Boolean isCategory, Long category, BigDecimal minPrice, BigDecimal maxPrice, Boolean isDiscount, String sort);
+
+SELECT product
+FROM Products product
+WHERE (:isCategory = TRUE OR product.category.categoryId = :category)
+  AND product.price BETWEEN :minPrice and :maxPrice
+  AND (:isDiscount = TRUE OR product.discountPrice IS NOT NULL)
+
+
+    List<ProductEntity> findByFilter(Boolean isCategory, Long category, BigDecimal minPrice, BigDecimal maxPrice, Boolean isDiscount, String sort);
+
+SELECT CASE
+           WHEN :period = 'MONTH' THEN DATE_FORMAT(o.CreatedAt, '%Y-%m')
+           WHEN :period = 'WEEK' THEN DATE_FORMAT(o.CreatedAt, '%Y-%u')
+           ELSE DATE_FORMAT(o.CreatedAt, '%Y-%m-%d')
+           END                    as period,
+       SUM(oi.Quantity * p.Price) as sum
+FROM Products p
+         JOIN OrderItems oi ON p.ProductID = oi.ProductID
+         JOIN Orders o ON oi.OrderId = o.OrderID
+WHERE o.Status = 'PENDING_PAYMENT'
+  AND o.CreatedAt >=
+      CASE
+          WHEN :period = 'MONTH' THEN NOW() - INTERVAL :value MONTH
+          WHEN :period = 'WEEK' THEN NOW() - INTERVAL :value WEEK
+          ELSE NOW() - INTERVAL :value DAY
+          END
+GROUP BY CASE
+             WHEN :period = 'MONTH' THEN DATE_FORMAT(o.CreatedAt, '%Y-%m')
+             WHEN :period = 'WEEK' THEN DATE_FORMAT(o.CreatedAt, '%Y-%u'
+                                                    ELSE DATE_FORMAT(o.CreatedAt, '%Y-%m-%d')
+                                                    END;
+
+List<ProductEntity> findProductsProfitByPeriod(String period, Integer value);
+

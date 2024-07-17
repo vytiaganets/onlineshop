@@ -24,7 +24,6 @@ public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
     private final Mappers mappers;
 
-    @Transactional
     public List<CategoryResponseDto> getAll() {
         log.debug("Attempting receive all categories.");
         List<CategoryEntity> categoryEntityList = categoryRepository.findAll();
@@ -34,7 +33,6 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryResponseDtoList;
     }
 
-//    @Transactional
     public CategoryResponseDto getById(Long categoryId) {
         log.debug("Attempting category with id: {}", categoryId);
         CategoryEntity categoryEntity =
@@ -48,7 +46,6 @@ public class CategoryServiceImpl implements CategoryService {
         return mappers.convertToCategoryResponseDto(categoryEntity);
     }
 
-    @Transactional
     public void insert(CategoryRequestDto categoryRequestDto) {
         log.debug("Attempting insert category: {}", categoryRequestDto.getName());
         CategoryEntity categoryEntity = categoryRepository.findCategoryEntityByName(categoryRequestDto.getName());
@@ -62,7 +59,6 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
-    @Transactional
     public CategoryResponseDto create(CategoryRequestDto categoryRequestDto) {
         log.debug("Attempting create category: {}", categoryRequestDto.getName());
         CategoryEntity categoryEntity = mappers.convertToCategoryEntity(categoryRequestDto);
@@ -70,7 +66,7 @@ public class CategoryServiceImpl implements CategoryService {
         CategoryEntity savedCategory = categoryRepository.save(categoryEntity);
         return mappers.convertToCategoryResponseDto(savedCategory);
     }
-    @Transactional
+
     public void deleteById(Long categoryId) {
         log.debug("Attempting delete category: {}", categoryId);
         Optional<CategoryEntity> categoryEntity = categoryRepository.findById(categoryId);
@@ -82,7 +78,7 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
-    @Transactional
+
     public void update(CategoryRequestDto categoryRequestDto, Long categoryId) {
         log.debug("Attempting update category: {}", categoryId);
         if (categoryId > 0) {
