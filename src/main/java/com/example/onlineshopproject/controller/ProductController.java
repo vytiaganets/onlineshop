@@ -1,8 +1,6 @@
 package com.example.onlineshopproject.controller;
 
-import com.example.onlineshopproject.dto.ProductCountDto;
-import com.example.onlineshopproject.dto.ProductRequestDto;
-import com.example.onlineshopproject.dto.ProductResponseDto;
+import com.example.onlineshopproject.dto.*;
 import com.example.onlineshopproject.exceptions.ProductInvalidArgumentException;
 import com.example.onlineshopproject.exceptions.ProductNotFoundException;
 import com.example.onlineshopproject.service.ProductService;
@@ -16,6 +14,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.List;
 
 
@@ -31,8 +31,8 @@ public class ProductController implements ProductControllerInterface {
     @GetMapping
     public List<ProductResponseDto> getAll(
             @RequestParam(value = "category", required = false) Long categoryId,
-            @RequestParam(value = "minPrice", required = false) Double minPrice,
-            @RequestParam(value = "maxPrice", required = false) Double maxPrice,
+            @RequestParam(value = "minPrice", required = false) BigDecimal minPrice,
+            @RequestParam(value = "maxPrice", required = false) BigDecimal maxPrice,
             @RequestParam(value = "isDiscount", required = false, defaultValue = "false") Boolean isDiscount,
             @RequestParam(value = "sort", required = false) String sort
     ) {
@@ -68,7 +68,7 @@ public class ProductController implements ProductControllerInterface {
         productService.insert(productRequestDto);
     }
 
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping(value = "/{productId}")
     @ResponseStatus(HttpStatus.OK)
     @Validated
@@ -77,11 +77,23 @@ public class ProductController implements ProductControllerInterface {
         productService.update(productRequestDto, productId);
     }
 
-    ///    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/top10")
     public List<ProductCountDto> getTop10(@RequestParam(value = "status", required = true) String status) {
         return productService.getTop10(status);
+    }
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(value = "/pending")
+    public List<ProductPendingDto> findProductsPending(Integer days) throws ParseException {
+        return productService.findProductsPending(days);
+    }
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping(value = "/profit")
+    public List<ProductProfitDto> findProductsProfitByPeriod(String period, Integer value) {
+        return productService.findProductsProfitByPeriod(period, value);
     }
     @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<String> handleProductNotFoundException(ProductNotFoundException productNotFoundException) {

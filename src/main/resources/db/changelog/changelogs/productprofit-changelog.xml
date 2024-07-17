@@ -8,26 +8,24 @@
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <changeSet id="1" author="Andrii">
-        <createTable tableName="CartItems">
-            <column name="CartItemID" type="BIGINT" autoIncrement="true">
+        <comment>Create table profit product</comment>
+        <createTable tableName="ProductProfit">
+            <column name="ProductID" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="CartID" type="BIGINT">
-                <constraints nullable="false" foreignKeyName="fk_cartItems_cart" references="Cart(CartID)"/>
+            <column name="Period" type="VARCHAR(255)">
+                <constraints nullable="false"/>
             </column>
-            <column name="ProductID" type="BIGINT">
-                <constraints nullable="false" foreignKeyName="fk_cartItems_product" references="Products(ProductID)"/>
-            </column>
-            <column name="Quantity" type="INTEGER">
+            <column name="Sum" type="DECIMAL(10,2)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
-<changeSet id="2" author="Andrii">
-<insert tableName="CartItems">
-    <column name="CartID" value="1"></column>
-    <column name="ProductID" value="1"></column>
-    <column name="Quantity" value="3"></column>
-</insert>
-</changeSet>
+    <changeSet id="2" author="Andrii">
+        <comment>Insert sample products count</comment>
+        <insert tableName="ProductProfit">
+            <column name="Period" value="2024-06"/>
+            <column name="Sum" value="10.12"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

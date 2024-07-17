@@ -4,6 +4,8 @@ import com.example.onlineshopproject.configuration.MapperConfiguration;
 import com.example.onlineshopproject.dto.*;
 import com.example.onlineshopproject.entity.*;
 import com.example.onlineshopproject.query.ProductCount;
+import com.example.onlineshopproject.query.ProductPending;
+import com.example.onlineshopproject.query.ProductProfit;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -93,7 +95,14 @@ modelMapper
         ProductEntity productEntity = modelMapper.map(productRequestDto, ProductEntity.class);
         return productEntity;
     }
-
+    public ProductPendingDto convertToProductPendingDto(ProductPending productPending) {
+        ProductPendingDto productPendingDto = modelMapper.map(productPending, ProductPendingDto.class);
+        return productPendingDto;
+    }
+    public ProductProfitDto convertToProductProfitDto(ProductProfit productProfit) {
+        ProductProfitDto productProfitDto = modelMapper.map(productProfit, ProductProfitDto.class);
+        return productProfitDto;
+    }
     public ProductCountDto convertToProductCountDto(ProductCount productCount) {
         ProductCountDto productCountDto = modelMapper.map(productCount, ProductCountDto.class);
         return productCountDto;

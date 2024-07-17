@@ -1,0 +1,33 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="1" author="Andrii">
+        <comment>Create table pending product</comment>
+        <createTable tableName="ProductPending">
+            <column name="ProductID" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="Name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Count" type="DECIMAL"/>
+            <column name="CreatedAt" type="TIMESTAMP">
+            <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="Andrii">
+        <comment>Insert sample pending products</comment>
+        <insert tableName="ProductPending">
+            <column name="Name" value="Spade"/>
+            <column name="Count" value="5"/>
+            <column name="CreatedAt" value="2024-07-07 17:34:12"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -1,9 +1,9 @@
 package com.example.onlineshopproject.service;
 
-import com.example.onlineshopproject.dto.ProductCountDto;
-import com.example.onlineshopproject.dto.ProductRequestDto;
-import com.example.onlineshopproject.dto.ProductResponseDto;
+import com.example.onlineshopproject.dto.*;
 
+import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.List;
 
 public interface ProductService {
@@ -22,7 +22,10 @@ public interface ProductService {
 
     void update(ProductRequestDto productRequestDto, Long productId);
 
-    List<ProductResponseDto> findByFilter(Long category, Double minPrice, Double maxPrice,
+    List<ProductResponseDto> findByFilter(Long category, BigDecimal minPrice, BigDecimal maxPrice,
                                           Boolean isDiscount, String sort);
 
+    List<ProductPendingDto> findProductsPending(Integer days) throws ParseException;
+
+    List<ProductProfitDto> findProductsProfitByPeriod(String period, Integer value);
 }

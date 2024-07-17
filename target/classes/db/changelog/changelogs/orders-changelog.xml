@@ -47,7 +47,7 @@
             <column name="DeliveryAddress" value="Kiev, Ukraine"/>
             <column name="DeliveryMethod" value="COURIER_DELIVERY"/>
             <column name="ContactPhone" value="123456789012"/>
-            <column name="Status" value="PAID"/>
+            <column name="Status" value="PENDING_PAYMENT"/>
             <column name="CreatedAt" value="2024-06-22 17:31:03.122000"/>
             <column name="UpdatedAt" value="2024-06-22 18:21:03.123000"/>
         </insert>
@@ -65,7 +65,7 @@
             <column name="DeliveryAddress" value="Rome, Italy"/>
             <column name="DeliveryMethod" value="COURIER_DELIVERY"/>
             <column name="ContactPhone" value="789123456012"/>
-            <column name="Status" value="ON_THE_WAY"/>
+            <column name="Status" value="PENDING_PAYMENT"/>
             <column name="CreatedAt" value="2024-06-24 18:21:03.123000"/>
             <column name="UpdatedAt" value="2024-06-24 18:21:03.123000"/>
         </insert>
@@ -74,7 +74,7 @@
             <column name="DeliveryAddress" value="Hamburg, Germany"/>
             <column name="DeliveryMethod" value="COURIER_DELIVERY"/>
             <column name="ContactPhone" value="167890122345"/>
-            <column name="Status" value="DELIVERED"/>
+            <column name="Status" value="PAID"/>
             <column name="CreatedAt" value="2024-06-23 19:21:03.123000"/>
             <column name="UpdatedAt" value="2024-06-24 18:21:03.123000"/>
         </insert>
