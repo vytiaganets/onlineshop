@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class FavoriteRequestDto {
-    @NotBlank(message = "Invalid favorite Id: Empty favorite Id")
-    @Pattern(regexp = "^[^0]\\d{1,18}$", message = "Invalid favorite Id: not a number")
+    //@NotBlank(message = "Invalid favorite Id: Empty favorite Id")
+    //@Pattern(regexp = "^[^0]\\d{1,18}$", message = "Invalid favorite Id: not a number")
     private Long productId;
 }

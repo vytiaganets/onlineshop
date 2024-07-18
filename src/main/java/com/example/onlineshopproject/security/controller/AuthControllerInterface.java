@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @Tag(name = "Auth Controller", description = "Controller for auth operations")
 public interface AuthControllerInterface {
-    @Operation(summary = "Login")
+    @Operation(summary = "Authentication")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",
                     description = "Login successfully",

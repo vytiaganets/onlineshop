@@ -71,7 +71,7 @@ WHERE o.Status = 'PENDING_PAYMENT'
           END
 GROUP BY CASE
              WHEN :period = 'MONTH' THEN DATE_FORMAT(o.CreatedAt, '%Y-%m')
-             WHEN :period = 'WEEK' THEN DATE_FORMAT(o.CreatedAt, '%Y-%u'
+             WHEN :period = 'WEEK' THEN DATE_FORMAT(o.CreatedAt, '%Y-%u')
                                                     ELSE DATE_FORMAT(o.CreatedAt, '%Y-%m-%d')
                                                     END;
 

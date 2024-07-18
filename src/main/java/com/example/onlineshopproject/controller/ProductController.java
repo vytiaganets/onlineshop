@@ -36,7 +36,8 @@ public class ProductController implements ProductControllerInterface {
             @RequestParam(value = "isDiscount", required = false, defaultValue = "false") Boolean isDiscount,
             @RequestParam(value = "sort", required = false) String sort
     ) {
-        List<ProductResponseDto> productDtoList = productService.findByFilter(
+        //List<ProductResponseDto> productDtoList = productService.findByFilter(
+        List<ProductResponseDto> productDtoList = productService.getAll(
                 categoryId,
                 minPrice,
                 maxPrice,

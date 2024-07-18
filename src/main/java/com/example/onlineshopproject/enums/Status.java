@@ -1,12 +1,12 @@
 package com.example.onlineshopproject.enums;
 
 public enum Status {
-    ORDERED("Создан"),
-    PAID("Оплачен"),
-    ON_THE_WAY(""),
-    PENDING_PAYMENT("Ожидается оплата"),
-    DELIVERED("Доставлено"),
-    CANCELLED("Отменено");
+    ORDERED("Создан"),//ожидает оплаты Отменено boolean
+    PAID("Оплачен"),//в пути
+    ON_THE_WAY("В пути"),//доставлен
+    PENDING_PAYMENT("Ожидается оплата"),//оплачен Отменено boolean
+    DELIVERED("Доставлено"),//конечный
+    CANCELLED("Отменено");//конечный
     private String title;
 
     Status(String title) {

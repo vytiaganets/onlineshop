@@ -7,7 +7,7 @@ import java.text.ParseException;
 import java.util.List;
 
 public interface ProductService {
-    List<ProductResponseDto> getAll(Long categoryId, Double minPrice, Double maxPrice, Boolean isDiscount,
+    List<ProductResponseDto> getAll(Long categoryId, BigDecimal minPrice, BigDecimal maxPrice, Boolean isDiscount,
                                     String sort);
 
     List<ProductCountDto> getTop10(String status);
@@ -22,8 +22,8 @@ public interface ProductService {
 
     void update(ProductRequestDto productRequestDto, Long productId);
 
-    List<ProductResponseDto> findByFilter(Long category, BigDecimal minPrice, BigDecimal maxPrice,
-                                          Boolean isDiscount, String sort);
+//    List<ProductResponseDto> findByFilter(Long category, BigDecimal minPrice, BigDecimal maxPrice,
+//                                          Boolean isDiscount, String sort);
 
     List<ProductPendingDto> findProductsPending(Integer days) throws ParseException;
 
