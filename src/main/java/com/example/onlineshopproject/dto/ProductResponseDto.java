@@ -28,4 +28,19 @@ public class ProductResponseDto {
     @JsonProperty("category")
     private CategoryResponseDto categoryResponseDto;
 
+
+
+    public ProductResponseDto(Long productId, String name, String description, BigDecimal price,
+                              BigDecimal discountPrice, String imageURL,
+                              Timestamp createAt, Timestamp updateAt) {
+        this.productId = productId;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.discountPrice = discountPrice;
+        this.imageURL = imageURL;
+        this.createAt = createAt;
+        this.updateAt = updateAt;
+
+    }
 }

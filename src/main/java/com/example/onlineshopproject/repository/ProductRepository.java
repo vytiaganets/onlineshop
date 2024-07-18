@@ -26,13 +26,14 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long>, P
 
     //AV interval dat
     //https://stackoverflow.com/questions/72978636/how-to-do-decimal-precision-in-spring-data-jpa-query-annotation
-    @Query(value = "SELECT ProductID, Name, Description, Price, DiscountPrice, CategoryID,ImageURL, CreatedAt, " +
-            "UpdatedAt FROM Products " +
-            "WHERE (?1 OR CategoryID = ?2) " +
-            "AND (?5 OR DiscountPrice IS NOT NULL) " +
-            "ORDER BY ?6 ASC ",
-            nativeQuery = true)
-    List<ProductEntity> findByFilter(Boolean isCategory, Long category, BigDecimal minPrice, BigDecimal maxPrice, Boolean isDiscount, String sort);
+//    @Query(value = "SELECT ProductID, Name, Description, Price, DiscountPrice, CategoryID,ImageURL, CreatedAt, " +
+//            "UpdatedAt FROM Products " +
+//            "WHERE (?1 OR CategoryID = ?2) " +
+//            "AND (?5 OR DiscountPrice IS NOT NULL) " +
+//            "ORDER BY ?6 ASC ",
+//            nativeQuery = true)
+//    List<String> findByFilter(Boolean isCategory, Long category, BigDecimal minPrice, BigDecimal maxPrice,
+//                         Boolean isDiscount, String sort);
 
 //    @Query(value =
 //            "SELECT product FROM Product product " +

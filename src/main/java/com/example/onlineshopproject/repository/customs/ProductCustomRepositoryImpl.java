@@ -1,12 +1,12 @@
 package com.example.onlineshopproject.repository.customs;
 
 import com.example.onlineshopproject.entity.CategoryEntity;
-import com.example.onlineshopproject.entity.OrderEntity;
 import com.example.onlineshopproject.entity.ProductEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.criteria.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,19 +14,19 @@ public class ProductCustomRepositoryImpl implements ProductCustomRepository{
     @PersistenceContext
     private EntityManager entityManager;
     @Override
-    public List<ProductEntity> findProductByFilter(CategoryEntity categoryEntity, Double minPrice, Double maxPrice,
-                                                    Boolean isDiscount, String sort) {
+    public List<ProductEntity> findProductByFilter(CategoryEntity categoryEntity, BigDecimal minPrice, BigDecimal maxPrice,
+                                                   Boolean isDiscount, String sort) {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<ProductEntity> productEntityCriteriaQuery = criteriaBuilder.createQuery(ProductEntity.class);//SELECT
         Root<ProductEntity> productEntityRoot = productEntityCriteriaQuery.from((ProductEntity.class));//FROM
         //WHERE
         List<Predicate> predicateList = new ArrayList<>();
         if (categoryEntity != null) {
-            predicateList.add(criteriaBuilder.equal(productEntityRoot.get("category"), categoryEntity));
+            predicateList.add(criteriaBuilder.equal(productEntityRoot.get("categoryEntity"), categoryEntity));
             //categoryEntity = 1
         }
         Predicate filterPrice = null;
-        if (minPrice != null && maxPrice != null && minPrice < maxPrice) {
+        if (minPrice != null && maxPrice != null && minPrice.compareTo(maxPrice)<0) {
             filterPrice = criteriaBuilder.between(productEntityRoot.get("price"), minPrice, maxPrice);
         } else if (minPrice != null) {//>minPrice
             filterPrice = criteriaBuilder.gt(productEntityRoot.get("price"), minPrice);//price>1

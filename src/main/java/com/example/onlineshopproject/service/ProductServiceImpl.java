@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
     private final CategoryRepository categoryRepository;
     private final MapperConfiguration mapperConfiguration;
 
-    public List<ProductResponseDto> getAll(Long categoryId, Double minPrice, Double maxPrice, Boolean isDiscount,
+    public List<ProductResponseDto> getAll(Long categoryId, BigDecimal minPrice, BigDecimal maxPrice, Boolean isDiscount,
                                            String sort) {
         log.debug("Attempting receive all products.");
         log.info("categoryId = " + categoryId);
@@ -141,27 +141,46 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-
-    public List<ProductResponseDto> findByFilter(Long category, BigDecimal minPrice, BigDecimal maxPrice,
-                                                 Boolean isDiscount, String sort) {
-       log.debug("Attempting find products:{}");
-        boolean isCategory = false;
-        if (category == null) {
-            isCategory = true;
-        }
-        if (minPrice == null) {
-            minPrice = BigDecimal.valueOf(0.00);
-        }
-        if (maxPrice == null) {
-            maxPrice = BigDecimal.valueOf(Double.MAX_VALUE);
-        }
-        if (sort == null) {
-            sort = "Name";
-        }
-        List<ProductEntity> productEntityList = productRepository.findByFilter(isCategory, category, minPrice,
-                maxPrice, isDiscount, sort);
-        return mapperConfiguration.convertList(productEntityList, mappers::convertToProductResponseDto);
-    }
+//
+//    public List<ProductResponseDto> findByFilter(Long category, BigDecimal minPrice, BigDecimal maxPrice,
+//                                                 Boolean isDiscount, String sort) {
+//       log.debug("Attempting find products:{}", category);
+//        boolean isCategory = false;
+//        if (category == null) {
+//            isCategory = true;
+//        }
+//        if (minPrice == null) {
+//            minPrice = BigDecimal.valueOf(0.00);
+//        }
+//        if (maxPrice == null) {
+//            maxPrice = BigDecimal.valueOf(Double.MAX_VALUE);
+//        }
+//        if (sort == null) {
+//            sort = "Name";
+//        }
+//        List<ProductEntity> productEntityList = productRepository.findByFilter(isCategory, category, minPrice,
+//                maxPrice, isDiscount, sort);
+//        return mapperConfiguration.convertList(productEntityList, mappers::convertToProductResponseDto);
+//        List<String> stringList = productRepository.findByFilter(isCategory, category, minPrice,
+//                maxPrice, isDiscount, sort);
+//        List<ProductResponseDto> productResponseDtoList = new ArrayList<>();
+//        for (String entry : stringList) {
+//            String[] string = entry
+//                    .split(",");
+//            ProductResponseDto productResponseDto = new ProductResponseDto(
+//                    Long.parseUnsignedLong(string[0]),
+//                    string[1],
+//                    string[2],
+//                    BigDecimalParser.parseWithFastParser(string[3]),
+//                    BigDecimalParser.parseWithFastParser(string[4]),
+//                    string[5],
+//                    Timestamp.valueOf(string[6]),
+//                    Timestamp.valueOf(string[7]));
+//            productResponseDtoList.add(productResponseDto);
+//        }
+//        log.info("Returning all products", productResponseDtoList.size());
+//        return productResponseDtoList;
+//    }
    public List<ProductPendingDto> findProductsPending(Integer days) throws ParseException {
        log.debug("Attempting pending products by days", days);
        List<String> stringList = productRepository.findProductsPending(days);
@@ -188,10 +207,9 @@ public class ProductServiceImpl implements ProductService {
            String[] string = entry
                    .split(",");
            ProductProfitDto productProfitDto = new ProductProfitDto(
-                   Long.parseUnsignedLong(
-                            string[0]),
-                            string[1],
-                            BigDecimalParser.parseWithFastParser(string[2]));
+//                   Long.parseUnsignedLong(string[0]),
+                            string[0],
+                            BigDecimalParser.parseWithFastParser(string[1]));
            productProfitDtoList.add(productProfitDto);
        }
        log.info("Returning profits products by status", productProfitDtoList.size());
