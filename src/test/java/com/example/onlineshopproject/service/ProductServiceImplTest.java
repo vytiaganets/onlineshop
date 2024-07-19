@@ -58,7 +58,7 @@ public class ProductServiceImplTest {
                 .description("Description")
                 .price(new BigDecimal("10.00"))
                 .imageURL("http://localhost/cart.jpg")
-                .createAt(Timestamp.valueOf(LocalDateTime.now()))
+                .createdAt(Timestamp.valueOf(LocalDateTime.now()))
                 .categoryResponseDto(new CategoryResponseDto(1L, "Category"))
                 .build();
         productEntity = new ProductEntity(1L,

@@ -21,8 +21,8 @@ public class ProductResponseDto {
     private BigDecimal price;
     private String imageURL;
     private BigDecimal discountPrice;
-    private Timestamp createAt;
-    private Timestamp updateAt;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
     private int quantity;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty("category")
@@ -32,15 +32,15 @@ public class ProductResponseDto {
 
     public ProductResponseDto(Long productId, String name, String description, BigDecimal price,
                               BigDecimal discountPrice, String imageURL,
-                              Timestamp createAt, Timestamp updateAt) {
+                              Timestamp createdAt, Timestamp updatedAt) {
         this.productId = productId;
         this.name = name;
         this.description = description;
         this.price = price;
         this.discountPrice = discountPrice;
         this.imageURL = imageURL;
-        this.createAt = createAt;
-        this.updateAt = updateAt;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
 
     }
 }
