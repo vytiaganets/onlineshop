@@ -10,12 +10,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 public class ProductProfitDto {
-    //private Long productId;
     private String period;
     private BigDecimal sum;
 
     public ProductProfitDto(String period, BigDecimal sum) {
-        //this.productId = productId;
         this.period = period;
         this.sum = sum;
     }

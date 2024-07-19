@@ -12,6 +12,7 @@ import com.example.onlineshopproject.query.ProductProfit;
 import com.example.onlineshopproject.repository.CategoryRepository;
 import com.example.onlineshopproject.repository.ProductRepository;
 import com.fasterxml.jackson.core.io.BigDecimalParser;
+import jakarta.ws.rs.BadRequestException;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -99,7 +100,7 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
-
+    @Transactional
     public void insert(ProductRequestDto productRequestDto) {
         log.debug("Attempting insert product: {}", productRequestDto.getName());
         CategoryEntity categoryEntity =
@@ -109,6 +110,7 @@ public class ProductServiceImpl implements ProductService {
             productEntity.setProductId(0L);
             productEntity.setCategoryEntity(categoryEntity);
             productEntity.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
+            productEntity.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
             productRepository.save(productEntity);
         } else {
             log.error("Product not found", productRequestDto.getName());
@@ -123,13 +125,13 @@ public class ProductServiceImpl implements ProductService {
             CategoryEntity categoryEntity =
                     categoryRepository.findCategoryEntityByName(productRequestDto.getCategoryEntity());
             if (productEntity != null && categoryEntity != null) {
+                productEntity.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
                 productEntity.setName(productRequestDto.getName());
                 productEntity.setDescription(productRequestDto.getDescription());
                 productEntity.setPrice(productRequestDto.getPrice());
                 productEntity.setDiscountPrice(productRequestDto.getDiscountPrice());
                 productEntity.setImageUrl(productRequestDto.getImageUrl());
                 productEntity.setCategoryEntity(categoryEntity);
-                productEntity.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
                 productRepository.save(productEntity);
             } else {
                 log.error("Can't find the product with id: {}", productId);

@@ -39,6 +39,7 @@ public class OrderServiceImpl implements OrderService {
     private final ProductRepository productRepository;
     private final Mappers mappers;
 
+    @Transactional
     public void insert(OrderRequestDto orderRequestDto, Long userId) {
         log.debug("Attempting insert order by userId: {}", userId);
         OrderEntity orderEntity = new OrderEntity();
@@ -46,9 +47,12 @@ public class OrderServiceImpl implements OrderService {
         if (userEntity != null) {
             orderEntity.setUserEntity(userEntity);
             orderEntity.setCreatedAt(Timestamp.valueOf(LocalDateTime.now()));
+            orderEntity.setUpdatedAt(Timestamp.valueOf(LocalDateTime.now()));
             orderEntity.setContactPhone(userEntity.getPhoneNumber());
             orderEntity.setDeliveryAddress(orderRequestDto.getDeliveryAddress());
             orderEntity.setDeliveryMethod(DeliveryMethod.valueOf(orderRequestDto.getDeliveryMethod()));
+            //orderEntity.setItems(orderRequestDto.getOrderItemSet());
+            //Column 'ProductID' cannot be null] [insert into OrderItems (orderId,priceAtPurchase,ProductId,quantity) values (?,?,?,?)]; SQL [insert into OrderItems (orderId,priceAtPurchase,ProductId,quantity) values (?,?,?,?)]; constraint [null]] with root cause
             orderEntity.setStatus(Status.ORDERED);
             orderEntity = orderRepository.save(orderEntity);
         } else {
@@ -67,6 +71,7 @@ public class OrderServiceImpl implements OrderService {
                     orderItemEntity.setPriceAtPurchase(productEntity.getDiscountPrice());
                 }
                 orderItemEntity.setQuantity(orderItemEntity.getQuantity());
+                orderItemEntity.setProductEntity(productEntity);
                 orderItemEntity.setQuantity(orderItemRequestDto.getQuantity());
                 orderItemEntity.setOrderEntity(orderEntity);
                 orderItemRepository.save(orderItemEntity);

@@ -15,7 +15,6 @@ public class ProductRequestDto {
     private BigDecimal price;
     private BigDecimal discountPrice;
     private String imageUrl;
-    //private Long categoryId;
     @NotBlank(message = "Invalid category: empty category")
     private String categoryEntity;
 }
