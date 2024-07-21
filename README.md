@@ -1,5 +1,6 @@
 # Online-shop project [Backend and Telegram Bot with ChatGPT]
 [ ⚡Here you can see the video Swagger test⚡](https://youtu.be/OlRL9_uWFu4)
+[![img_2.png](img_2.png)](https://youtu.be/OlRL9_uWFu4)
 ## Links to the [layout](https://github.com/vytiaganets/onlineshop/blob/main/src/main/resources/db/bd.jpg), [technical specifications](https://github.com/vytiaganets/onlineshop/blob/main/src/main/resources/db/tz.txt) or requirements, [deployed implementation](https://github.com/vytiaganets/onlineshop/blob/main/src/main/resources/db/rest.txt)
 ## The application allows customers to select a product from the catalog, add it to the cart, place an order and track its status in real time. For administrators and employees, the application provides tools for managing the product catalog, orders, promotions and sales analytics.
 ## Ask a question to the artificial intelligence (AI). The user can ask questions and get answers from our AI, which will help them make decisions about their buy.
