@@ -188,7 +188,6 @@
     <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-client:3.1.6" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.14" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.16" level="project" />
-    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.16.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.14" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.15.1" level="project" />
@@ -198,5 +197,28 @@
     <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-engine:1.10.2" level="project" />
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.13" level="project" />
+    <orderEntry type="library" name="Maven: dev.langchain4j:langchain4j:0.28.0" level="project" />
+    <orderEntry type="library" name="Maven: dev.langchain4j:langchain4j-core:0.28.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.10.1" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.retrofit2:retrofit:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:4.12.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio-jvm:3.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.9.24" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.9.24" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.opennlp:opennlp-tools:1.9.4" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.16.1" level="project" />
+    <orderEntry type="library" name="Maven: dev.langchain4j:langchain4j-open-ai:0.28.0" level="project" />
+    <orderEntry type="library" name="Maven: dev.ai4j:openai4j:0.15.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.retrofit2:converter-gson:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp-sse:4.12.0" level="project" />
+    <orderEntry type="library" name="Maven: com.knuddels:jtokkit:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: dev.langchain4j:langchain4j-document-parser-apache-pdfbox:0.30.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.pdfbox:pdfbox:2.0.30" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.pdfbox:fontbox:2.0.30" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
   </component>
 </module>
