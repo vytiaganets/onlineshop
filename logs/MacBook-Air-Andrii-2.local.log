@@ -1,140 +1,436 @@
-2024-07-21 07:18:31.081 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 9590 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 07:18:31.116 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 07:18:31.118 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-21 07:19:19.535 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 9605 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 07:19:19.537 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 07:19:19.545 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-21 12:31:51.836 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 1948 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 12:31:51.838 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 12:31:51.840 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 12:31:58.214 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 12:32:12.248 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 22.36 seconds (process running for 25.783)
-2024-07-21 13:48:29.265 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 2788 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 13:48:29.269 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 13:48:29.270 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 13:48:52.759 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 13:49:17.769 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 53.398 seconds (process running for 58.652)
-2024-07-21 13:50:18.724 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 2845 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 13:50:18.726 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 13:50:18.727 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 13:50:24.843 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 13:50:44.419 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 27.963 seconds (process running for 31.94)
-2024-07-21 13:51:06.941 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 2866 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 13:51:06.968 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 13:51:06.969 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 13:51:13.858 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 13:51:27.313 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 22.645 seconds (process running for 25.879)
-2024-07-21 14:18:17.142 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 3077 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 14:18:17.146 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 14:18:17.153 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 14:18:23.138 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 14:18:37.255 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 21.984 seconds (process running for 24.969)
-2024-07-21 14:43:02.014 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 3732 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 14:43:02.018 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 14:43:02.020 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 14:43:08.629 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 14:43:25.151 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 25.286 seconds (process running for 28.921)
-2024-07-21 15:13:49.820 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4045 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:13:49.823 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:13:49.824 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:14:10.496 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:14:31.501 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 45.714 seconds (process running for 50.391)
-2024-07-21 15:16:44.295 | http-nio-8080-exec-1      | INFO  | com.example.onlineshopproject.controller.LoadController                 -  Loading single document start.
-2024-07-21 15:17:55.959 | http-nio-8080-exec-1      | INFO  | com.example.onlineshopproject.controller.LoadController                 -  Loading single document end.
-2024-07-21 15:19:16.819 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4104 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:19:16.820 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:19:16.822 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:19:22.797 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:19:33.816 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 18.103 seconds (process running for 20.149)
-2024-07-21 15:32:52.867 | http-nio-8080-exec-7      | INFO  | com.example.onlineshopproject.controller.LoadController                 -  Loading single document start.
-2024-07-21 15:32:55.096 | http-nio-8080-exec-7      | INFO  | com.example.onlineshopproject.controller.LoadController                 -  Loading single document end.
-2024-07-21 15:38:50.622 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4248 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:38:50.634 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:38:50.635 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:38:56.152 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:39:07.448 | main                      | ERROR | com.example.onlineshopproject.configuration.TelegramConfiguration       -  Exception during registration Telegram API: Error removing old webhook
-2024-07-21 15:40:59.247 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4270 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:40:59.248 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:40:59.251 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:41:06.327 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:41:18.786 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 21.488 seconds (process running for 24.448)
-2024-07-21 15:44:08.378 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4329 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:44:08.379 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:44:08.381 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:44:12.839 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:44:33.678 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 27.419 seconds (process running for 30.058)
-2024-07-21 15:47:10.169 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4353 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:47:10.171 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:47:10.173 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:47:15.662 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:47:28.430 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 19.6 seconds (process running for 21.435)
-2024-07-21 15:49:17.362 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4373 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:49:17.375 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:49:17.377 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:49:22.054 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:49:33.136 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 16.729 seconds (process running for 18.356)
-2024-07-21 15:54:22.133 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4416 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:54:22.138 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:54:22.141 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:54:26.938 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:54:37.916 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 16.889 seconds (process running for 19.252)
-2024-07-21 15:57:10.378 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4439 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:57:10.380 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:57:10.381 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:57:16.833 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:57:35.180 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 26.099 seconds (process running for 27.884)
-2024-07-21 15:57:47.212 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: Message(messageId=13, messageThreadId=null, from=User(id=5274618964, firstName=Andrii, isBot=false, lastName=null, userName=andriukha82, languageCode=uk, canJoinGroups=null, canReadAllGroupMessages=null, supportInlineQueries=null, isPremium=null, addedToAttachmentMenu=null), date=1721570266, chat=Chat(id=5274618964, type=private, title=null, firstName=Andrii, lastName=null, userName=andriukha82, photo=null, description=null, inviteLink=null, pinnedMessage=null, stickerSetName=null, canSetStickerSet=null, permissions=null, slowModeDelay=null, bio=null, linkedChatId=null, location=null, messageAutoDeleteTime=null, hasPrivateForwards=null, HasProtectedContent=null, joinToSendMessages=null, joinByRequest=null, hasRestrictedVoiceAndVideoMessages=null, isForum=null, activeUsernames=null, emojiStatusCustomEmojiId=null, hasAggressiveAntiSpamEnabled=null, hasHiddenMembers=null, emojiStatusExpirationDate=null, availableReactions=null, accentColorId=null, backgroundCustomEmojiId=null, profileAccentColorId=null, profileBackgroundCustomEmojiId=null, hasVisibleHistory=null, unrestrictBoostCount=null, customEmojiStickerSetName=null), forwardFrom=null, forwardFromChat=null, forwardDate=null, text=/start, entities=[MessageEntity(type=bot_command, offset=0, length=6, url=null, user=null, language=null, customEmojiId=null, text=/start)], captionEntities=null, audio=null, document=null, photo=null, sticker=null, video=null, contact=null, location=null, venue=null, animation=null, pinnedMessage=null, newChatMembers=[], leftChatMember=null, newChatTitle=null, newChatPhoto=null, deleteChatPhoto=null, groupchatCreated=null, replyToMessage=null, voice=null, caption=null, superGroupCreated=null, channelChatCreated=null, migrateToChatId=null, migrateFromChatId=null, editDate=null, game=null, forwardFromMessageId=null, invoice=null, successfulPayment=null, videoNote=null, authorSignature=null, forwardSignature=null, mediaGroupId=null, connectedWebsite=null, passportData=null, forwardSenderName=null, poll=null, replyMarkup=null, dice=null, viaBot=null, senderChat=null, proximityAlertTriggered=null, messageAutoDeleteTimerChanged=null, isAutomaticForward=null, hasProtectedContent=null, webAppData=null, videoChatStarted=null, videoChatEnded=null, videoChatParticipantsInvited=null, videoChatScheduled=null, isTopicMessage=null, forumTopicCreated=null, forumTopicClosed=null, forumTopicReopened=null, forumTopicEdited=null, generalForumTopicHidden=null, generalForumTopicUnhidden=null, writeAccessAllowed=null, hasMediaSpoiler=null, userShared=null, chatShared=null, story=null, externalReplyInfo=null, forwardOrigin=null, linkPreviewOptions=null, quote=null, usersShared=null, giveawayCreated=null, giveaway=null, giveawayWinners=null, giveawayCompleted=null, replyToStory=null, boostAdded=null, senderBoostCount=null)
-2024-07-21 15:57:47.216 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  /start
-2024-07-21 15:58:04.082 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4452 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 15:58:04.084 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 15:58:04.090 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 15:58:08.917 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 15:58:22.073 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 19.332 seconds (process running for 21.012)
-2024-07-21 15:58:37.796 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: Message(messageId=15, messageThreadId=null, from=User(id=5274618964, firstName=Andrii, isBot=false, lastName=null, userName=andriukha82, languageCode=uk, canJoinGroups=null, canReadAllGroupMessages=null, supportInlineQueries=null, isPremium=null, addedToAttachmentMenu=null), date=1721570317, chat=Chat(id=5274618964, type=private, title=null, firstName=Andrii, lastName=null, userName=andriukha82, photo=null, description=null, inviteLink=null, pinnedMessage=null, stickerSetName=null, canSetStickerSet=null, permissions=null, slowModeDelay=null, bio=null, linkedChatId=null, location=null, messageAutoDeleteTime=null, hasPrivateForwards=null, HasProtectedContent=null, joinToSendMessages=null, joinByRequest=null, hasRestrictedVoiceAndVideoMessages=null, isForum=null, activeUsernames=null, emojiStatusCustomEmojiId=null, hasAggressiveAntiSpamEnabled=null, hasHiddenMembers=null, emojiStatusExpirationDate=null, availableReactions=null, accentColorId=null, backgroundCustomEmojiId=null, profileAccentColorId=null, profileBackgroundCustomEmojiId=null, hasVisibleHistory=null, unrestrictBoostCount=null, customEmojiStickerSetName=null), forwardFrom=null, forwardFromChat=null, forwardDate=null, text=tell me about gravity, entities=null, captionEntities=null, audio=null, document=null, photo=null, sticker=null, video=null, contact=null, location=null, venue=null, animation=null, pinnedMessage=null, newChatMembers=[], leftChatMember=null, newChatTitle=null, newChatPhoto=null, deleteChatPhoto=null, groupchatCreated=null, replyToMessage=null, voice=null, caption=null, superGroupCreated=null, channelChatCreated=null, migrateToChatId=null, migrateFromChatId=null, editDate=null, game=null, forwardFromMessageId=null, invoice=null, successfulPayment=null, videoNote=null, authorSignature=null, forwardSignature=null, mediaGroupId=null, connectedWebsite=null, passportData=null, forwardSenderName=null, poll=null, replyMarkup=null, dice=null, viaBot=null, senderChat=null, proximityAlertTriggered=null, messageAutoDeleteTimerChanged=null, isAutomaticForward=null, hasProtectedContent=null, webAppData=null, videoChatStarted=null, videoChatEnded=null, videoChatParticipantsInvited=null, videoChatScheduled=null, isTopicMessage=null, forumTopicCreated=null, forumTopicClosed=null, forumTopicReopened=null, forumTopicEdited=null, generalForumTopicHidden=null, generalForumTopicUnhidden=null, writeAccessAllowed=null, hasMediaSpoiler=null, userShared=null, chatShared=null, story=null, externalReplyInfo=null, forwardOrigin=null, linkPreviewOptions=null, quote=null, usersShared=null, giveawayCreated=null, giveaway=null, giveawayWinners=null, giveawayCompleted=null, replyToStory=null, boostAdded=null, senderBoostCount=null)
-2024-07-21 15:58:37.798 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  tell me about gravity
-2024-07-21 16:01:35.894 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4481 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 16:01:35.895 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 16:01:35.896 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 16:01:41.339 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 16:01:54.536 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 20.069 seconds (process running for 22.226)
-2024-07-21 16:02:06.618 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: 5274618964
-2024-07-21 16:02:06.620 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  tell me about gravity
-2024-07-21 16:05:50.412 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4517 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 16:05:50.412 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 16:05:50.414 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 16:05:55.407 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 16:06:06.737 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 17.314 seconds (process running for 18.903)
-2024-07-21 16:09:22.742 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: 5274618964
-2024-07-21 16:09:22.747 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  tell me about gravity
-2024-07-21 16:17:03.034 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4604 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 16:17:03.038 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 16:17:03.043 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 16:17:14.892 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 16:17:30.456 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 29.479 seconds (process running for 32.007)
-2024-07-21 16:19:53.230 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: 5274618964
-2024-07-21 16:19:53.236 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  1
-2024-07-21 16:22:31.330 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4684 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 16:22:31.344 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 16:22:31.346 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 16:22:36.995 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 16:25:58.583 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: 5274618964
-2024-07-21 16:25:58.590 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  ell me about gravity
-2024-07-21 16:26:00.367 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 211.27 seconds (process running for 215.607)
-2024-07-21 16:27:36.390 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 4784 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 16:27:36.391 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 16:27:36.393 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 16:27:48.476 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 16:28:30.257 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 58.752 seconds (process running for 63.553)
-2024-07-21 17:06:40.956 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: 5274618964
-2024-07-21 17:06:40.986 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  tell me about gravity
-2024-07-21 17:17:10.392 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 5285 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-21 17:17:10.393 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-21 17:17:10.396 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-21 17:17:16.023 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-21 17:17:28.925 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 20.188 seconds (process running for 21.973)
-2024-07-21 17:17:44.830 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: 5274618964
-2024-07-21 17:17:44.831 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  tell me about gravity
-2024-07-21 17:19:36.961 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: 5274618964
-2024-07-21 17:19:36.964 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  what time is it?
-2024-07-21 17:20:00.732 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  Message received: 5274618964
-2024-07-21 17:20:00.735 | inberlinwohnung_bot Telegram Executor | INFO  | com.example.onlineshopproject.bot.TelegramBot                           -  что такое ножници
+2024-07-23 07:01:57.306 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 8512 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:01:57.330 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:01:57.333 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-23 07:02:03.424 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:02:16.528 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 22.255 seconds (process running for 25.933)
+2024-07-23 07:03:21.095 | http-nio-8080-exec-9      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukrr.net
+2024-07-23 07:03:21.203 | http-nio-8080-exec-9      | ERROR | com.example.onlineshopproject.service.UserServiceImpl                   -  User not found with email: andrii@ukrr.net
+2024-07-23 07:03:21.204 | http-nio-8080-exec-9      | ERROR | com.example.onlineshopproject.controller.advice.AdviceController        -  User is not found: The user with e-mail was not found in the database:andrii@ukrr.net
+2024-07-23 07:03:31.849 | http-nio-8080-exec-5      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 07:05:14.637 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8595 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:05:14.639 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:05:14.642 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:05:34.910 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:05:35.157 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 22.295 seconds (process running for 25.13)
+2024-07-23 07:08:46.519 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8640 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:08:46.520 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:08:46.521 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:09:02.854 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:09:02.963 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.288 seconds (process running for 19.653)
+2024-07-23 07:09:40.993 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8650 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:09:40.995 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:09:40.997 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:09:59.574 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:09:59.733 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.867 seconds (process running for 23.312)
+2024-07-23 07:11:45.271 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8669 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:11:45.273 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:11:45.276 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:12:01.170 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:12:01.294 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.096 seconds (process running for 19.49)
+2024-07-23 07:14:42.773 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8725 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:14:42.775 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:14:42.776 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:14:58.520 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:14:58.634 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 16.979 seconds (process running for 19.478)
+2024-07-23 07:15:39.749 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8737 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:15:39.753 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:15:39.754 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:16:00.930 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:16:01.235 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 22.582 seconds (process running for 24.993)
+2024-07-23 07:17:10.578 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8752 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:17:10.579 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:17:10.582 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:17:26.900 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:17:27.026 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.584 seconds (process running for 19.963)
+2024-07-23 07:19:50.286 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8775 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:19:50.287 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:19:50.290 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:20:11.828 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:20:11.946 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 22.485 seconds (process running for 26.585)
+2024-07-23 07:20:23.344 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8786 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:20:23.345 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:20:23.347 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:20:41.534 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:20:41.649 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.426 seconds (process running for 22.396)
+2024-07-23 07:24:21.680 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8815 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:24:21.682 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:24:21.684 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:24:40.437 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:24:40.585 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.981 seconds (process running for 22.443)
+2024-07-23 07:25:34.920 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8828 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 07:25:34.924 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 07:25:34.925 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 07:25:53.347 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 07:25:53.492 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.608 seconds (process running for 22.048)
+2024-07-23 13:02:11.738 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10560 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:02:11.740 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:02:11.743 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 13:02:52.799 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:02:53.017 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 44.81 seconds (process running for 51.525)
+2024-07-23 13:06:01.191 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10595 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:06:01.196 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:06:01.201 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 13:07:10.971 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:07:11.569 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 73.326 seconds (process running for 83.613)
+2024-07-23 13:13:06.771 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10659 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:13:06.772 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:13:06.776 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 13:13:53.579 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:13:53.952 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 49.918 seconds (process running for 57.275)
+2024-07-23 13:17:58.228 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10715 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:17:58.230 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:17:58.232 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 13:19:13.755 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:19:14.079 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 78.838 seconds (process running for 88.61)
+2024-07-23 13:25:07.060 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10772 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:25:07.063 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:25:07.129 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 13:25:48.566 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:25:48.937 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 44.904 seconds (process running for 54.43)
+2024-07-23 13:25:51.189 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 13:27:16.538 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10791 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:27:16.539 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:27:16.543 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 13:28:00.611 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:28:00.989 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 47.415 seconds (process running for 56.766)
+2024-07-23 13:28:04.079 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 13:29:33.860 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10811 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:29:33.865 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:29:33.867 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 13:30:17.982 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:30:18.361 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 50.132 seconds (process running for 58.639)
+2024-07-23 13:30:21.195 | main                      | ERROR | com.example.onlineshopproject.security.jwt.JwtProvider                  -  Неправильно сформированный jwt.
+io.jsonwebtoken.MalformedJwtException: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 0
+	at io.jsonwebtoken.impl.JwtTokenizer.tokenize(JwtTokenizer.java:102)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:370)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94)
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36)
+	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821)
+	at com.example.onlineshopproject.security.jwt.JwtProvider.validateToken(JwtProvider.java:71)
+	at com.example.onlineshopproject.security.jwt.JwtProvider.validateRefreshToken(JwtProvider.java:63)
+	at com.example.onlineshopproject.security.service.AuthServiceImpl.getAccessToken(AuthServiceImpl.java:45)
+	at com.example.onlineshopproject.security.controller.AuthController.getNewAccessToken(AuthController.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at com.example.onlineshopproject.security.jwt.JwtFilter.doFilter(JwtFilter.java:34)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at com.example.onlineshopproject.security.jwt.JwtFilter.doFilter(JwtFilter.java:34)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
+	at com.example.onlineshopproject.integration.AuthIntegrationTest.getAccessToken(AuthIntegrationTest.java:50)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+2024-07-23 13:36:42.526 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 10874 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:36:42.528 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:36:42.565 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-23 13:36:55.630 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:37:47.473 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 67.878 seconds (process running for 70.607)
+2024-07-23 13:42:39.829 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 10942 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:42:39.835 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:42:39.840 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-23 13:42:55.933 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:43:15.865 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 39.839 seconds (process running for 44.066)
+2024-07-23 13:47:14.647 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 10988 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:47:14.648 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:47:14.649 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-23 13:47:22.764 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:47:53.051 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 40.857 seconds (process running for 44.082)
+2024-07-23 13:48:47.381 | http-nio-8080-exec-8      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-23 13:50:14.152 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 11021 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 13:50:14.155 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 13:50:14.157 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-23 13:50:33.870 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 13:51:11.390 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 60.204 seconds (process running for 64.078)
+2024-07-23 15:22:48.277 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 949 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 15:22:48.282 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 15:22:48.285 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-23 15:22:53.140 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 15:23:03.933 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 17.517 seconds (process running for 19.347)
+2024-07-23 15:24:56.156 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 971 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 15:24:56.157 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 15:24:56.158 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-23 15:25:00.536 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 15:25:11.432 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 16.331 seconds (process running for 18.115)
+2024-07-23 15:38:29.194 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 1129 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 15:38:29.196 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 15:38:29.197 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-23 15:38:33.969 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 15:38:45.151 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 16.806 seconds (process running for 19.025)
+2024-07-23 15:39:39.221 | http-nio-8080-exec-6      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 15:40:09.508 | http-nio-8080-exec-5      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-23 15:52:36.695 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1230 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 15:52:36.699 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 15:52:36.700 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 15:53:03.412 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 15:53:03.647 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 28.748 seconds (process running for 36.985)
+2024-07-23 15:53:05.191 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:02:33.569 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1298 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:02:33.576 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:02:33.579 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:02:52.765 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:02:52.883 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 21.098 seconds (process running for 25.009)
+2024-07-23 16:02:54.152 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:02:54.947 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:03:09.713 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1307 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:03:09.715 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:03:09.716 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:03:29.701 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:03:29.856 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 21.884 seconds (process running for 25.688)
+2024-07-23 16:04:06.052 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1317 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:04:06.053 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:04:06.054 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:04:24.328 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:04:24.476 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.918 seconds (process running for 22.851)
+2024-07-23 16:04:26.354 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:04:26.775 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:04:26.995 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:07:08.967 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1342 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:07:08.971 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:07:08.974 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:07:24.333 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:07:24.492 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 16.51 seconds (process running for 19.187)
+2024-07-23 16:07:26.268 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:07:26.563 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:07:26.737 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:19:39.140 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1463 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:19:39.143 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:19:39.144 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:19:57.331 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:19:57.794 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.975 seconds (process running for 23.105)
+2024-07-23 16:24:12.619 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1499 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:24:12.621 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:24:12.622 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:24:36.153 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:24:36.284 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 25.33 seconds (process running for 28.661)
+2024-07-23 16:25:10.568 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1511 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:25:10.569 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:25:10.570 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:25:29.923 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:25:30.114 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 20.789 seconds (process running for 23.746)
+2024-07-23 16:26:26.350 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1524 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:26:26.353 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:26:26.354 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:26:42.609 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:26:42.785 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.545 seconds (process running for 21.285)
+2024-07-23 16:27:27.937 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1535 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:27:27.938 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:27:27.939 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:27:53.775 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:27:53.922 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 27.748 seconds (process running for 31.38)
+2024-07-23 16:27:55.578 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:27:56.267 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:27:56.526 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:39:53.772 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1641 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:39:53.772 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:39:53.775 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:40:10.482 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:40:10.628 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 18.159 seconds (process running for 20.466)
+2024-07-23 16:40:11.623 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:40:12.061 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:40:12.220 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:42:21.598 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1673 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:42:21.598 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:42:21.599 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:42:37.688 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:42:37.824 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.612 seconds (process running for 19.825)
+2024-07-23 16:42:39.066 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:42:39.615 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:42:39.816 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:43:26.927 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1685 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:43:26.928 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:43:26.929 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:43:46.970 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:43:47.206 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 21.706 seconds (process running for 26.247)
+2024-07-23 16:44:31.916 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:45:23.628 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:45:35.223 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1708 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:45:35.225 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:45:35.227 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:45:57.794 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:45:57.985 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 24.642 seconds (process running for 27.889)
+2024-07-23 16:46:20.736 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:52:37.657 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1756 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-23 16:52:37.658 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-23 16:52:37.660 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
+2024-07-23 16:52:54.934 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-23 16:52:55.094 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 18.768 seconds (process running for 21.728)
+2024-07-23 16:52:56.244 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-23 16:52:56.810 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
