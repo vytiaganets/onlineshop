@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="onlineshopproject/Hibernate" uuid="992d384f-b11f-4b3e-a7c5-4b74956cc26d">
+    <data-source source="LOCAL" name="onlineshopproject/Hibernate" uuid="c31dd0c5-ba37-4c4d-b2ec-dbcd10726bac">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
       <remarks>Hibernate</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/onlineshopproject</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/onlineshopproject?allowPublicKeyRetrieval=true&amp;useSSL=false</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="OnlineShop@localhost" uuid="eea3f793-666b-4eae-97b3-c1f591cf256d">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:13306/OnlineShop?user=root&amp;password=1234&amp;allowPublicKeyRetrieval=true&amp;useSSL=false</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

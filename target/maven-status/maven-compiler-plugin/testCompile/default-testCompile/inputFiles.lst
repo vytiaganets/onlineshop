@@ -5,6 +5,7 @@
 /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/src/test/java/com/example/onlineshopproject/controller/OrderControllerTest.java
 /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/src/test/java/com/example/onlineshopproject/controller/ProductControllerTest.java
 /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/src/test/java/com/example/onlineshopproject/controller/UserControllerTest.java
+/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/src/test/java/com/example/onlineshopproject/integration/AuthIntegrationTest.java
 /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/src/test/java/com/example/onlineshopproject/integration/CartIntegrationTest.java
 /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/src/test/java/com/example/onlineshopproject/integration/CategoryIntegrationTest.java
 /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/src/test/java/com/example/onlineshopproject/integration/FavoritesIntegrationTest.java

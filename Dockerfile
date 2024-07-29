@@ -6,4 +6,3 @@ WORKDIR /app
 COPY target/*.jar app.jar
 #S pecify the command to run your application
 CMD ["java", "-jar", "app.jar"]
-#ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "app.jar"]

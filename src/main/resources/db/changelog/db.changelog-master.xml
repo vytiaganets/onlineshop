@@ -7,6 +7,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <include file="db/changelog/changelogs/users-changelog.xml"/>
+    <include file="db/changelog/changelogs/telegramusers-changelog.xml"/>
     <include file="db/changelog/changelogs/category-changelog.xml"/>
     <include file="db/changelog/changelogs/product-changelog.xml"/>
     <include file="db/changelog/changelogs/favorites-changelog.xml"/>

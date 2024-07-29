@@ -24,7 +24,7 @@
     <changeSet id="2" author="Andrii">
         <comment>Insert sample products count</comment>
         <insert tableName="ProductProfit">
-            <column name="Period" value="2024-06"/>
+            <column name="Period" value="2024-06-29 12"/>
             <column name="Sum" value="10.12"/>
         </insert>
     </changeSet>
