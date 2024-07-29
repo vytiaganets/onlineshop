@@ -1,0 +1,35 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="1" author="Andrii">
+        <comment>create table users</comment>
+        <createTable tableName="TelegramUsers">
+            <column name="chatId"  type="BIGINT">
+            </column>
+            <column name="firstName" type="VARCHAR(255)">
+            </column>
+            <column name="lastName" type="VARCHAR(255)">
+            </column>
+            <column name="userName" type="VARCHAR(255)">
+            </column>
+            <column name="registeredAt" type="TIMESTAMP">
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="Andrii">
+    <comment>add test data to users</comment>
+    <insert tableName="TelegramUsers">
+        <column name="chatId" value="5274618964"/>
+        <column name="firstName" value="Andrii"/>
+        <column name="lastName" value=""/>
+        <column name="userName" value="andriukha82"/>
+        <column name="registeredAt" value="2024-07-24 10:48:17.428000"/>
+    </insert>
+    </changeSet>
+</databaseChangeLog>

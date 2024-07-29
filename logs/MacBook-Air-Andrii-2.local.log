@@ -1,436 +1,445 @@
-2024-07-23 07:01:57.306 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 8512 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:01:57.330 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:01:57.333 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-23 07:02:03.424 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:02:16.528 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 22.255 seconds (process running for 25.933)
-2024-07-23 07:03:21.095 | http-nio-8080-exec-9      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukrr.net
-2024-07-23 07:03:21.203 | http-nio-8080-exec-9      | ERROR | com.example.onlineshopproject.service.UserServiceImpl                   -  User not found with email: andrii@ukrr.net
-2024-07-23 07:03:21.204 | http-nio-8080-exec-9      | ERROR | com.example.onlineshopproject.controller.advice.AdviceController        -  User is not found: The user with e-mail was not found in the database:andrii@ukrr.net
-2024-07-23 07:03:31.849 | http-nio-8080-exec-5      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 07:05:14.637 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8595 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:05:14.639 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:05:14.642 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:05:34.910 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:05:35.157 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 22.295 seconds (process running for 25.13)
-2024-07-23 07:08:46.519 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8640 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:08:46.520 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:08:46.521 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:09:02.854 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:09:02.963 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.288 seconds (process running for 19.653)
-2024-07-23 07:09:40.993 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8650 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:09:40.995 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:09:40.997 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:09:59.574 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:09:59.733 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.867 seconds (process running for 23.312)
-2024-07-23 07:11:45.271 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8669 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:11:45.273 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:11:45.276 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:12:01.170 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:12:01.294 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.096 seconds (process running for 19.49)
-2024-07-23 07:14:42.773 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8725 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:14:42.775 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:14:42.776 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:14:58.520 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:14:58.634 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 16.979 seconds (process running for 19.478)
-2024-07-23 07:15:39.749 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8737 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:15:39.753 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:15:39.754 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:16:00.930 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:16:01.235 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 22.582 seconds (process running for 24.993)
-2024-07-23 07:17:10.578 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8752 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:17:10.579 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:17:10.582 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:17:26.900 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:17:27.026 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.584 seconds (process running for 19.963)
-2024-07-23 07:19:50.286 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8775 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:19:50.287 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:19:50.290 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:20:11.828 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:20:11.946 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 22.485 seconds (process running for 26.585)
-2024-07-23 07:20:23.344 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8786 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:20:23.345 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:20:23.347 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:20:41.534 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:20:41.649 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.426 seconds (process running for 22.396)
-2024-07-23 07:24:21.680 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8815 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:24:21.682 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:24:21.684 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:24:40.437 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:24:40.585 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.981 seconds (process running for 22.443)
-2024-07-23 07:25:34.920 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 8828 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 07:25:34.924 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 07:25:34.925 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 07:25:53.347 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 07:25:53.492 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.608 seconds (process running for 22.048)
-2024-07-23 13:02:11.738 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10560 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:02:11.740 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:02:11.743 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 13:02:52.799 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:02:53.017 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 44.81 seconds (process running for 51.525)
-2024-07-23 13:06:01.191 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10595 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:06:01.196 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:06:01.201 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 13:07:10.971 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:07:11.569 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 73.326 seconds (process running for 83.613)
-2024-07-23 13:13:06.771 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10659 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:13:06.772 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:13:06.776 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 13:13:53.579 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:13:53.952 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 49.918 seconds (process running for 57.275)
-2024-07-23 13:17:58.228 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10715 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:17:58.230 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:17:58.232 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 13:19:13.755 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:19:14.079 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 78.838 seconds (process running for 88.61)
-2024-07-23 13:25:07.060 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10772 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:25:07.063 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:25:07.129 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 13:25:48.566 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:25:48.937 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 44.904 seconds (process running for 54.43)
-2024-07-23 13:25:51.189 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 13:27:16.538 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10791 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:27:16.539 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:27:16.543 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 13:28:00.611 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:28:00.989 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 47.415 seconds (process running for 56.766)
-2024-07-23 13:28:04.079 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 13:29:33.860 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 10811 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:29:33.865 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:29:33.867 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 13:30:17.982 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:30:18.361 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 50.132 seconds (process running for 58.639)
-2024-07-23 13:30:21.195 | main                      | ERROR | com.example.onlineshopproject.security.jwt.JwtProvider                  -  Неправильно сформированный jwt.
-io.jsonwebtoken.MalformedJwtException: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 0
-	at io.jsonwebtoken.impl.JwtTokenizer.tokenize(JwtTokenizer.java:102)
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:370)
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:362)
-	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:94)
-	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:36)
-	at io.jsonwebtoken.impl.io.AbstractParser.parse(AbstractParser.java:29)
-	at io.jsonwebtoken.impl.DefaultJwtParser.parseSignedClaims(DefaultJwtParser.java:821)
-	at com.example.onlineshopproject.security.jwt.JwtProvider.validateToken(JwtProvider.java:71)
-	at com.example.onlineshopproject.security.jwt.JwtProvider.validateRefreshToken(JwtProvider.java:63)
-	at com.example.onlineshopproject.security.service.AuthServiceImpl.getAccessToken(AuthServiceImpl.java:45)
-	at com.example.onlineshopproject.security.controller.AuthController.getNewAccessToken(AuthController.java:37)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:165)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at com.example.onlineshopproject.security.jwt.JwtFilter.doFilter(JwtFilter.java:34)
-	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
-	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479)
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340)
-	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128)
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at com.example.onlineshopproject.security.jwt.JwtFilter.doFilter(JwtFilter.java:34)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240)
-	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323)
-	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224)
-	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.test.web.servlet.setup.MockMvcFilterDecorator.doFilter(MockMvcFilterDecorator.java:151)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:132)
-	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:201)
-	at com.example.onlineshopproject.integration.AuthIntegrationTest.getAccessToken(AuthIntegrationTest.java:50)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
-	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
-	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
-2024-07-23 13:36:42.526 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 10874 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:36:42.528 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:36:42.565 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-23 13:36:55.630 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:37:47.473 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 67.878 seconds (process running for 70.607)
-2024-07-23 13:42:39.829 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 10942 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:42:39.835 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:42:39.840 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-23 13:42:55.933 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:43:15.865 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 39.839 seconds (process running for 44.066)
-2024-07-23 13:47:14.647 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 10988 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:47:14.648 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:47:14.649 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-23 13:47:22.764 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:47:53.051 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 40.857 seconds (process running for 44.082)
-2024-07-23 13:48:47.381 | http-nio-8080-exec-8      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
-2024-07-23 13:50:14.152 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 11021 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 13:50:14.155 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 13:50:14.157 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-23 13:50:33.870 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 13:51:11.390 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 60.204 seconds (process running for 64.078)
-2024-07-23 15:22:48.277 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 949 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 15:22:48.282 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 15:22:48.285 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-23 15:22:53.140 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 15:23:03.933 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 17.517 seconds (process running for 19.347)
-2024-07-23 15:24:56.156 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 971 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 15:24:56.157 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 15:24:56.158 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-23 15:25:00.536 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 15:25:11.432 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 16.331 seconds (process running for 18.115)
-2024-07-23 15:38:29.194 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 1129 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 15:38:29.196 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 15:38:29.197 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
-2024-07-23 15:38:33.969 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 15:38:45.151 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 16.806 seconds (process running for 19.025)
-2024-07-23 15:39:39.221 | http-nio-8080-exec-6      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 15:40:09.508 | http-nio-8080-exec-5      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
-2024-07-23 15:52:36.695 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1230 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 15:52:36.699 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 15:52:36.700 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 15:53:03.412 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 15:53:03.647 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 28.748 seconds (process running for 36.985)
-2024-07-23 15:53:05.191 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:02:33.569 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1298 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:02:33.576 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:02:33.579 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:02:52.765 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:02:52.883 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 21.098 seconds (process running for 25.009)
-2024-07-23 16:02:54.152 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:02:54.947 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:03:09.713 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1307 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:03:09.715 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:03:09.716 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:03:29.701 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:03:29.856 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 21.884 seconds (process running for 25.688)
-2024-07-23 16:04:06.052 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1317 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:04:06.053 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:04:06.054 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:04:24.328 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:04:24.476 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.918 seconds (process running for 22.851)
-2024-07-23 16:04:26.354 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:04:26.775 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:04:26.995 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:07:08.967 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1342 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:07:08.971 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:07:08.974 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:07:24.333 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:07:24.492 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 16.51 seconds (process running for 19.187)
-2024-07-23 16:07:26.268 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:07:26.563 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:07:26.737 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:19:39.140 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1463 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:19:39.143 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:19:39.144 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:19:57.331 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:19:57.794 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 19.975 seconds (process running for 23.105)
-2024-07-23 16:24:12.619 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1499 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:24:12.621 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:24:12.622 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:24:36.153 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:24:36.284 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 25.33 seconds (process running for 28.661)
-2024-07-23 16:25:10.568 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1511 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:25:10.569 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:25:10.570 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:25:29.923 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:25:30.114 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 20.789 seconds (process running for 23.746)
-2024-07-23 16:26:26.350 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1524 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:26:26.353 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:26:26.354 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:26:42.609 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:26:42.785 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.545 seconds (process running for 21.285)
-2024-07-23 16:27:27.937 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1535 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:27:27.938 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:27:27.939 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:27:53.775 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:27:53.922 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 27.748 seconds (process running for 31.38)
-2024-07-23 16:27:55.578 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:27:56.267 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:27:56.526 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:39:53.772 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1641 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:39:53.772 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:39:53.775 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:40:10.482 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:40:10.628 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 18.159 seconds (process running for 20.466)
-2024-07-23 16:40:11.623 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:40:12.061 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:40:12.220 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:42:21.598 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1673 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:42:21.598 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:42:21.599 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:42:37.688 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:42:37.824 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 17.612 seconds (process running for 19.825)
-2024-07-23 16:42:39.066 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:42:39.615 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:42:39.816 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:43:26.927 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1685 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:43:26.928 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:43:26.929 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:43:46.970 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:43:47.206 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 21.706 seconds (process running for 26.247)
-2024-07-23 16:44:31.916 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:45:23.628 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:45:35.223 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1708 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:45:35.225 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:45:35.227 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:45:57.794 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:45:57.985 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 24.642 seconds (process running for 27.889)
-2024-07-23 16:46:20.736 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:52:37.657 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Starting AuthIntegrationTest using Java 22.0.1 with PID 1756 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
-2024-07-23 16:52:37.658 | main                      | DEBUG | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Running with Spring Boot v3.3.0, Spring v6.1.8
-2024-07-23 16:52:37.660 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  The following 1 profile is active: "dev"
-2024-07-23 16:52:54.934 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
-2024-07-23 16:52:55.094 | main                      | INFO  | com.example.onlineshopproject.integration.AuthIntegrationTest           -  Started AuthIntegrationTest in 18.768 seconds (process running for 21.728)
-2024-07-23 16:52:56.244 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
-2024-07-23 16:52:56.810 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Attempting to find a user by email: andrii@ukr.net
+2024-07-27 13:55:44.400 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 3072 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 13:55:44.429 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 13:55:44.431 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 13:55:51.156 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 13:57:06.942 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 3091 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 13:57:06.946 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 13:57:06.948 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 13:57:11.926 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 13:58:04.984 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 3105 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 13:58:04.986 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 13:58:04.991 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 13:58:10.024 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 13:58:42.369 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 3113 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 13:58:42.375 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 13:58:42.382 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 13:58:47.942 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 14:00:00.775 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 3124 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:00:00.782 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:00:00.785 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 14:00:05.614 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 14:00:19.757 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 20.385 seconds (process running for 22.239)
+2024-07-27 14:14:47.077 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 3260 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:14:47.083 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:14:47.086 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 14:14:52.314 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 14:15:05.079 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 19.151 seconds (process running for 21.21)
+2024-07-27 14:25:28.580 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Starting ProductRepositoryTest using Java 22.0.1 with PID 3353 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:25:28.588 | main                      | DEBUG | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:25:28.592 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  The following 1 profile is active: "dev"
+2024-07-27 14:25:38.348 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting receive all categories.
+2024-07-27 14:25:38.365 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Returning all categories: 1
+2024-07-27 14:25:38.430 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 1
+2024-07-27 14:25:38.437 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 9
+2024-07-27 14:25:38.439 | main                      | ERROR | com.example.onlineshopproject.service.CategoryServiceImpl               -  Category not found: 9
+2024-07-27 14:25:39.206 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 1
+2024-07-27 14:25:39.212 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 9
+2024-07-27 14:25:39.214 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Product or user not found: 9
+2024-07-27 14:25:39.215 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 1
+2024-07-27 14:25:39.216 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Product or user not found: 1
+2024-07-27 14:25:39.234 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 1
+2024-07-27 14:25:39.243 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 9
+2024-07-27 14:25:39.244 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  User or product not found: 9
+2024-07-27 14:25:39.245 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 1
+2024-07-27 14:25:39.247 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  User or product not found: 1
+2024-07-27 14:25:39.264 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting get by userId: 1
+2024-07-27 14:25:39.269 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting get by userId: 9
+2024-07-27 14:25:39.270 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Cart not found: 9
+2024-07-27 14:25:39.550 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Fetching all users.
+2024-07-27 14:25:39.590 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-27 14:25:39.593 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 9
+2024-07-27 14:25:39.594 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id 9 not found.
+2024-07-27 14:25:39.605 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Receiving top 10 products by status
+2024-07-27 14:25:39.616 | main                      | INFO  | com.example.onlineshopproject.service.ProductServiceImpl                -  Returning top 10 products by status
+2024-07-27 14:25:39.627 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Product name
+2024-07-27 14:25:39.631 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Incorrect product name
+2024-07-27 14:25:39.631 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product not found
+2024-07-27 14:25:39.646 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:25:39.648 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:25:39.650 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Can't find the product with id: 9
+2024-07-27 14:25:39.652 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:25:39.652 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product id not valid: -1
+2024-07-27 14:25:39.663 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 1
+2024-07-27 14:25:39.667 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 9
+2024-07-27 14:25:39.668 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id not found: 9
+2024-07-27 14:25:39.897 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:25:39.901 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:25:39.902 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:25:39.904 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:25:39.905 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:25:39.921 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:25:39.924 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:25:39.925 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:25:39.926 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 9
+2024-07-27 14:25:39.927 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:25:39.936 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 1
+2024-07-27 14:25:39.949 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 9
+2024-07-27 14:25:39.950 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by userId 9 not found.
+2024-07-27 14:25:40.372 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:25:40.376 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 9
+2024-07-27 14:25:40.377 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 9
+2024-07-27 14:25:40.380 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:25:40.381 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 1
+2024-07-27 14:26:49.673 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Starting OrderRepositoryTest using Java 22.0.1 with PID 3372 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:26:49.675 | main                      | DEBUG | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:26:49.676 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  The following 1 profile is active: "dev"
+2024-07-27 14:26:51.833 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting receive all categories.
+2024-07-27 14:26:51.837 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Returning all categories: 1
+2024-07-27 14:26:51.855 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 1
+2024-07-27 14:26:51.858 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 9
+2024-07-27 14:26:51.859 | main                      | ERROR | com.example.onlineshopproject.service.CategoryServiceImpl               -  Category not found: 9
+2024-07-27 14:26:52.331 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:26:52.334 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:26:52.335 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:26:52.335 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:26:52.336 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:26:52.343 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:26:52.346 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:26:52.348 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:26:52.351 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 9
+2024-07-27 14:26:52.353 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:26:52.366 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 1
+2024-07-27 14:26:52.372 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 9
+2024-07-27 14:26:52.374 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by userId 9 not found.
+2024-07-27 14:26:52.401 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-27 14:26:52.404 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 9
+2024-07-27 14:26:52.406 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id 9 not found.
+2024-07-27 14:26:52.464 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Receiving top 10 products by status
+2024-07-27 14:26:52.493 | main                      | INFO  | com.example.onlineshopproject.service.ProductServiceImpl                -  Returning top 10 products by status
+2024-07-27 14:26:52.504 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Product name
+2024-07-27 14:26:52.508 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Incorrect product name
+2024-07-27 14:26:52.509 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product not found
+2024-07-27 14:26:52.517 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:26:52.519 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:26:52.520 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Can't find the product with id: 9
+2024-07-27 14:26:52.521 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:26:52.522 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product id not valid: -1
+2024-07-27 14:26:52.529 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 1
+2024-07-27 14:26:52.531 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 9
+2024-07-27 14:26:52.532 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id not found: 9
+2024-07-27 14:26:52.790 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:26:52.794 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 9
+2024-07-27 14:26:52.795 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 9
+2024-07-27 14:26:52.797 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:26:52.798 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 1
+2024-07-27 14:29:14.229 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Starting OrderRepositoryTest using Java 22.0.1 with PID 3395 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:29:14.230 | main                      | DEBUG | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:29:14.232 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  The following 1 profile is active: "dev"
+2024-07-27 14:29:24.558 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Started OrderRepositoryTest in 11.663 seconds (process running for 18.412)
+2024-07-27 14:29:25.111 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting receive all categories.
+2024-07-27 14:29:25.113 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Returning all categories: 1
+2024-07-27 14:29:25.124 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 1
+2024-07-27 14:29:25.127 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 9
+2024-07-27 14:29:25.128 | main                      | ERROR | com.example.onlineshopproject.service.CategoryServiceImpl               -  Category not found: 9
+2024-07-27 14:29:25.826 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:29:25.830 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:29:25.831 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:29:25.832 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:29:25.833 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:29:25.846 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:29:25.849 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:29:25.850 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:29:25.852 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 9
+2024-07-27 14:29:25.853 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:29:25.862 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 1
+2024-07-27 14:29:25.866 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 9
+2024-07-27 14:29:25.866 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by userId 9 not found.
+2024-07-27 14:29:25.881 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-27 14:29:25.887 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 9
+2024-07-27 14:29:25.889 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id 9 not found.
+2024-07-27 14:29:25.895 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Receiving top 10 products by status
+2024-07-27 14:29:25.912 | main                      | INFO  | com.example.onlineshopproject.service.ProductServiceImpl                -  Returning top 10 products by status
+2024-07-27 14:29:25.923 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Product name
+2024-07-27 14:29:25.928 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Incorrect product name
+2024-07-27 14:29:25.928 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product not found
+2024-07-27 14:29:25.939 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:29:25.944 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:29:25.945 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Can't find the product with id: 9
+2024-07-27 14:29:25.947 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:29:25.948 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product id not valid: -1
+2024-07-27 14:29:25.953 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 1
+2024-07-27 14:29:25.956 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 9
+2024-07-27 14:29:25.956 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id not found: 9
+2024-07-27 14:29:26.252 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:29:26.257 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 9
+2024-07-27 14:29:26.257 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 9
+2024-07-27 14:29:26.258 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:29:26.259 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 1
+2024-07-27 14:32:06.549 | main                      | INFO  | com.example.onlineshopproject.repository.UserRepositoryTest             -  Starting UserRepositoryTest using Java 22.0.1 with PID 3431 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:32:06.551 | main                      | DEBUG | com.example.onlineshopproject.repository.UserRepositoryTest             -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:32:06.552 | main                      | INFO  | com.example.onlineshopproject.repository.UserRepositoryTest             -  The following 1 profile is active: "dev"
+2024-07-27 14:32:15.791 | main                      | INFO  | com.example.onlineshopproject.repository.UserRepositoryTest             -  Started UserRepositoryTest in 10.484 seconds (process running for 13.577)
+2024-07-27 14:32:35.231 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Starting OrderRepositoryTest using Java 22.0.1 with PID 3438 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:32:35.233 | main                      | DEBUG | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:32:35.235 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  The following 1 profile is active: "dev"
+2024-07-27 14:32:42.359 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Started OrderRepositoryTest in 7.973 seconds (process running for 13.595)
+2024-07-27 14:32:42.761 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting receive all categories.
+2024-07-27 14:32:42.763 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Returning all categories: 1
+2024-07-27 14:32:42.774 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 1
+2024-07-27 14:32:42.777 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 9
+2024-07-27 14:32:42.777 | main                      | ERROR | com.example.onlineshopproject.service.CategoryServiceImpl               -  Category not found: 9
+2024-07-27 14:32:43.363 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:32:43.366 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:32:43.367 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:32:43.368 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:32:43.370 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:32:43.381 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:32:43.384 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:32:43.386 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:32:43.387 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 9
+2024-07-27 14:32:43.388 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:32:43.401 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 1
+2024-07-27 14:32:43.404 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 9
+2024-07-27 14:32:43.405 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by userId 9 not found.
+2024-07-27 14:32:43.418 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-27 14:32:43.421 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 9
+2024-07-27 14:32:43.422 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id 9 not found.
+2024-07-27 14:32:43.429 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Receiving top 10 products by status
+2024-07-27 14:32:43.443 | main                      | INFO  | com.example.onlineshopproject.service.ProductServiceImpl                -  Returning top 10 products by status
+2024-07-27 14:32:43.452 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Product name
+2024-07-27 14:32:43.457 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Incorrect product name
+2024-07-27 14:32:43.457 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product not found
+2024-07-27 14:32:43.471 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:32:43.473 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:32:43.474 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Can't find the product with id: 9
+2024-07-27 14:32:43.475 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:32:43.475 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product id not valid: -1
+2024-07-27 14:32:43.482 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 1
+2024-07-27 14:32:43.485 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 9
+2024-07-27 14:32:43.487 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id not found: 9
+2024-07-27 14:32:43.711 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:32:43.713 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 9
+2024-07-27 14:32:43.714 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 9
+2024-07-27 14:32:43.715 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:32:43.716 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 1
+2024-07-27 14:33:34.298 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Starting ProductRepositoryTest using Java 22.0.1 with PID 3452 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:33:34.300 | main                      | DEBUG | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:33:34.302 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  The following 1 profile is active: "dev"
+2024-07-27 14:33:42.907 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Started ProductRepositoryTest in 9.555 seconds (process running for 11.647)
+2024-07-27 14:33:45.873 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting receive all categories.
+2024-07-27 14:33:45.886 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Returning all categories: 1
+2024-07-27 14:33:45.925 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 1
+2024-07-27 14:33:45.931 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 9
+2024-07-27 14:33:45.932 | main                      | ERROR | com.example.onlineshopproject.service.CategoryServiceImpl               -  Category not found: 9
+2024-07-27 14:33:46.811 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 1
+2024-07-27 14:33:46.818 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 9
+2024-07-27 14:33:46.820 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Product or user not found: 9
+2024-07-27 14:33:46.821 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 1
+2024-07-27 14:33:46.824 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Product or user not found: 1
+2024-07-27 14:33:46.849 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 1
+2024-07-27 14:33:46.854 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 9
+2024-07-27 14:33:46.855 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  User or product not found: 9
+2024-07-27 14:33:46.857 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 1
+2024-07-27 14:33:46.858 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  User or product not found: 1
+2024-07-27 14:33:46.879 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting get by userId: 1
+2024-07-27 14:33:46.887 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting get by userId: 9
+2024-07-27 14:33:46.888 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Cart not found: 9
+2024-07-27 14:33:47.191 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Fetching all users.
+2024-07-27 14:33:47.255 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-27 14:33:47.260 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 9
+2024-07-27 14:33:47.260 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id 9 not found.
+2024-07-27 14:33:47.284 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Receiving top 10 products by status
+2024-07-27 14:33:47.300 | main                      | INFO  | com.example.onlineshopproject.service.ProductServiceImpl                -  Returning top 10 products by status
+2024-07-27 14:33:47.322 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Product name
+2024-07-27 14:33:47.330 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Incorrect product name
+2024-07-27 14:33:47.332 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product not found
+2024-07-27 14:33:47.352 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:33:47.356 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:33:47.359 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Can't find the product with id: 9
+2024-07-27 14:33:47.360 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:33:47.361 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product id not valid: -1
+2024-07-27 14:33:47.385 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 1
+2024-07-27 14:33:47.389 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 9
+2024-07-27 14:33:47.390 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id not found: 9
+2024-07-27 14:33:47.630 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:33:47.633 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:33:47.634 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:33:47.635 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:33:47.636 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:33:47.649 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:33:47.652 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:33:47.653 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:33:47.658 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 9
+2024-07-27 14:33:47.659 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:33:47.674 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 1
+2024-07-27 14:33:47.685 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 9
+2024-07-27 14:33:47.687 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by userId 9 not found.
+2024-07-27 14:33:48.064 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:33:48.069 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 9
+2024-07-27 14:33:48.069 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 9
+2024-07-27 14:33:48.071 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:33:48.073 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 1
+2024-07-27 14:50:11.677 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 942 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:50:11.681 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:50:11.683 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 14:50:16.722 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 14:51:29.458 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 980 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:51:29.479 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:51:29.483 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 14:51:34.093 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 14:51:47.645 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 988 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:51:47.646 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:51:47.647 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 14:51:51.574 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 14:52:03.246 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Starting OnlineShopProjectApplication using Java 22.0.1 with PID 996 (/Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject/target/classes started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:52:03.247 | main                      | DEBUG | com.example.onlineshopproject.OnlineShopProjectApplication              -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:52:03.249 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  No active profile set, falling back to 1 default profile: "default"
+2024-07-27 14:52:07.530 | main                      | DEBUG | com.example.onlineshopproject.security.jwt.JwtFilter                    -  Filter 'jwtFilter' configured for use
+2024-07-27 14:52:21.033 | main                      | INFO  | com.example.onlineshopproject.OnlineShopProjectApplication              -  Started OnlineShopProjectApplication in 18.447 seconds (process running for 20.128)
+2024-07-27 14:53:35.902 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Starting OrderRepositoryTest using Java 22.0.1 with PID 1015 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:53:35.903 | main                      | DEBUG | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:53:35.905 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  The following 1 profile is active: "dev"
+2024-07-27 14:53:44.353 | main                      | INFO  | com.example.onlineshopproject.repository.OrderRepositoryTest            -  Started OrderRepositoryTest in 9.543 seconds (process running for 15.703)
+2024-07-27 14:53:44.854 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting receive all categories.
+2024-07-27 14:53:44.857 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Returning all categories: 1
+2024-07-27 14:53:44.863 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 1
+2024-07-27 14:53:44.865 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 9
+2024-07-27 14:53:44.865 | main                      | ERROR | com.example.onlineshopproject.service.CategoryServiceImpl               -  Category not found: 9
+2024-07-27 14:53:45.552 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:53:45.556 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:53:45.557 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:53:45.558 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:53:45.559 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:53:45.567 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:53:45.572 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:53:45.573 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:53:45.576 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 9
+2024-07-27 14:53:45.577 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:53:45.585 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 1
+2024-07-27 14:53:45.590 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 9
+2024-07-27 14:53:45.591 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by userId 9 not found.
+2024-07-27 14:53:45.610 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-27 14:53:45.612 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 9
+2024-07-27 14:53:45.613 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id 9 not found.
+2024-07-27 14:53:45.622 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Receiving top 10 products by status
+2024-07-27 14:53:45.636 | main                      | INFO  | com.example.onlineshopproject.service.ProductServiceImpl                -  Returning top 10 products by status
+2024-07-27 14:53:45.646 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Product name
+2024-07-27 14:53:45.651 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Incorrect product name
+2024-07-27 14:53:45.652 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product not found
+2024-07-27 14:53:45.661 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:53:45.664 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:53:45.665 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Can't find the product with id: 9
+2024-07-27 14:53:45.666 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:53:45.666 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product id not valid: -1
+2024-07-27 14:53:45.673 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 1
+2024-07-27 14:53:45.676 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 9
+2024-07-27 14:53:45.677 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id not found: 9
+2024-07-27 14:53:45.946 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:53:45.949 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 9
+2024-07-27 14:53:45.949 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 9
+2024-07-27 14:53:45.950 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:53:45.951 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 1
+2024-07-27 14:54:32.669 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Starting ProductRepositoryTest using Java 22.0.1 with PID 1038 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 14:54:32.681 | main                      | DEBUG | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 14:54:32.708 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  The following 1 profile is active: "dev"
+2024-07-27 14:54:41.884 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Started ProductRepositoryTest in 10.519 seconds (process running for 12.852)
+2024-07-27 14:54:44.729 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting receive all categories.
+2024-07-27 14:54:44.744 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Returning all categories: 1
+2024-07-27 14:54:44.793 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 1
+2024-07-27 14:54:44.801 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 9
+2024-07-27 14:54:44.802 | main                      | ERROR | com.example.onlineshopproject.service.CategoryServiceImpl               -  Category not found: 9
+2024-07-27 14:54:45.489 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 1
+2024-07-27 14:54:45.496 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 9
+2024-07-27 14:54:45.497 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Product or user not found: 9
+2024-07-27 14:54:45.499 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 1
+2024-07-27 14:54:45.500 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Product or user not found: 1
+2024-07-27 14:54:45.518 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 1
+2024-07-27 14:54:45.523 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 9
+2024-07-27 14:54:45.525 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  User or product not found: 9
+2024-07-27 14:54:45.526 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 1
+2024-07-27 14:54:45.527 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  User or product not found: 1
+2024-07-27 14:54:45.542 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting get by userId: 1
+2024-07-27 14:54:45.548 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting get by userId: 9
+2024-07-27 14:54:45.549 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Cart not found: 9
+2024-07-27 14:54:45.824 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Fetching all users.
+2024-07-27 14:54:45.869 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-27 14:54:45.873 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 9
+2024-07-27 14:54:45.874 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id 9 not found.
+2024-07-27 14:54:45.890 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Receiving top 10 products by status
+2024-07-27 14:54:45.899 | main                      | INFO  | com.example.onlineshopproject.service.ProductServiceImpl                -  Returning top 10 products by status
+2024-07-27 14:54:45.911 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Product name
+2024-07-27 14:54:45.914 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Incorrect product name
+2024-07-27 14:54:45.914 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product not found
+2024-07-27 14:54:45.923 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:54:45.925 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:54:45.926 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Can't find the product with id: 9
+2024-07-27 14:54:45.927 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 14:54:45.927 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product id not valid: -1
+2024-07-27 14:54:45.940 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 1
+2024-07-27 14:54:45.944 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 9
+2024-07-27 14:54:45.944 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id not found: 9
+2024-07-27 14:54:46.126 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:54:46.135 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:54:46.138 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:54:46.140 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 14:54:46.143 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 14:54:46.170 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:54:46.172 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 14:54:46.173 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:54:46.175 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 9
+2024-07-27 14:54:46.176 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 14:54:46.189 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 1
+2024-07-27 14:54:46.193 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 9
+2024-07-27 14:54:46.194 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by userId 9 not found.
+2024-07-27 14:54:46.500 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:54:46.504 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 9
+2024-07-27 14:54:46.505 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 9
+2024-07-27 14:54:46.506 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 14:54:46.507 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 1
+2024-07-27 15:19:20.362 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Starting ProductRepositoryTest using Java 22.0.1 with PID 990 (started by andrii.vytiahanets in /Users/andrii.vytiahanets/Documents/Tel-Ran_by_Starta_Institute/onlineshopproject)
+2024-07-27 15:19:20.364 | main                      | DEBUG | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Running with Spring Boot v3.3.0, Spring v6.1.8
+2024-07-27 15:19:20.365 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  The following 1 profile is active: "dev"
+2024-07-27 15:19:32.461 | main                      | INFO  | com.example.onlineshopproject.repository.ProductRepositoryTest          -  Started ProductRepositoryTest in 13.768 seconds (process running for 16.857)
+2024-07-27 15:19:35.886 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting receive all categories.
+2024-07-27 15:19:35.903 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Returning all categories: 1
+2024-07-27 15:19:36.091 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 1
+2024-07-27 15:19:36.101 | main                      | DEBUG | com.example.onlineshopproject.service.CategoryServiceImpl               -  Attempting delete category: 9
+2024-07-27 15:19:36.102 | main                      | ERROR | com.example.onlineshopproject.service.CategoryServiceImpl               -  Category not found: 9
+2024-07-27 15:19:36.950 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 1
+2024-07-27 15:19:36.959 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 9
+2024-07-27 15:19:36.960 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Product or user not found: 9
+2024-07-27 15:19:36.962 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting delete by productId: 1
+2024-07-27 15:19:36.963 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Product or user not found: 1
+2024-07-27 15:19:37.032 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 1
+2024-07-27 15:19:37.037 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 9
+2024-07-27 15:19:37.038 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  User or product not found: 9
+2024-07-27 15:19:37.040 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting insert cart: 1
+2024-07-27 15:19:37.041 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  User or product not found: 1
+2024-07-27 15:19:37.071 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting get by userId: 1
+2024-07-27 15:19:37.079 | main                      | DEBUG | com.example.onlineshopproject.service.CartServiceImpl                   -  Attempting get by userId: 9
+2024-07-27 15:19:37.080 | main                      | ERROR | com.example.onlineshopproject.service.CartServiceImpl                   -  Cart not found: 9
+2024-07-27 15:19:37.376 | main                      | DEBUG | com.example.onlineshopproject.service.UserServiceImpl                   -  Fetching all users.
+2024-07-27 15:19:37.419 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 1
+2024-07-27 15:19:37.423 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting product with id: 9
+2024-07-27 15:19:37.424 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id 9 not found.
+2024-07-27 15:19:37.436 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Receiving top 10 products by status
+2024-07-27 15:19:37.448 | main                      | INFO  | com.example.onlineshopproject.service.ProductServiceImpl                -  Returning top 10 products by status
+2024-07-27 15:19:37.460 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Product name
+2024-07-27 15:19:37.464 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting insert product: Incorrect product name
+2024-07-27 15:19:37.465 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product not found
+2024-07-27 15:19:37.475 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 15:19:37.478 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 15:19:37.479 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Can't find the product with id: 9
+2024-07-27 15:19:37.480 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting update product
+2024-07-27 15:19:37.480 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product id not valid: -1
+2024-07-27 15:19:37.510 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 1
+2024-07-27 15:19:37.517 | main                      | DEBUG | com.example.onlineshopproject.service.ProductServiceImpl                -  Attempting delete product by id: 9
+2024-07-27 15:19:37.518 | main                      | ERROR | com.example.onlineshopproject.service.ProductServiceImpl                -  Product with id not found: 9
+2024-07-27 15:19:37.746 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 15:19:37.749 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 15:19:37.750 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 15:19:37.751 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting delete by productId
+2024-07-27 15:19:37.752 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by productId not found
+2024-07-27 15:19:37.770 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 15:19:37.775 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 1
+2024-07-27 15:19:37.776 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 15:19:37.778 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting insert favorite: 9
+2024-07-27 15:19:37.779 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite not found
+2024-07-27 15:19:37.796 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 1
+2024-07-27 15:19:37.802 | main                      | DEBUG | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Attempting favorite by userId: 9
+2024-07-27 15:19:37.803 | main                      | ERROR | com.example.onlineshopproject.service.FavoriteServiceImpl               -  Favorite by userId 9 not found.
+2024-07-27 15:19:38.224 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 15:19:38.228 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 9
+2024-07-27 15:19:38.229 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 9
+2024-07-27 15:19:38.231 | main                      | DEBUG | com.example.onlineshopproject.service.OrderServiceImpl                  -  Attempting insert order by userId: 1
+2024-07-27 15:19:38.232 | main                      | ERROR | com.example.onlineshopproject.service.OrderServiceImpl                  -  Order not found: 1

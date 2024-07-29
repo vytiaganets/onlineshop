@@ -211,5 +211,7 @@
     <orderEntry type="library" name="Maven: org.apache.pdfbox:pdfbox:2.0.30" level="project" />
     <orderEntry type="library" name="Maven: org.apache.pdfbox:fontbox:2.0.30" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Maven: com.vdurmont:emoji-java:5.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20170516" level="project" />
   </component>
 </module>

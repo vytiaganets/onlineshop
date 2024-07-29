@@ -59,7 +59,8 @@ public class SecurityConfiguration {
                                 .requestMatchers(URLS).permitAll()
                                 //AB allow the user to log in to receive a token
                                 //AB allows registering a new user without a token and passwords
-                                .anyRequest().authenticated())
+                                .anyRequest()//.permitAll())
+                                .authenticated())
                 //AB basic authentication
                 //AB work with token
                 .addFilterAfter(jwtFilter,
